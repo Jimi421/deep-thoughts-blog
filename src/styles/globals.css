@@ -1,0 +1,27 @@
+/* src/styles/globals.css */
+
+/* 1. Load Tailwind’s core layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Global resets / utility @apply rules */
+html {
+  /* full-screen background + text color, switching in dark mode */
+  @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100;
+}
+
+/* 3. Global link styling */
+a {
+  @apply text-blue-600 hover:underline;
+}
+
+/* 4. Make images responsive by default */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* 5. Optional: smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
