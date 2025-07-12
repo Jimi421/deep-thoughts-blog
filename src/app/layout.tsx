@@ -1,9 +1,8 @@
 // src/app/layout.tsx
-
-import "@/styles/globals.css"; // your Tailwind + base styles
+import "@/styles/globals.css"; // your global Tailwind CSS
 import type { ReactNode } from "react";
-import Header from "@/components/Header"; // client component
-import Footer from "@/components/Footer";
+import Header from "@/components/Header"; // your header
+import Footer from "@/components/Footer"; // your footer
 
 export const metadata = {
   title: "Deep Thoughts",
@@ -14,13 +13,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="antialiased">
       <body
-        className="
-        flex flex-col min-h-screen
-        bg-white text-gray-800
-        dark:bg-gray-900 dark:text-gray-100
-      "
+        className="flex flex-col min-h-screen 
+                       bg-white text-gray-800 
+                       dark:bg-gray-900 dark:text-gray-100"
       >
-        {/* site header with dark mode toggle */}
+        {/* site header with dark-mode toggle */}
         <Header />
 
         {/* page content */}
