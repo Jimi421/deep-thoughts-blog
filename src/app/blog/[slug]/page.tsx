@@ -3,12 +3,17 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostSlugs, getPostBySlug } from "@/lib/posts";
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   // Return array of plain objects { slug: string }
   return getPostSlugs().map((slug) => ({ slug: slug.replace(/\.mdx?$/, "") }));
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+export default async function Page({ params }: PageProps) {
   try {
     const post = await getPostBySlug(params.slug);
     const { frontmatter, mdxSource } = post;
