@@ -1,31 +1,25 @@
-// src/app/blog/[slug]/page.tsx
-
-import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import Link from "next/link";
 import { getPostSlugs, getPostBySlug } from "@/lib/posts";
 
-export async function generateStaticParams() {
-  const slugs = getPostSlugs()
-    .filter((filename) => filename.endsWith(".mdx") || filename.endsWith(".md"))
-    .map((filename) => filename.replace(/\.mdx?$/, ""));
+export default async function Page() {
+  const slugs = getPostSlugs().map((filename) => filename.replace(/\.mdx?$/, ""));
+  const posts = await Promise.all(
+    slugs.map(async (slug) => {
+      const { frontmatter } = await getPostBySlug(slug);
+      return { slug, title: frontmatter.title as string };
+    })
+  );
 
-  // MUST be an array of plain objects, no promises inside
-  return slugs.map((slug) => ({ slug }));
-}
-
-export default async function Page({ params }: { params: { slug: string } }) {
-  try {
-    const post = await getPostBySlug(params.slug);
-    const { frontmatter, mdxSource } = post;
-
-    return (
-      <article className="prose mx-auto py-12">
-        <h1>{frontmatter.title}</h1>
-        <p className="text-sm text-gray-500 mb-6">{frontmatter.date}</p>
-        <MDXRemote source={mdxSource} components={{}} />
-      </article>
-    );
-  } catch {
-    return notFound();
-  }
+  return (
+    <div className="prose mx-auto py-12">
+      <h1>Blog</h1>
+      <ul>
+        {posts.map(({ slug, title }) => (
+          <li key={slug}>
+            <Link href={`/blog/${slug}`}>{title}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
