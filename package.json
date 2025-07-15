@@ -2,6 +2,9 @@
   "name": "deep-thoughts-blog",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "prepare": "husky install",
     "dev": "next dev --turbo",

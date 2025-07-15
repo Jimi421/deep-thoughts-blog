@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Requirements
+
+This project uses Node.js features that rely on the `node:` prefix for built-in
+modules. Ensure you are running **Node.js 18 or later** so these modules are
+available and your dependency tree resolves correctly.
+
 ## Getting Started
 
 First, run the development server:
