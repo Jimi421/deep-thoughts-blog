@@ -1,4 +1,5 @@
 /* src/styles/globals.css */
+@config "../../tailwind.config.js";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,12 +7,22 @@
 /* example global @apply usages */
 @layer base {
   html {
-    @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100;
+    color: var(--color-gray-800);
+    background-color: var(--color-white);
+  }
+  .dark html {
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-100);
   }
   a {
-    @apply text-blue-600 hover:underline;
+    color: var(--color-blue-600);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
   img {
-    @apply max-w-full h-auto;
+    max-width: 100%;
+    height: auto;
   }
 }

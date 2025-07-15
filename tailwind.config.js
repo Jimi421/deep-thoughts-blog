@@ -6,6 +6,8 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx,mdx}",
     "./src/lib/posts.ts",
     "./src/data/posts/**/*.{md,mdx}",
+    // include global styles where `@apply` is used
+    "./src/styles/**/*.css",
   ],
   darkMode: "class", // your choice: 'media' or 'class'
   theme: {
