@@ -3,6 +3,8 @@ import "@/styles/globals.css"; // your global Tailwind CSS
 import type { ReactNode } from "react";
 import Header from "@/components/Header"; // your header
 import Footer from "@/components/Footer"; // your footer
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 export const metadata = {
   title: "Deep Thoughts",
@@ -11,7 +13,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="antialiased">
+    <html
+      lang="en"
+      className={`antialiased ${GeistSans.variable} ${GeistMono.variable}`}
+    >
       <body
         className="flex flex-col min-h-screen 
                        bg-white text-gray-800 

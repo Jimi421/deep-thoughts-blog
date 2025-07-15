@@ -11,7 +11,12 @@ module.exports = {
   ],
   darkMode: "class", // your choice: 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
+      },
+    },
   },
   plugins: [],
 };
