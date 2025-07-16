@@ -1,22 +1,18 @@
-"use client"; // this file uses client-side hooks
 import Link from "next/link";
-import DarkToggle from "@/components/DarkToggle";
 
 export default function Header() {
   return (
-    <header className="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/">
-          <span className="text-xl font-bold cursor-pointer">
-            Deep Thoughts
-          </span>
+    <header className="w-full py-6 px-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+      <div className="max-w-3xl mx-auto flex justify-between items-center">
+        <Link
+          href="/"
+          className="text-xl font-bold text-brand-dark dark:text-brand-light"
+        >
+          Deep Thoughts
         </Link>
-        <nav className="flex items-center space-x-4">
-          <Link href="/blog">
-            <span className="hover:underline cursor-pointer">Blog</span>
-          </Link>
-          <DarkToggle />
-        </nav>
+        <Link href="/blog" className="text-sm font-semibold hover:underline">
+          Blog
+        </Link>
       </div>
     </header>
   );

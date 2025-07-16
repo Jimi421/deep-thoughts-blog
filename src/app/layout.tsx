@@ -1,31 +1,32 @@
 // src/app/layout.tsx
-import "@/styles/globals.css"; // your global Tailwind CSS
-import type { ReactNode } from "react";
-import Header from "@/components/Header"; // your header
-import Footer from "@/components/Footer"; // your footer
 
-export const metadata = {
+import "../styles/globals.css";
+import { Inter } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
   title: "Deep Thoughts",
-  description: "A minimal blog built with Next.js, MDX, and Tailwind CSS",
+  description: "A clean, thoughtful blog built with Next.js + Tailwind CSS",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className="antialiased">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className="flex flex-col min-h-screen 
-                       bg-white text-gray-800 
-                       dark:bg-gray-900 dark:text-gray-100"
+        className={`${inter.className} bg-zinc-900 text-zinc-100 min-h-screen flex flex-col`}
       >
-        {/* site header with dark-mode toggle */}
         <Header />
-
-        {/* page content */}
         <main className="flex-grow container mx-auto px-4 py-8">
           {children}
         </main>
-
-        {/* site footer */}
         <Footer />
       </body>
     </html>
