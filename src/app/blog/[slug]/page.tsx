@@ -2,18 +2,25 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostSlugs, getPostBySlug } from "@/lib/posts";
 
-export async function generateStaticParams() {
+// Generate static params for all posts
+export function generateStaticParams() {
   const slugs = getPostSlugs()
-    .filter((filename) => filename.endsWith(".mdx") || filename.endsWith(".md"))
-    .map((filename) => filename.replace(/\.mdx?$/, ""));
-  return slugs.map((slug) => ({ slug }));
+    .filter(
+      (filename: string) =>
+        filename.endsWith(".mdx") || filename.endsWith(".md"),
+    )
+    .map((filename: string) => filename.replace(/\.mdx?$/, ""));
+
+  return slugs.map((slug: string) => ({ slug }));
 }
 
-export default async function Page({
-  params,
-}: {
+// Page component with proper typing for async params
+interface Props {
   params: Promise<{ slug: string }>;
-}) {
+}
+
+export default async function Page({ params }: Props) {
+  // Await the params since they're now a Promise
   const { slug } = await params;
 
   let post;
@@ -26,8 +33,8 @@ export default async function Page({
   const { frontmatter, mdxSource } = post;
 
   return (
-    <article className="prose mx-auto py-12">
-      <h1>{frontmatter.title}</h1>
+    <article className="prose prose-invert mx-auto py-12">
+      <h1 className="text-4xl font-bold">{frontmatter.title}</h1>
       <p className="text-sm text-gray-500 mb-6">{frontmatter.date}</p>
       <MDXRemote source={mdxSource} components={{}} />
     </article>
