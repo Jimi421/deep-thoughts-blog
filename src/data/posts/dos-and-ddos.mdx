@@ -1,0 +1,93 @@
+---
+title: "DOS and DDoS"
+slug: "dos-and-ddos"
+date: "2025-10-29"
+status: "published"
+summary: "Denial of Servise (DoS) Attack - occurs when one machine is continually flooding a victum with requests for services. now one machine is not powerul enough"
+tags: ["network+"]
+toc: true
+---
+
+# DOS and DDoS
+
+Denial of Servise (DoS) Attack - occurs when one machine is continually flooding a victum with requests for services. now one machine is not powerul enough 
+
+TCP SYN Flood - A specefic type of DoS attack where an attacker initates a session, but never completes the connection , continues to send the syn packets. server will send it to a spoofed ID, leaving the connetion half open. 
+
+ICMP Flood (Smurf Attack) - occurs when an attaker pings a subnet broadcast with a spoofed source ip making the victimized server being exaused of resources. 
+
+icmp floods re not as common as they used to be but could still be a iable attck methos for misconfigured network 
+
+DDoS - Attacker may use may comouters at the same time asking for access to a single server. 
+
+Botnet - collection of compromised computers. 
+
+Zombie - single node controled in a bot net. 
+
+c2 - command and control server
+
+it’s harder as you move to the cloud. you can scale horizontaly. DDoS attacks should be preveneted even when using cloud-based resourses. 
+
+# DoS & DDoS Attacks
+
+### Denial of Service (DoS)
+
+- **One attacker, one victim.**
+- Floods a system with requests to exhaust resources.
+- Less common today (single machine often not powerful enough).
+
+---
+
+### Types of DoS Attacks
+
+- **TCP SYN Flood**
+    - Attacker sends SYN packets but never completes 3-way handshake.
+    - Leaves many **half-open connections**.
+    - Server resources exhausted.
+- **ICMP Flood (Smurf Attack)**
+    - Attacker spoofs victim’s IP as source of ICMP echo requests (pings).
+    - Sends to broadcast address → all hosts reply to victim.
+    - Victim is overwhelmed by replies.
+    - Less common today due to router configs blocking directed broadcasts.
+
+---
+
+### Distributed Denial of Service (DDoS)
+
+- **Many attackers (botnet) targeting one victim simultaneously.**
+- Far more powerful than single DoS.
+- Common in large-scale attacks (e.g., against banks, governments).
+
+---
+
+### Key Terms
+
+- **Botnet** → Network of compromised devices (PCs, IoT).
+- **Zombie** → A single compromised device inside a botnet.
+- **C2 (Command & Control) Server** → Directs the botnet’s attack traffic.
+
+---
+
+### Mitigation / Considerations
+
+- **Cloud scaling (horizontal scaling)** can absorb traffic, but DDoS can still overwhelm systems.
+- Need **DDoS prevention/mitigation services** (e.g., Cloudflare, AWS Shield).
+- Network devices should be configured to **drop spoofed or broadcast traffic**.
+
+---
+
+✅ **Exam Must-Knows**
+
+- DoS = **single attacker**; DDoS = **multiple attackers (botnet)**.
+- **SYN Flood = incomplete handshakes**.
+- **Smurf = ICMP flood via broadcast spoofing**.
+- **Botnet = collection of zombies, controlled by C2.**
+- Cloud helps but **does not eliminate DDoS risk**.
+
+---
+
+⚡Memory Trick:
+
+- **SYN Flood = Starts, Never Finishes.**
+- **Smurf = Ping + Broadcast = Big Echo.**
+- **Zombie army = DDoS.**

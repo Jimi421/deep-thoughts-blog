@@ -1,0 +1,92 @@
+---
+title: "Network Sensor"
+slug: "network-sensor"
+date: "2025-10-29"
+status: "published"
+summary: "Temp -  most devices report on their own sensor."
+tags: ["network+"]
+toc: true
+---
+
+# Network Sensor
+
+Temp -  most devices report on their own sensor. 
+
+Temperature sensors can e used to measure intake and outake 
+
+minor threshold - a rise in temp is detected. 
+
+major threshold - the temp reaches a dangerous conditipon. device can start to load shed. 
+
+cpu usage - under normal conditions cpu should hae minimal utilization in the range of 5%-40% 
+
+high CPU can cause a router or deive to start to drop packets. 
+
+misconfigured network 
+
+network under attack. 
+
+Memory utilization baseline 40% , busy 60% to 70% peak up to 80%
+
+minor threshold 
+
+severe threshold 
+
+critical threshold
+
+# 📊 Network Sensors & Monitoring
+
+## 🌡️ Temperature Sensors
+
+- Most devices (switches, routers, servers) have **built-in sensors**.
+- Measure **intake vs. exhaust air**.
+
+**Thresholds:**
+
+- **Minor:** Temp rises above baseline.
+- **Major:** Dangerous condition; device may **load shed** (reduce performance).
+- **Critical:** Device may **shut down** to protect hardware.
+
+---
+
+## ⚙️ CPU Utilization
+
+- **Normal baseline:** ~5%–40%.
+- **High CPU** → device may **drop packets** or fail to forward traffic.
+- Causes:
+    - Misconfiguration.
+    - Network under attack (DDoS, excessive traffic).
+
+---
+
+## 🧠 Memory Utilization
+
+- **Baseline:** ~40%.
+- **Busy:** 60%–70%.
+- **Peak:** up to 80%.
+
+**Thresholds:**
+
+- **Minor:** approaching 60%.
+- **Severe:** 70%+.
+- **Critical:** 80%+ (risk of crashes or packet drops).
+
+---
+
+## ✅ Exam Tips
+
+- **Sensors provide early warning signs** for overheating, high CPU, or memory exhaustion.
+- Know difference between **minor, major/severe, and critical thresholds**.
+- High CPU/memory can be caused by **attacks, misconfigurations, or failing hardware**.
+
+---
+
+⚡ Sample Exam Question:
+
+*“A router begins dropping packets during normal traffic loads. Monitoring shows CPU utilization at 90%. What’s the most likely cause?”*
+
+→ **Device is overloaded due to high CPU utilization.**
+
+---
+
+👉 Do you want me to also build a **baseline & threshold quick chart** (Temp, CPU, Memory side by side) so you can memorize normal vs warning vs critical values at a glance?

@@ -1,0 +1,137 @@
+---
+title: "DNS - DOMAIN NAME SYSTEM"
+slug: "DNS-domain-name-system"
+date: "2025-10-29"
+status: "published"
+summary: "Converts a hostname to an ip address and an ip address to a hostname. DNS is an embedded part of networks and systems. You can set up your own DNS server to have your own domain na"
+tags: ["network+"]
+toc: true
+---
+
+# DNS - DOMAIN NAME SYSTEM
+
+Converts a hostname to an ip address and an ip address to a hostname. DNS is an embedded part of networks and systems. You can set up your own DNS server to have your own domain name and hostname resolution. 
+
+Fully-Qualified Domain Name FQDN a domanin name is witha top level provider .com 
+
+[www.jimi421.com](HTTP://www.jimi421.com) domain name is jimi421 top level domain is .com if you have ftp. blog. .jimi ect will create the fully qualified domain. there are 5 layers. 
+
+5 evels 
+
+root. 
+
+top level domain .com .net 
+
+second level domain [jimi421.com](HTTP://jimi421.com) 
+
+sub domain [blog.jimi421.com](HTTP://blog.jimi421.com) 
+
+host rasberri-pi.home.jimi421.com
+
+url has the full with the HTTPs:// 
+
+Host file - a text fiel that servs as the first point of contact when a device wants to communicat with another device on the internet. hosts will check here first. 
+
+A  i p v 4
+
+AAAA - ip v 6 
+
+cname - points to another domain 
+
+mx -  mail exchange record. 
+
+start of authortiy sores important info like zone transfer, which uses TCP. 
+
+reverse DNS lookup. 
+
+internal DNS is popular with cloud computing. 
+
+DNS uses recursive lookup, keeps workig up to the root to ask. 
+
+DNS Security - if you cna change the ip address in the DNS records hten you can cpaute the traffic and keep the login data, and redirect to the correct place. 
+
+DNS Serucity excentions - provides a digital tamper proof seal for DNS 
+
+DNS ofver HDDPs DoH - used to sedn DNS through the HTTPS protocol . 
+
+DNS over TLS (
+
+jplaces DNS throuh a TLS tunnel. 
+
+# Domain Name System (DNS) — Exam Notes
+
+### Purpose
+
+- Converts **hostnames ⇄ IP addresses**
+- Embedded in all networks and systems
+- Uses **port 53**
+    - UDP for queries (small messages)
+    - TCP for zone transfers/large messages
+
+---
+
+### DNS Hierarchy (5 Levels)
+
+1. **Root** – “.” (the invisible dot at the end of all FQDNs)
+2. **Top-Level Domain (TLD)** – .com, .net, .org, .edu, country codes (.uk, .jp)
+3. **Second-Level Domain** – e.g., `jimi421.com`
+4. **Subdomain** – e.g., `blog.jimi421.com`
+5. **Host** – e.g., `raspberry-pi.home.jimi421.com`
+
+**FQDN (Fully Qualified Domain Name)** = Host + Domain + TLD (e.g., `www.jimi421.com`)
+
+---
+
+### Records
+
+- **A** – maps hostname → IPV4
+- **AAAA** – maps hostname → IPV6
+- **CNAME** – alias; points one name to another
+- **MX** – mail exchanger (email delivery)
+- **PTR** – reverse lookup (IP → hostname)
+- **SOA** – Start of Authority; holds zone info (admin contact, refresh time, etc.)
+- **NS** – identifies authoritative name servers
+- **TXT** – human/machine-readable text (used for SPF, DKIM, domain verification)
+
+---
+
+### Other Key Concepts
+
+- **Hosts file** – local text file, checked *before* DNS.
+- **Recursive Lookup** – DNS server queries other servers until answer found.
+- **Iterative Lookup** – DNS server gives referral to another server.
+- **Zone Transfer** – copy of DNS database (TCP).
+- **Internal vs External DNS** – internal for private networks/cloud, external for internet.
+
+---
+
+### Security
+
+- **DNS Poisoning / Spoofing** – attacker changes DNS records to redirect traffic.
+- **DNSSEC** – cryptographic signatures; verifies authenticity (not encrypted, just signed).
+- **DNS over HTTPS (DoH)** – encrypts DNS in HTTPS traffic.
+- **DNS over TLS (DoT)** – encrypts DNS in a TLS tunnel.
+
+---
+
+### Exam Tips
+
+- **Port 53** = DNS
+- **Zone transfers** = TCP
+- **Queries** = UDP (unless too large)
+- **DNSSEC** = authenticity, not encryption
+- **DoH/DoT** = encrypt queries for privacy
+
+---
+
+✅ **Common Question:**
+
+*“Which record type is used for reverse lookups?”* → **PTR**
+
+*“Which protocol does DNS use for zone transfers?”* → **TCP**
+
+*“Which protocol does DNS use for queries?”* → **UDP (port 53)**
+
+---
+
+Flashcard Trick: **A → Address (IPV4), AAAA → IPV6 (4 A’s = 4x bigger), CNAME → Canonical Name, MX → Mail Exchange, PTR → Pointer (reverse).**

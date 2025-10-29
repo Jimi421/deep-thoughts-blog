@@ -1,0 +1,72 @@
+---
+title: "Packet Captures"
+slug: "packet-captures"
+date: "2025-10-29"
+status: "published"
+summary: "Capture shows:"
+tags: ["network+"]
+toc: true
+---
+
+# Packet Captures
+
+# 📦 Packet Capture Example Questions
+
+### 1. **Port Scan**
+
+Capture shows:
+
+```
+No.  Time   Source         Dest     Protocol  Info
+1    0.001  192.168.1.10   10.0.0.5 TCP       SYN to port 21
+2    0.002  192.168.1.10   10.0.0.5 TCP       SYN to port 22
+3    0.003  192.168.1.10   10.0.0.5 TCP       SYN to port 23
+
+```
+
+**Question:** What type of attack is shown?
+
+**Answer:** Port scan (probing for open ports).
+
+---
+
+### 2. **SYN Flood**
+
+Capture shows many SYN packets from one source, but no completion of the TCP three-way handshake:
+
+```
+1  192.168.1.20 → 10.0.0.5   TCP  SYN
+2  192.168.1.20 → 10.0.0.5   TCP  SYN
+3  192.168.1.20 → 10.0.0.5   TCP  SYN
+
+```
+
+**Question:** What’s happening?
+
+**Answer:** SYN Flood attack (overwhelms the server with half-open connections).
+
+---
+
+### 3. **DDoS**
+
+Capture shows SYN flood attempts but from **multiple source IPs** all targeting the same server:
+
+```
+1  192.168.1.10 → 10.0.0.5   TCP  SYN
+2  172.16.4.20  → 10.0.0.5   TCP  SYN
+3  203.0.113.5  → 10.0.0.5   TCP  SYN
+
+```
+
+**Question:** What type of attack is indicated?
+
+**Answer:** Distributed Denial of Service (DDoS).
+
+---
+
+## ✅ Exam Tips
+
+- Focus on **Source/Destination IPs**, **Ports**, and **Flags (SYN, ACK, FIN)**.
+- **Multiple SYNs without ACK** = flood.
+- **Many IPs to one target** = DDoS.
+- **SYNs across many ports** = port scan.

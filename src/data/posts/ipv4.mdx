@@ -1,0 +1,138 @@
+---
+title: "IPV4"
+slug: "IPV4"
+date: "2025-10-29"
+status: "published"
+summary: "four decimil numers separated by dots 10.1.2.3 dotted decimal notation. Each section is an octet. 8 bts of a binary numbe. Each is represented by a value of 0 to 265. gives total 3"
+tags: ["network+"]
+toc: true
+---
+
+# IPV4
+
+four decimil numers separated by dots 10.1.2.3 dotted decimal notation. Each section is an octet. 8 bts of a binary numbe. Each is represented by a value of 0 to 265. gives total 32 bits. it 
+
+Network portion - 
+
+Host portion 
+
+subnet mask- continous stirngs of ones and zeros making up the host and network portion. 
+
+5 classes. 
+
+A 1 st octet value Devault mask 255.0.0.0 16.7 million hosts
+
+B 128- 191. default mask 255.255.0.0 65536 hosts. 
+
+C 192-223 default mask 255.255.255.0 256 hosts. 
+
+D 224-239 multicast routing address. Logical address for a group of computers that can be multipcase. 
+
+E 240 255 experemtal, for R and D
+
+Classless Mask. Used to borrow some of the host bits from an IPV4 to be used as a network portion. 
+
+ex 192.168.0.1. 255.255.255.0 if i only need 64 hosts use 255.255.255.192
+
+Classless interdomain routing . CIDR 
+
+192.168.1.4/24
+
+# IPV4 Addressing (N10-009)
+
+### Dotted-Decimal Notation
+
+- **Format:** four decimal numbers separated by dots (e.g., **10.1.2.3**).
+- Each section = **octet** = **8 bits** → value **0–255** (not 265).
+- Total address length = **32 bits**.
+
+### Network vs Host Portion
+
+- Split by the **subnet mask** (contiguous 1s for network, 0s for host).
+- Example: **/24** (255.255.255.0) → first 24 bits = network, last 8 bits = host.
+
+---
+
+# Classful Addressing (legacy but tested)
+
+| Class | 1st Octet Range | Default Mask | Usable Hosts per Network* |
+| --- | --- | --- | --- |
+| A | **1–126** | **255.0.0.0 (/8)** | 16,777,214 |
+| B | **128–191** | **255.255.0.0 (/16)** | 65,534 |
+| C | **192–223** | **255.255.255.0 (/24)** | 254 |
+| D | **224–239** | Multicast | n/a |
+| E | **240–255** | Experimental | n/a |
+- Usable hosts = 2^(host bits) − 2 (network + broadcast).
+
+Note: **127.x.x.x** reserved for loopback.
+
+### Private (RFC 1918) Ranges (Must Know)
+
+- Class A: **10.0.0.0/8**
+- Class B: **172.16.0.0 – 172.31.255.255 (/12)**
+- Class C: **192.168.0.0/16**
+
+---
+
+# Classless Addressing (CIDR)
+
+- **CIDR** = Classless Inter-Domain Routing → writes masks as **/prefix** (e.g., **192.168.1.4/24**).
+- Lets you **borrow host bits** to create more subnets (VLSM).
+
+### Example (your scenario)
+
+- Start: **192.168.0.0/24** (mask 255.255.255.0) → host bits = 8 → 254 usable hosts.
+- Need ≈ **64 hosts** → choose **/26** (**255.255.255.192**)
+    - Host bits = 6 → **2^6 = 64**, **usable = 64−2 = 62** (fits “~64 hosts”).
+- /26 subnets of 192.168.0.0:
+    - 192.168.0.0/26 (hosts .1–.62, bcast .63)
+    - 192.168.0.64/26 (hosts .65–.126, bcast .127)
+    - 192.168.0.128/26 (hosts .129–.190, bcast .191)
+    - 192.168.0.192/26 (hosts .193–.254, bcast .255)
+
+**Exam Tip:** When they say “needs 60–64 hosts,” pick **/26**.
+
+---
+
+# Quick Subnet Cheat Table (High-Yield)
+
+| Prefix | Mask | Usable Hosts | Block Size in 4th Octet |
+| --- | --- | --- | --- |
+| /24 | 255.255.255.0 | 254 | 1 |
+| /25 | 255.255.255.128 | 126 | 128 |
+| /26 | 255.255.255.192 | 62 | 64 |
+| /27 | 255.255.255.224 | 30 | 32 |
+| /28 | 255.255.255.240 | 14 | 16 |
+| /29 | 255.255.255.248 | 6 | 8 |
+| /30 | 255.255.255.252 | 2 | 4 |
+
+**Memory Trick:** “128, 64, 32, 16, 8, 4” are the block sizes for /25 → /30.
+
+---
+
+# Must-Know Definitions
+
+- **Subnet mask:** Delimits network/host bits (contiguous 1s then 0s).
+- **Network address:** First address in subnet (all host bits 0).
+- **Broadcast address:** Last address (all host bits 1).
+- **Gateway (router) IP:** Typically first usable (.1) but can be any usable.
+
+---
+
+# Flashcards
+
+- **Q:** Range of a single octet? **A:** 0–255.
+- **Q:** How many usable hosts in /26? **A:** 62.
+- **Q:** Private Class B range? **A:** 172.16.0.0–172.31.255.255.
+- **Q:** Formula for usable hosts? **A:** 2^(host bits) − 2.
+- **Q:** What does /24 mean? **A:** 24 network bits → 255.255.255.0.
+
+---
+
+# Rapid Review Questions
+
+1. You need at least 30 hosts per subnet. Smallest prefix? → **/27** (30 usable).
+2. First subnet of 10.0.0.0/26: network? broadcast? → **10.0.0.0**, **10.0.0.63**.
+3. Which class has default mask /16? → **Class B**.
+
+Want a 10-question mini-quiz or a one-page subnetting cheat sheet?

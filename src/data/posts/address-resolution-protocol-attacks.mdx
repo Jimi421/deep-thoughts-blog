@@ -1,0 +1,110 @@
+---
+title: "Address Resolution Protocol Attacks"
+slug: "address-resolution-protocol-attacks"
+date: "2025-10-29"
+status: "published"
+summary: "ARP - used to match an IP address to a MACA ddress"
+tags: ["network+"]
+toc: true
+---
+
+# Address Resolution Protocol Attacks
+
+ARP - used to match an IP address to a MACA ddress 
+
+ARP Spoofing - an attack where an attacker sends falsifed arp messages ofer a lan. link the MAC address of the attacker to the legit ip address of a network resource. arp spoofing can be used to do on -path 
+
+ARP POISONING - an attack that corrupts the arp cache (ARP table) in the network. 
+
+ARP Spoofing more targeting attack 
+
+Arp Poising targets all devices in a LAN
+
+Data interception - if the ip is matches. 
+
+on - path attack - intercepts without the partys knowledge. 
+
+Network disruption
+
+Scnn for an IP-MAC pairs and sending fake arp responses with a tool. 
+
+conducting an ARP poising by conductin and arp flood 
+
+use ARP oniotoring tools to track arp ADDRESS MAPPING 
+
+alert network adming sof unusiual arp traffic patterns 
+
+use IDS 
+
+Static arp enteires - manually inputting arp mappings to preent spoofing. 
+
+Dynamic Arp inspection -switches inspect ARP packets, dropping suspicious mapping based on trused map ip pairs 
+
+network segmentation - using VLANs ect lowers brodcast domaings. 
+
+vpn and encrypton - safeguards against reading the data even if susscesefiol. 
+
+# ARP Attacks (Address Resolution Protocol)
+
+### Purpose of ARP
+
+- Maps **IP address → MAC address** on a LAN.
+- Stored in local ARP cache/table.
+
+---
+
+### ARP Spoofing
+
+- Attacker sends **fake ARP replies** to a victim.
+- Maps attacker’s MAC to a **legitimate IP** (like the gateway or server).
+- Used for **targeted on-path (MITM)** attacks → attacker intercepts victim’s traffic.
+
+---
+
+### ARP Poisoning
+
+- Broader version: corrupts ARP caches of **multiple hosts** on the LAN.
+- Attacker associates their MAC with many IPs → traffic is redirected.
+- Often done by **ARP flooding**.
+- Can disrupt the entire LAN.
+
+---
+
+### Impacts
+
+- **Data Interception** → attacker can read/modify traffic.
+- **On-Path Attacks** → attacker invisibly relays traffic between hosts.
+- **Network Disruption** → corrupted ARP tables break connectivity.
+
+---
+
+### Tools / Methods
+
+- Attackers scan for IP-MAC pairs, then inject **fake ARP responses**.
+- Tools: Ettercap, Cain & Abel, arpspoof.
+
+---
+
+### Mitigation
+
+- **ARP Monitoring Tools:** Detect unusual IP–MAC mappings.
+- **IDS/IPS:** Alert on suspicious ARP traffic.
+- **Static ARP Entries:** Hard-code mappings for critical devices.
+- **Dynamic ARP Inspection (DAI):** Switches validate ARP against trusted IP–MAC bindings.
+- **Network Segmentation (VLANs):** Reduce broadcast domains, limit scope.
+- **Encryption (VPN/SSL):** Even if intercepted, traffic is unreadable.
+
+---
+
+✅ **Exam Must-Knows**
+
+- **ARP Spoofing = Targeted MITM.**
+- **ARP Poisoning = Broad LAN disruption.**
+- Both rely on **sending fake ARP replies**.
+- **Defense = DAI, static entries, monitoring, VLANs, encryption.**
+
+---
+
+⚡Memory Trick:
+
+**“Spoof = Single Target. Poison = Poison the whole LAN.”**

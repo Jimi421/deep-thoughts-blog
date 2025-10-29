@@ -1,0 +1,114 @@
+---
+title: "Software defined networking"
+slug: "software-defined-networking"
+date: "2025-10-29"
+status: "published"
+summary: "Approach to networking that uses software based controllers or APIs to communicate with underlying hardware infrastructure and direct traffic on a network."
+tags: ["network+"]
+toc: true
+---
+
+# Software defined networking
+
+Approach to networking that uses software based controllers or APIs to communicate with underlying hardware infrastructure and direct traffic on a network. 
+
+Allows the network to make smart descisions based on the application it’s working to support. allows to easially manage network traffic which cn help with scalabiility 
+
+iac INFRASTRUCUTE AS COD 
+
+includes the provisioning of archiceture in which deployment of resources is performed by scriped utomation and orchestration. 
+
+Control plane - carries the trafic tha tprovides the signals to and from a router. across multiple media types makes descisions how traffic is prioritized. decides where to go
+
+data plane - used to carrie user traffic on the network. moves the data 
+
+management plane - used to administer the routers and switches and monitors traffic condictions and the sttus of the network. 
+
+use an SDN applicstion to define the policy descisions. flexibility 
+
+speed and agility
+
+automaton - full deployment with orchestrtion. 
+
+critical when dealing with high availability and volitiy. networks 
+
+single point of failure 
+
+high vulneravility
+
+open SDN - open source variant that relies on open ource 
+
+hybrid SDN network that employs traditional SDN protols to operate itself 
+
+SDN overlay - create network abstractin to run multiple fvirtualized networks 
+
+f
+
+# Software Defined Networking (SDN)
+
+### Concept
+
+- **Approach to networking using software controllers or APIs** to manage and direct traffic.
+- Separates the **decision-making** from the **hardware**.
+- Enables automation, agility, and scalability.
+
+---
+
+### SDN Planes
+
+1. **Control Plane**
+    - Makes decisions on how traffic should flow (routing, prioritization, QoS).
+    - “Brains” of the network.
+2. **Data Plane**
+    - Forwards actual **user traffic** based on control plane instructions.
+    - “Muscle” of the network.
+3. **Management Plane**
+    - Used by admins to configure devices, monitor status, and push policies.
+    - Provides visibility into network health.
+
+---
+
+### Features
+
+- **Policy-driven control:** Use SDN apps to define traffic priorities.
+- **Automation & Orchestration:** Infrastructure as Code (IaC) for fast provisioning.
+- **Agility & Flexibility:** Networks adapt quickly to app needs.
+- **Overlay Networks:** Abstract multiple virtualized networks over physical infrastructure.
+
+---
+
+### Deployment Models
+
+- **Open SDN:** Open-source variant, uses open standards (e.g., OpenFlow).
+- **Hybrid SDN:** Combines traditional networking with SDN protocols.
+- **SDN Overlay:** Creates network abstractions (e.g., virtual networks on top of existing hardware).
+
+---
+
+### Pros
+
+- Scalability (easy traffic management).
+- Speed (policy and automation driven).
+- Centralized control (one dashboard).
+
+### Cons
+
+- **Single Point of Failure:** If the controller fails, the whole network may fail.
+- **Security Risks:** Centralized control plane is a high-value target.
+- Complexity of setup and integration.
+
+---
+
+✅ **Exam Must-Knows**
+
+- SDN separates **control plane (decisions)** and **data plane (traffic forwarding)**.
+- Uses **software controllers and APIs**.
+- Benefits: scalability, agility, automation.
+- Risks: single point of failure, vulnerabilities in centralized control.
+- Types: **Open, Hybrid, Overlay**.
+
+---
+
+⚡Memory Trick:
+
+Think: **SDN = Software Directs Networking.**

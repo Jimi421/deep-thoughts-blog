@@ -1,0 +1,123 @@
+---
+title: "SNMP (Simple Network management protocol)"
+slug: "snmp-simple-network-management-protocol"
+date: "2025-10-29"
+status: "published"
+summary: "An internet protocol for collecitn, organizing, and modifiying informaton about managed devices on IP networks."
+tags: ["network+"]
+toc: true
+---
+
+# SNMP (Simple Network management protocol)
+
+An internet protocol for collecitn, organizing, and modifiying informaton about managed devices on IP networks. 
+
+Managed deviced - any device that can communicate with an SNMP manager 
+
+SNMP  Manager - any machine on network running snmp protocol to colleoct and process 
+
+SNMP agents - devices that are sending info about themselves back to the snmp manager. 
+
+set - manager to agent .. change value of a variable. 
+
+get manger to agent .. retreve the value of a variable from the agent to the manger. 
+
+trap - agent to manager. agent notify manager of real time events. 
+
+ex uptime, config changes, unexpected downtime of a link.. 
+
+granulatr trap - each SNMP trap has an OID
+
+ OID, Identifies a vriable that can be read or setMIB used to describe thesstructure of the managemtn data of a device subsystem using hierarchel namespace. 
+
+MIb - used to desribed the management strudc data of a hierachale namespace. 
+
+SNMP traps don’t send redundant info. 
+
+verbose trap - configured to contain all info about a given alert. 
+
+Variable binding - data stored in a key value configuration. 
+
+snmpv1 use community string to give access to their security mechanasim. default community strings are publice or private and are a security risk. 
+
+v2 
+
+v3 - newest most secure. 
+
+intregrithy - hash messages 
+
+authengication - source validation 
+
+confidentiality - encryption DES 56 bit key or AES if you have a firmware upgrade. groups comonets into different componets. 
+
+# 📡 SNMP (Simple Network Management Protocol)
+
+**Definition:**
+
+Internet protocol for **collecting, organizing, and modifying information** about managed devices on IP networks.
+
+---
+
+## 🔑 Components
+
+- **Managed Devices**
+    - Any device running an SNMP agent (routers, switches, servers, printers).
+- **SNMP Manager**
+    - Central system running SNMP software.
+    - Collects/processes info from agents.
+- **SNMP Agents**
+    - Run on devices.
+    - Send info back to SNMP manager.
+
+---
+
+## 📊 Core Operations
+
+- **GET** → Manager asks agent for variable value.
+- **SET** → Manager changes a variable on agent.
+- **TRAP** → Agent notifies manager of an event (e.g., link down).
+- **Variable Binding** → Key-value pairs that define SNMP data.
+
+---
+
+## 🗂️ MIB & OIDs
+
+- **MIB (Management Information Base):**
+    - Defines the structure of managed data in a hierarchical namespace.
+- **OID (Object Identifier):**
+    - Unique identifier for each variable that can be read/set.
+
+---
+
+## 🛎️ Traps
+
+- **Granular Trap** → Only includes specific OID(s).
+- **Verbose Trap** → Includes full context/details for the event.
+- Traps don’t send redundant info → only triggered events.
+
+---
+
+## 🔐 SNMP Versions
+
+- **SNMPv1**
+    - Uses **community strings** (“public” / “private”).
+    - ⚠️ Weak security (plaintext).
+- **SNMPv2c**
+    - Adds bulk transfers, still uses community strings.
+    - Slightly improved performance, still insecure.
+- **SNMPv3** (most secure, recommended)
+    - Adds:
+        - **integrity** → hash messages to prevent tampering.
+        - **Authentication** → validate source.
+        - **Confidentiality** → encryption (DES 56-bit, or AES if supported).
+
+---
+
+## ✅ Exam Tips
+
+- **Trap = agent → manager notification.**
+- **GET/SET = manager ↔ agent requests.**
+- **MIB = database structure; OID = unique variable identifier.**
+- **SNMPv1/v2 = insecure (plaintext community strings).**
+- **SNMPv3 = secure (encryption, authentication, integrity).**
+- **Default community strings = BIG risk → must be changed.**

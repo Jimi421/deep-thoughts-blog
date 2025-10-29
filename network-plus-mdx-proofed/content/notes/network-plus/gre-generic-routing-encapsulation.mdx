@@ -1,0 +1,69 @@
+---
+title: "GRE Generic routing encapsulation"
+slug: "gre-generic-routing-encapsulation"
+date: "2025-10-29"
+status: "published"
+summary: "Tunneling protocol used to encsuplte a wide varity of network layer protocols inside a virtual point to point network."
+tags: ["network+"]
+toc: true
+---
+
+# GRE Generic routing encapsulation
+
+Tunneling protocol used to encsuplte a wide varity of network layer protocols inside a virtual point to point network. 
+
+universal translator when connecign similar network topologies over a network. 
+
+Versitility and intergration 
+
+# GRE (Generic Routing Encapsulation)
+
+### **Definition**
+
+- A **tunneling protocol** that encapsulates a wide variety of **Layer 3 protocols** inside virtual point-to-point links.
+- Think of it as a **universal translator** for networks → allows different or similar network topologies to interconnect over an IP network.
+
+---
+
+### **Key Features**
+
+- **Encapsulation only** → GRE does **not provide encryption or confidentiality** (must pair with **IPsec** if security is required).
+- Supports **multicast, broadcast, and non-IP protocols** across IP networks (unlike many VPNs).
+- Provides a **virtual point-to-point connection** between routers.
+- Commonly used for:
+    - Site-to-site tunnels
+    - VPNs needing multicast (e.g., routing protocol traffic)
+    - Interconnecting remote offices with different topologies
+
+---
+
+### **Advantages**
+
+- **Versatility:** Can encapsulate many protocols.
+- **Integration:** Works with existing IP infrastructure.
+- **Flexibility:** Often layered with IPsec for secure, encrypted tunnels.
+
+---
+
+✅ **Must-Know for Exam**
+
+- GRE = **encapsulation, not encryption**.
+- Used as a **universal translator** to tunnel different network protocols.
+- Often paired with **IPsec** → “GRE over IPsec” for secure site-to-site VPNs.
+- Supports **multicast & broadcast** (important for routing protocols).
+
+---
+
+⚡ Flashcards
+
+- **Q:** What does GRE provide?
+    
+    **A:** Encapsulation of many protocols, point-to-point tunneling.
+    
+- **Q:** Does GRE encrypt traffic?
+    
+    **A:** No (needs IPsec for security).
+    
+- **Q:** Why is GRE often used with routing protocols?
+    
+    **A:** Because it supports multicast/broadcast.

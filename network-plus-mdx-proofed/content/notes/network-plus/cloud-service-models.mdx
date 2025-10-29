@@ -1,0 +1,118 @@
+---
+title: "Cloud Service Models"
+slug: "cloud-service-models"
+date: "2025-10-29"
+status: "published"
+summary: "On - premise vs hosted"
+tags: ["network+"]
+toc: true
+---
+
+# Cloud Service Models
+
+On - premise vs hosted 
+
+on premice solutions offer security but have high costs, need to procure hardware, software, personell, datacenter. 
+
+Hosted solution Third party service provider that provides all the hardware and facilities needed to maintain a cloud solution. 
+
+Software as a serie SaaS - office365 ect. turbotax/quickbooks. 
+
+Platform as a service PaaS - The responsibility for creating the code relies on the usery the team is only responsible for the code.  you get the servers and the runtime, just not the appliation. 
+
+Network as a service - IaaS Infrastructure as a sturcrue. servers and loadbalancers and network componets. you get the elasticity but you don’t have 
+
+IaaS is focused on hardware only, virtual machines and networking portions of the network. 
+
+Most will allow you to choose the OS also. ex EC2 instances can be spun up with linux but is still IaaS but to be PaaS then it needs to have the webserver. databases 
+
+hint: if things are more than IaaS then PaaS if things are less than SaaS then choose Paas for IaaS provides you with everything you need to run a server and possibly the OS. with PaaS you add Apache webserver, MySQL, programming languages, SaaS adds the end user applications and is much closer to the end user expectations. with PaaS you have to code or add that part. 
+
+# On-Premise vs Hosted
+
+### On-Premise
+
+- Company owns and manages **hardware, software, personnel, and data center**.
+- **Pros:** Full control, security, compliance.
+- **Cons:** High cost (CapEx), staff required for maintenance, slower to scale.
+
+### Hosted / Cloud
+
+- **Third-party provider** supplies hardware, facilities, network, and often security.
+- **Pros:** Scalable, lower upfront cost, faster deployment.
+- **Cons:** Less direct control, shared infrastructure.
+
+---
+
+# Cloud Service Models
+
+### SaaS – Software as a Service
+
+- **End-user applications delivered over the Internet.**
+- Provider manages everything (infrastructure, platform, app).
+- User just logs in and uses it.
+- Examples: Office 365, TurboTax, QuickBooks, Gmail, Salesforce.
+- **Exam Tip:** SaaS = you just use the software, no setup needed.
+
+---
+
+### PaaS – Platform as a Service
+
+- Provider delivers **infrastructure + runtime/platform** (OS, DB, web server).
+- Customer only manages **the application code/data**.
+- Great for developers.
+- Examples: Google App Engine, AWS Elastic Beanstalk, Microsoft Azure App Service.
+- **Exam Tip:** If you only worry about writing code, it’s PaaS.
+
+---
+
+### IaaS – Infrastructure as a Service
+
+- Provider delivers **virtualized hardware resources** (VMs, storage, networking).
+- Customer installs and manages OS, middleware, runtime, and apps.
+- Offers most flexibility.
+- Examples: AWS EC2, Azure VMs, Google Compute Engine.
+- **Exam Tip:** IaaS = “raw hardware” in the cloud, you build the stack yourself.
+
+---
+
+### NaaS – Network as a Service
+
+- Provider delivers **networking functions** (firewalls, load balancers, VPNs, routing, WAN optimization).
+- Often bundled into IaaS/PaaS but increasingly sold separately.
+- Examples: AWS VPC, Azure Virtual WAN, Cloudflare One.
+- **Exam Tip:** If the focus is on **network infrastructure services** (not apps or code), it’s NaaS.
+
+---
+
+# Quick Comparison Table
+
+| Model | You Manage | Provider Manages | Example |
+| --- | --- | --- | --- |
+| **On-Prem** | Everything | Nothing | Local datacenter |
+| **IaaS** | OS, runtime, apps | Hardware, virtualization, networking | AWS EC2 |
+| **PaaS** | Apps/code | OS, middleware, DB, runtime, hardware | Google App Engine |
+| **SaaS** | Nothing (just use app) | Everything | Office 365 |
+| **NaaS** | Depends (you configure) | Network infra behind the scenes | Cloudflare, AWS VPC |
+
+---
+
+✅ **Exam Must-Knows**
+
+- SaaS = **ready-to-use apps**.
+- PaaS = **developer platform**.
+- IaaS = **hardware in the cloud**.
+- NaaS = **network functions as a service**.
+- On-Prem = **full control, high cost**; Hosted/Cloud = **shared, scalable**.
+
+---
+
+⚡Memory Trick:
+
+Think of a **pizza analogy**:
+
+- **On-Prem:** You make the dough, sauce, cheese, cook it, serve it.
+- **IaaS:** They give you the kitchen; you cook everything.
+- **PaaS:** They give you the oven preheated with dough + sauce; you add toppings.
+- **SaaS:** Pizza delivered hot and ready.
+- **NaaS:** The delivery guy also gives you a custom road just for your pizza ro

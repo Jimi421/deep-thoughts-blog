@@ -1,0 +1,147 @@
+---
+title: "Layer 3 (Network)"
+slug: "layer-3-network"
+date: "2025-10-29"
+status: "published"
+summary: "How wer’re going to forward traffic using logical addresses. iP address IPV4 or IPV6."
+tags: ["network+"]
+toc: true
+---
+
+# Layer 3 (Network)
+
+How wer’re going to forward traffic using logical addresses. iP address IPV4 or IPV6. 
+
+Logical addressing - IPV4 and IPV6 - AppleTalk, IPX are old versions. 
+
+IP:
+
+IPV4 - ex. 10.0.0.38/24 
+
+Layer 3 switching (Routing) - 
+
+packet switching - Data is devided into packets and then forwarded on. like mailing a letter through different mail facilities. 
+
+circut switching - Dedicated communication link is established between the two deivices. like the old school phone lines. a dedicated and constant communication path is maintained for the duration of a converstion. 
+
+message switching: data is divided into messaged which may be stored then forwarded. 
+
+most networks are using packet switching. home networks, and small networks. 
+
+Route discovery and selection: how to know which wya to let the traffic to go.  Manually configured as a static route or dynamically through a routing protocol using rouging tables isign rougint table. RIP OSPF and EIGRP
+
+How to know which way to go can be done by routing protocols similar to GPS
+
+Connection services: Augment layer 2 services to improve reliablity
+
+flow control 
+
+packet reordering - encures that all data reaches the reciver correctly at the end destination. 
+
+ICMP - Sends error messages and operational information to an IP destination. 
+
+ping , tracert
+
+bandwidth usage
+
+Router
+
+Multi-layer switcher
+
+## 🌐 Layer 3 — Network Layer (OSI Model)
+
+> Purpose: Determines how traffic is forwarded using logical addressing (IP). Responsible for routing, packet forwarding, and path selection across networks.
+> 
+
+---
+
+### 🧠 Key Concepts
+
+- Uses **logical addresses** (IPV4, IPV6) to identify devices across networks.
+- Supports **packet delivery** between networks (unlike Layer 2 which is limited to a local segment).
+
+---
+
+### 🧾 Logical Addressing
+
+- **IPV4 Example**: `10.0.0.38/24`
+    - `/24` indicates the subnet mask (255.255.255.0)
+- **IPV6**: Longer addresses, written in hex (e.g., `fe80::1`)
+- **Legacy** protocols: AppleTalk, IPX — no longer in use
+
+---
+
+### 🔄 Layer 3 Switching (Routing Types)
+
+| Type | Description | Analogy |
+| --- | --- | --- |
+| **Packet Switching** | Data is split into packets and forwarded independently | Like mailing separate letters |
+| **Circuit Switching** | A dedicated communication path is created for the whole session | Like an old-school phone call |
+| **Message Switching** | Whole messages are stored and forwarded later | Like handing off a written message at each stop |
+
+> 🧠 Most networks today use packet switching (including your home router).
+> 
+
+---
+
+### 🧭 Route Discovery & Path Selection
+
+> Goal: Decide the best path to reach a destination network
+> 
+
+Two ways to configure routes:
+
+- ✅ **Static Routing** – Manually set paths
+- ✅ **Dynamic Routing** – Uses protocols to auto-discover best paths
+
+### Routing Protocol Examples:
+
+| Protocol | Type | Description |
+| --- | --- | --- |
+| **RIP** | Distance-vector | Based on hop count, simple but outdated |
+| **OSPF** | Link-state | Calculates fastest route using bandwidth |
+| **EIGRP** | Hybrid | Combines features of both methods |
+
+> Similar to a GPS choosing the fastest or shortest route based on live data.
+> 
+
+---
+
+### 🔗 Layer 3 Services
+
+- **Connection Services**: Improve transmission reliability
+    - Flow control
+    - Packet reordering (ensures correct sequence)
+- **ICMP** (Internet Control Message Protocol):
+    - Used for diagnostics (e.g., `ping`, `tracert`)
+    - Sends error and status messages (e.g., destination unreachable)
+
+---
+
+### 📈 Bandwidth Usage Concepts
+
+- **QoS (Quality of Service)** often works at Layer 3 to prioritize critical traffic (VoIP, video).
+- **Load balancing** and **routing metrics** influence path decisions and congestion handling.
+
+---
+
+### 🛠️ Layer 3 Devices
+
+| Device | Role |
+| --- | --- |
+| **Router** | Connects different networks, makes forwarding decisions |
+| **Multilayer Switch** | Acts as both Layer 2 (switch) and Layer 3 (router) |
+| **Firewall (Layer 3 capable)** | Can filter based on IP and ports |
+| **Core Routers / Edge Routers** | Used in large enterprise and ISP networks |
+
+---
+
+### 📌 Summary
+
+| Function | Layer 3 Role |
+| --- | --- |
+| Addressing | Assigns and uses IP addresses |
+| Routing | Forwards packets based on routing tables |
+| Diagnostics | Uses ICMP to test and report |
+| Delivery | Ensures packets reach the destination subnet |
+| Connection Enhancements | Works with Layer 2 to increase reliability |

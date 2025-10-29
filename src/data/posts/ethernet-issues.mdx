@@ -1,0 +1,87 @@
+---
+title: "Ethernet Issues"
+slug: "ethernet-issues"
+date: "2025-10-29"
+status: "published"
+summary: "LED - status indicators used to diagnose an isse with a connection."
+tags: ["network+"]
+toc: true
+---
+
+# Ethernet Issues
+
+LED - status indicators used to diagnose an isse with a connection. 
+
+activity, and link speed light .if activity light is off no connection. if it’s solid orange there is a connection. if the light is blinking orange, there is data activity. 
+
+a quick look at the ativity light can be a good hint during network troubleshooting. 
+
+link speed ling=ght will be off orange or green. 
+
+green 1 gbps 
+
+orange light 100 mbbps 
+
+10 mbps is off.. 
+
+for most nics this is accurate .
+
+network switches have similare leds for each port. 
+
+Duplex mismatch - when one device thinks the connnection is full duplex and tho other thinks it is half duples. 
+
+high rate of packet loss wtihout high jitter, high recive erro rrate. 
+
+ensure both devices are configured to use auto negotiate. 
+
+can manually configure them. 
+
+# 🛠 Copper Cable Issues (Network+)
+
+### 🔌 Incorrect Pinouts
+
+- **Most common**: mismatch between **T568A vs T568B**.
+- **Patch panels**: usually T568B →
+    - White/Orange, Orange, White/Green, Blue, White/Blue, Green, White/Brown, Brown.
+- **Wall jacks (keystone)**: same pinout, 4 pins on each side.
+- **RJ45 connectors**: check wiring order by holding connector up to light and counting pins.
+
+---
+
+### ⚠️ Bad Port
+
+- Symptom: No connectivity, even with a known good cable.
+- **Test with a loopback plug** to confirm if the port transmits/receives.
+- If faulty:
+    - Replace/switch port on a switch.
+    - For routers, may need to replace the interface card/module.
+
+---
+
+### 🚫 Opens
+
+- Definition: No continuity — wire break or no device connected at far end.
+- Caused by physical damage, loose termination, or cut cable.
+
+---
+
+### 🔀 Shorts
+
+- Definition: Two wires are improperly touching/connected together.
+- Often due to **poor crimping** of RJ45.
+
+---
+
+### 🧰 Tools to Identify Issues
+
+- **Cable Tester** → Basic continuity and pinout check.
+- **Cable Certifier** → Validates cable meets standards (CAT5e, CAT6, etc.).
+- **Wire Mapper** → Checks correct wiring order (pin-to-pin).
+
+---
+
+⚡ **Exam Tip:** Know which tool is used for which issue:
+
+- Tester = quick check.
+- Mapper = pinouts.
+- Certifier = full complianc

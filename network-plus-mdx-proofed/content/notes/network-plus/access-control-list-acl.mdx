@@ -1,0 +1,101 @@
+---
+title: "Access Control List (ACL)"
+slug: "access-control-list-acl"
+date: "2025-10-29"
+status: "published"
+summary: "List of permission sassociated with a given system or network resource. Can be applied to any packet filttering device. ip address port or applicatons. it starts at the top and wor"
+tags: ["network+"]
+toc: true
+---
+
+# Access Control List (ACL)
+
+List of permission sassociated with a given system or network resource. Can be applied to any packet filttering device. ip address port or applicatons. it starts at the top and works its way to the bottom. most specefic rules are at the top, more general rules at the bottom. 
+
+block ssh for a single computer based on it’s ip on oop 
+
+block any ip us
+
+1 block requests form internal private loopback address ranages and multicast IP ranges. 
+
+2 block incoming requess from protocols that should only be used locally. icmp, smb ect. 
+
+3 - block all IPV6 traffic or allow it to only authorized hotts and ports 
+
+example acl 
+
+permit tcp 10.0.2.0 0.0.0.255 eq www any established 
+
+deny ip any any 
+
+explicit deny - blocks matching traffic
+
+implicit deny - blocks traffic that is not allowed from an allow statement. 
+
+Role-based access defines the priviles and responsibilites of administrative users who control firewalls and their ACLs
+
+# 🔐 Access Control List (ACL)
+
+An **ACL** is a list of rules (permissions) that define what traffic is allowed or denied to flow through a network device (firewall, router, switch, etc.). ACLs are evaluated **top-to-bottom**:
+
+- Most **specific rules** should be at the top.
+- More **general rules** go at the bottom.
+- The process stops as soon as a match is found.
+
+---
+
+## 📋 Key Concepts
+
+- **Explicit deny**: A written `deny` rule that blocks traffic matching certain criteria.
+- **Implicit deny**: If traffic does not match any rule, it is denied by default (even if no `deny` is written).
+- **Criteria**: ACLs can filter on IP address, subnet, port, protocol, or application.
+- **Role-based access**: Defines the privileges and responsibilities of administrative users who create and maintain ACLs.
+
+---
+
+## 🛑 Common ACL Best Practices
+
+1. **Block traffic from internal/private/multicast ranges** coming from the *outside* (spoofed addresses).
+    - Examples: `127.0.0.0/8` (loopback), `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `224.0.0.0/4` (multicast).
+2. **Block incoming traffic for protocols that should only be used locally.**
+    - Examples: ICMP, SMB, NetBIOS.
+3. **Handle IPV6 deliberately.**
+    - Either block all IPV6 traffic if not in use, or only allow it to specific hosts/ports.
+4. **Apply least privilege.**
+    - Only allow what is required; deny everything else.
+
+---
+
+## 🎯 Example ACL Rules
+
+```
+! Allow established web traffic from inside LAN to outside
+permit tcp 10.0.2.0 0.0.0.255 eq www any established
+
+! Block SSH to a single host
+deny tcp host 10.0.2.15 any eq 22
+
+! Block spoofed internal/private addresses from external interface
+deny ip 127.0.0.0 0.255.255.255 any
+deny ip 10.0.0.0 0.255.255.255 any
+deny ip 172.16.0.0 0.15.255.255 any
+deny ip 192.168.0.0 0.0.255.255 any
+deny ip 224.0.0.0 15.255.255.255 any
+
+! Block all other traffic (implicit deny usually covers this)
+deny ip any any
+
+```
+
+---
+
+## ⚖️ Implicit vs Explicit Deny
+
+- **Explicit deny**: `deny ip any any` written at the end.
+- **Implicit deny**: Even if not written, any traffic not matching an allow rule will be dropped.
+
+---
+
+✅ With this cleaned up, your notes will be exam-ready (CompTIA Sec+/Net+, Cisco CCNA) **and** practical for your pfSense/home-lab firewall practice.
+
+👉 Do you want me to also show you how the **same ACL logic looks in pfSense** (GUI-style rules instead of Cisco IOS syntax)?

@@ -1,0 +1,85 @@
+---
+title: "NTP (NETWORK TIME PROTOCOL)"
+slug: "ntp-network-time-protocol"
+date: "2025-10-29"
+status: "published"
+summary: "SYNCS CLOCKS - BETEWEN DIFFERENT SYSTEMS that communicate over a packet switched variable-latency network. TCP."
+tags: ["network+"]
+toc: true
+---
+
+# NTP (NETWORK TIME PROTOCOL)
+
+SYNCS CLOCKS - BETEWEN DIFFERENT SYSTEMS that communicate over a packet switched variable-latency network. TCP. 
+
+NTP uses UDP 123. 
+
+it’s important to make sure we’re all using the same time. it syncs within milisecs. 
+
+Goes through strata
+
+stratum 0 - atomic clock, gps etc. 
+
+stratum 1 is synced to stratum 0. can go down to stratum 14 
+
+improemnts are PTP percision time protocol used to sync clocks sub micro second. more accurate 
+
+NTS - network time security protocol 0 extennon of ntp that provides cryptographic seciurity . 
+
+# Network Time Protocol (NTP)
+
+### Purpose
+
+- **Syncs clocks** between systems on packet-switched, variable-latency networks.
+- Ensures consistent timestamps for logs, authentication, security, and transactions.
+- Accuracy: within **milliseconds** of UTC.
+
+---
+
+### Protocol Details
+
+- **UDP port 123** (not TCP).
+- Operates in **client-server** or **peer-to-peer** mode.
+
+---
+
+### Stratum Levels
+
+- **Stratum 0** → Reference clock (atomic, GPS, radio).
+- **Stratum 1** → Directly connected to stratum 0.
+- **Stratum 2+** → Gets time from stratum 1, passes it down.
+- Can go down to **Stratum 15** (Stratum 16 = unsynchronized).
+
+---
+
+### Improvements
+
+- **PTP (Precision Time Protocol):**
+    - More accurate than NTP (sub-microsecond).
+    - Used in high-performance networks (finance, telecom, data centers).
+
+---
+
+### Security
+
+- **NTS (Network Time Security):**
+    - Extension of NTP.
+    - Adds **cryptographic authentication** to prevent spoofing or tampering.
+
+---
+
+✅ **Exam Must-Knows**
+
+- **NTP port** = UDP 123
+- **Why important?** = Consistent time across systems (logging, Kerberos, SSL/TLS, forensic analysis)
+- **Stratum 0 = atomic/GPS**, Stratum 1 = synced directly
+- **PTP = higher accuracy than NTP**
+- **NTS = secure NTP with crypto authentication**
+
+---
+
+⚡Memory Trick:
+
+Think **“123 NTP”** → UDP port **123** is the timekeeper for all.
+
+---

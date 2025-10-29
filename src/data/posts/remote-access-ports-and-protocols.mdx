@@ -1,0 +1,106 @@
+---
+title: "Remote Access Ports and Protocols"
+slug: "remote-access-ports-and-protocols"
+date: "2025-10-29"
+status: "published"
+summary: "Build an manage systems and networks from across the network. Allows admins and users to run progras from afar"
+tags: ["network+"]
+toc: true
+---
+
+# Remote Access Ports and Protocols
+
+Build an manage systems and networks from across the network. Allows admins and users to run progras from afar 
+
+SSH : Secure shell - protocol used for secure remote logn over a secure netork. Operates over port 22. 
+
+SSH is creating a secure encrypted tunnel that cna operate text based commands from a remote server. 
+
+Telnet - Operates oer port 23, allows one computer to longin remotly to another computer. Telnet lacks encryption. SSH replaced Telnet. never use it. 
+
+RDP: Propritary protocol that was developed by ‘Microsoft to provide users with a GUI to to connect to another computer over a network onnection. 3389 
+
+data encrption smart card authentication, bandwidth reduction mechanisims. 
+
+RDP and SSh are critical to managing modern networks. 
+
+## What these do (in one line)
+
+- **SSH (Secure Shell)** — secure CLI remote login/tunneling over **22/TCP**.
+- **Telnet** — legacy, **insecure** CLI remote login over **23/TCP** (don’t use on real networks).
+- **RDP (Remote Desktop Protocol)** — Microsoft GUI remote access over **3389/TCP** with encryption, smart‑card auth, bandwidth reduction.
+
+### Must Know (Ports show up a lot)
+
+- **SSH = 22**, **Telnet = 23**, **RDP = 3389**. (All listed under N10‑009 1.4 ports table.)
+
+---
+
+## Key Differences (fast compare)
+
+- **Security**
+    - SSH: **Encrypted** channel + strong auth.
+    - Telnet: **Plain text** (credentials and data). **Avoid**.
+    - RDP: **Encrypted** session; supports **smart cards** and **bandwidth reduction**.
+- **Use case**
+    - SSH: Admin CLI on Linux/Unix/network gear; can tunnel SFTP/port‑forwarding.
+    - Telnet: Only for labs/legacy when encryption isn’t required (exam will flag it as wrong in prod).
+    - RDP: Full **Windows GUI** remote control.
+
+---
+
+## Exam Tips
+
+- **Ports**: If the question smells like “secure CLI,” pick **SSH/22**; “legacy CLI,” **Telnet/23**; “Windows GUI,” **RDP/3389**.
+- **Security**: “Plain‑text remote login?” → **Telnet** (bad). “Encrypted remote management?” → **SSH** or **RDP** depending on CLI vs GUI.
+- **Association**: **SFTP rides SSH on port 22** (often paired in questions).
+
+---
+
+## Memory Tricks
+
+- **“22 is secure too (SSH)”**, **“23 is dirty (Telnet)”**, **“RDP has 3–3–8–9 windows”** (think Windows GUI boxes).
+
+---
+
+## Quick Checks (Common Questions)
+
+- **Q:** Which protocol gives you a secure terminal into a router over the internet?
+    
+    **A:** **SSH (22)**.
+    
+- **Q:** A packet capture shows user/pass in clear text during remote login—what protocol?
+    
+    **A:** **Telnet (23)**.
+    
+- **Q:** Need full desktop on a remote Windows Server with smart‑card login—what/port?
+    
+    **A:** **RDP (3389)**.
+    
+
+---
+
+## Flashcards (optional)
+
+- **Front:** SSH default port
+    
+    **Back:** 22/TCP (secure CLI/tunnel).
+    
+- **Front:** Telnet default port + risk
+    
+    **Back:** 23/TCP; **plain text/insecure**.
+    
+- **Front:** RDP default port + two features
+    
+    **Back:** 3389/TCP; encryption, smart‑card auth (also bandwidth reduction mechanisms).
+    
+
+---
+
+## 30‑Second Drill
+
+- **SSH 22** ✅
+- **Telnet 23** ❌ (insecure)
+- **RDP 3389** 🪟 (GUI, encrypted)
+
+Want me to turn this into a one‑page cram sheet with a mini port map?

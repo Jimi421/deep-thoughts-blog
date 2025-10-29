@@ -1,0 +1,78 @@
+---
+title: "security principles"
+slug: "security-principles"
+date: "2025-10-29"
+status: "published"
+summary: "Least privilege - using the lowest level of permissions or privilets needed in order to complete the job."
+tags: ["network+"]
+toc: true
+---
+
+# security principles
+
+Least privilege - using the lowest level of permissions or privilets needed in order to complete the job. 
+
+systems and networks nee to be designed with the concept of least prividlged.  using the principle of least priviliged puts IOt 
+
+DAC - discretionary access control acsess control methos is determined by the owner. can decide rwx
+
+1 every object in the system has to have an owner. 
+
+2 each owner much detemine the access rights and permisson for each object. 
+
+MAC - mandatory ccess control policy - computer picks the access based on the trust level. compare lables to determinie if you can use it. similar to high security, top security in military. unclassified, confedential, secret, top secret. security clearence determines classification. 
+
+you need the level and the need to know. 
+
+mac is not used in most enterprised networks and is reserved for military si=ystems
+
+RBAC - role based acess control is controlled by the system but is focused on a set of permissions vs an indifiduals permissions. roles for each job function. 
+
+groups vers individual access and permisions. based on least prevlidge. 
+
+# 🔐 Security Principles & Access Control
+
+## Principle of Least Privilege (PoLP)
+
+- **Definition:** Users, devices, and processes should only get the **minimum permissions** needed to complete their tasks.
+- **Purpose:** Reduces attack surface and damage if credentials are compromised.
+- **Exam Tip:** Always link PoLP to **risk reduction** and **role-based permissions**.
+
+---
+
+## Access Control Models
+
+### 1. **DAC – Discretionary Access Control**
+
+- **Owner decides** access rights (read/write/execute).
+- Each object (file, folder, resource) has an **owner**.
+- **Example:** Windows NTFS permissions where the file creator sets access.
+- **Weakness:** Too much control by individual owners can create inconsistent security.
+
+---
+
+### 2. **MAC – Mandatory Access Control**
+
+- Access is controlled by the **system, not the user**.
+- Based on **security labels** (e.g., Top Secret, Secret, Confidential, Unclassified).
+- Users need **both clearance level + need-to-know**.
+- **Example:** Military, government systems.
+- **Must Know:** Rare in enterprise networks, reserved for high-security environments.
+
+---
+
+### 3. **RBAC – Role-Based Access Control**
+
+- Permissions tied to **roles**, not individuals.
+- Users are assigned to groups → groups have defined access rights.
+- Supports **least privilege** by assigning only what’s required for the role.
+- **Example:** HR group has access to payroll database; IT group has access to system configs.
+- **Common Question:** “What model uses job functions for permissions?” → **RBAC**.
+
+---
+
+✅ **Memory Trick:**
+
+- **DAC = Discretion of owner**
+- **MAC = Mandatory by system**
+- **RBAC = Roles not individuals**

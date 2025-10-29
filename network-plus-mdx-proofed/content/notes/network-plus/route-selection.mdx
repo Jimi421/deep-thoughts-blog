@@ -1,0 +1,113 @@
+---
+title: "Route Selection"
+slug: "route-selection"
+date: "2025-10-29"
+status: "published"
+summary: "Determines whithc path a route should take."
+tags: ["network+"]
+toc: true
+---
+
+# Route Selection
+
+Determines whithc path a route should take. 
+
+Beliveablility of a route. 
+
+RIP is older so less beliveable vs OSPF. 
+
+AD administrative Distance - lower ad IS MORE TRUSTWORKTY or 
+
+directly connected 0 always belived. 
+
+static 1 - belive the admin
+
+EIGRP 90 newist
+
+OSPF 110 newer
+
+RIP 120 oldest
+
+External eigrp 170 older
+
+UNKNOWN 255 
+
+for exam know the order not the numbers. 
+
+Metrics - 
+
+hop count, belivibility, realibility, bandwidth delay ,costs other metrics. it’s like golf rules lowest sore is the highest cost. 
+
+bandwidth 0 lowest cost 
+
+for route selection all are. etter. 
+
+# Route Selection (N10-009)
+
+### **Administrative Distance (AD)**
+
+- **Definition:** How “trustworthy” a routing source is.
+- **Rule:** **Lower AD = more believable.**
+- If multiple routes exist to the same destination → the one with the **lowest AD** wins.
+
+**Common AD Values (memorize order, not numbers):**
+
+- **0** – Directly Connected (always trusted most)
+- **1** – Static Route (set by admin)
+- **90** – EIGRP (internal)
+- **110** – OSPF
+- **120** – RIP (least believable common IGP)
+- **170** – EIGRP (external)
+- **255** – Unknown/invalid (never used)
+
+👉 **Exam Tip:** Just know the **priority order**:
+
+**Direct > Static > EIGRP > OSPF > RIP > External EIGRP > Unknown**
+
+---
+
+### **Metrics**
+
+- Metrics determine the **best path** *within* a routing protocol.
+- Think of metrics as the **score of the path** → like golf: **lowest = best**.
+- Different protocols use different metrics:
+
+| Protocol | Metric Used |
+| --- | --- |
+| RIP | Hop Count (max 15) |
+| OSPF | Cost (based on bandwidth) |
+| EIGRP | Composite (bandwidth, delay, reliability, load) |
+| IS-IS | Cost |
+| BGP | Path Vector (AS-path length + policies) |
+
+---
+
+✅ **Must-Know for Exam**
+
+- **AD = trust between protocols. Metric = best path inside a protocol.**
+- If a router knows a route from **OSPF (AD 110)** and **RIP (AD 120)**, it chooses **OSPF**.
+- If it knows two OSPF routes, it chooses the one with the **lowest cost metric**.
+
+---
+
+⚡ Flashcards
+
+- **Q:** What is AD 0?
+    
+    **A:** Directly connected.
+    
+- **Q:** Which has lower AD: OSPF or RIP?
+    
+    **A:** OSPF.
+    
+- **Q:** Which routing protocol uses hop count?
+    
+    **A:** RIP.
+    
+- **Q:** What does EIGRP use as a metric?
+    
+    **A:** Bandwidth + delay (composite).
+    
+- **Q:** What happens at AD 255?
+    
+    **A:** Route is invalid/unusable.

@@ -1,0 +1,76 @@
+---
+title: "captive portal issues"
+slug: "captive-portal-issues"
+date: "2025-10-29"
+status: "published"
+summary: "When you enter the webpage, then you go to the redirect messages."
+tags: ["network+"]
+toc: true
+---
+
+# captive portal issues
+
+When you enter the webpage, then you go to the redirect messages. 
+
+HTTP redirect - all traffic is redireccted to a webserver then redirects them to a captive portal useinga 302 staus code. 
+
+ICMP - Redirect - sends error messages and operational inforamtion indication success or failure adn be used . 
+
+DNS redirect - the client is redirected by the onboard DNS server to the captive portal webpage. when they open a webbrouser, they are redirected to the. onboard DNS server then send them to the catptive portal. 
+
+if you have a static DNS server, then you won’t get the re direct, not the onboard DNS server. DNS was set to 8.8.8.8 and set it to automatically be set. 
+
+1 try to go to any wevsite. 
+
+try to go to gateway with HTTPs’
+
+3 check DNS for statis DNS settings. 
+
+# Captive Portal Issues
+
+A **captive portal** is the web page that appears when connecting to open/public Wi-Fi (e.g., hotels, airports, apartments) before Internet access is granted.
+
+Common issues occur when the **redirection process** fails.
+
+---
+
+## 1. Redirection Methods
+
+Captive portals can use several techniques to force the user to a login/consent page:
+
+- **HTTP Redirect**
+    - All HTTP requests are intercepted by the access point/firewall.
+    - The client is redirected to the portal using a **302 status code**.
+- **ICMP Redirect**
+    - ICMP can send error or redirect messages, influencing the client’s routing.
+    - Rare for captive portals, but some systems use it for notification/flow control.
+- **DNS Redirect**
+    - The onboard DNS server intercepts all queries.
+    - Instead of resolving external sites, it resolves them to the **captive portal’s IP**.
+    - Once authentication is complete, DNS resolution is restored.
+
+⚠️ **Problem**: If a device is configured with a **static DNS server** (e.g., `8.8.8.8`), the onboard DNS is bypassed, and the captive portal page won’t load.
+
+---
+
+## 2. Troubleshooting Steps
+
+1. **Open any non-HTTPS website**
+    - Try `HTTP://neverssl.com` or `HTTP://example.com`.
+    - HTTPS sites may fail silently because of certificate mismatch instead of redirecting.
+2. **Access the default gateway directly**
+    - Open a browser and go to `HTTP://192.168.1.1` (or whatever your gateway IP is).
+    - Many captive portals live at the gateway.
+3. **Check DNS settings**
+    - Ensure DNS is set to *automatic*.
+    - If using static DNS (e.g., `8.8.8.8` or `1.1.1.1`), switch back to DHCP-provided DNS so the captive portal can redirect properly.
+4. **Disable VPNs / Firewalls temporarily**
+    - These can block captive portal traffic.
+5. **Clear cache or try incognito mode**
+    - Cached redirects can sometimes break the process.
+
+---
+
+✅ **Bottom line**:
+
+Captive portal redirection works by hijacking DNS or HTTP requests until you authenticate. If you bypass that mechanism (static DNS, VPN, HTTPS-only access), the portal won’t appear.

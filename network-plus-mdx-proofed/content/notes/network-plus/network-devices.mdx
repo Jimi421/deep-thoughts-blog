@@ -1,0 +1,131 @@
+---
+title: "Network Devices"
+slug: "network-devices"
+date: "2025-10-29"
+status: "published"
+summary: "Hub - Known as a multiport; repeater connects. multiple network devices and workstations. square icon with arrow pointing in both directions."
+tags: ["network+"]
+toc: true
+---
+
+# Network Devices
+
+Hub - Known as a multiport; repeater connects. multiple network devices and workstations. square icon with arrow pointing in both directions. 
+
+Passive repeats signal, no amplificaton. 
+
+Active - repeats sitnal with amplificatpin can increase distance of network. 
+
+Smart active hub with enhanced features liks Simple Network Managemt Protocol, can be configured frmoteley. 
+
+Hubs are deprecated. 
+
+Collision domains - multiple network segments conected togehter by hubs. 
+
+Bridge - Analyzes source MAC addresses and makes intelligent forwarding decsicions based on that frame. separates collision domains. 
+
+Switch - known as a ultiort bridge, it is a Layer 2 device taht connects multi network segments. Switch make forwardign descions, just like a bridge. each port is a collision domain, but all are portof the same broadcast domain. 
+
+Device sends and arp request to find other devices, switch maintains an arp table, knows the senders MAC address and broadcasts looking for requedted MAC address once arp request is responded to both devices are saved in MAC address table, so that the broadcast is not needed every time. 
+
+Router Layer 3 device that connects multiple networks an makes forwrding descions based on logical network information. 
+
+IPV4 32 bit address
+
+IPV6 128 bit address, new
+
+Routers have multiple type of netorks so may have different connecitons. they can separate out broadcast domiains. 
+
+Layer 3 switch - makes routing descions and then interconnects entire netowrks but for the exam a switch is a layer 2 device. 
+
+# Network Devices & Domains (N10-009)
+
+### **Hub (Layer 1)**
+
+- **Definition:** Multiport repeater; connects multiple devices on a network.
+- **Types:**
+    - **Passive Hub:** Just repeats signal, no amplification.
+    - **Active Hub:** Repeats + amplifies signal (extends distance).
+    - **Smart Hub:** Active hub with SNMP management.
+- **Icon:** Square with arrows both ways.
+- **Downside:** All ports in **one collision domain** and **one broadcast domain**.
+- **Status:** Deprecated — replaced by switches.
+- **Half-duplex only.**
+
+---
+
+### **Bridge (Layer 2)**
+
+- **Definition:** Separates collision domains by forwarding based on **MAC addresses**.
+- Learns source MACs, builds a table, and forwards traffic only to the correct segment.
+- Each port = separate collision domain.
+- Legacy device, concept lives on in switches.
+
+---
+
+### **Switch (Layer 2)**
+
+- **Definition:** Multiport bridge; forwards frames based on **MAC addresses**.
+- **Collision Domains:** Each port = its own collision domain.
+- **Broadcast Domain:** Entire switch = 1 broadcast domain (unless VLANs are used).
+- **Process:**
+    - Device sends ARP request.
+    - Switch records MAC of sender in its table (CAM/MAC table).
+    - Switch broadcasts to find target MAC.
+    - Once response is received → forwards frames directly, no more broadcasts.
+- **Full-duplex support** → eliminates collisions.
+
+---
+
+### **Router (Layer 3)**
+
+- **Definition:** Connects multiple networks; makes forwarding decisions based on **IP addresses** (logical Layer 3).
+- **Capabilities:**
+    - Separates **broadcast domains**.
+    - Supports IPV4 (32-bit addresses) & IPV6 (128-bit).
+    - Often has interfaces of different types (Ethernet, fiber, serial, wireless).
+- **Exam Tip:** Routers = “gateway” device between networks.
+
+---
+
+### **Layer 3 Switch**
+
+- A switch that can perform **routing functions**.
+- For **Network+ exam**:
+    - Treat **switch = Layer 2**.
+    - **Routers = Layer 3**.
+    - Don’t overcomplicate — L3 switches show up later in advanced certs.
+
+---
+
+# ✅ Must-Know Domains
+
+- **Collision Domain:** Area where collisions can occur.
+    - Hubs: all ports in one collision domain.
+    - Switches/bridges: each port = its own collision domain.
+- **Broadcast Domain:** Area where a broadcast packet propagates.
+    - Hubs & switches: one big broadcast domain (unless VLANs).
+    - Routers: break up broadcast domains.
+
+---
+
+⚡ **Flashcard Drill**
+
+- **Q:** What device operates at Layer 1 and repeats signals?
+    
+    **A:** Hub.
+    
+- **Q:** Which device uses MAC addresses to forward frames?
+    
+    **A:** Switch (or bridge).
+    
+- **Q:** What device separates broadcast domains?
+    
+    **A:** Router.
+    
+- **Q:** For the exam, a switch is considered what layer?
+    
+    **A:** Layer 2.
+    
+
+---

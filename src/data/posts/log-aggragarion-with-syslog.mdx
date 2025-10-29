@@ -1,0 +1,120 @@
+---
+title: "Log Aggragarion with Syslog"
+slug: "log-aggragarion-with-syslog"
+date: "2025-10-29"
+status: "published"
+summary: "Information"
+tags: ["network+"]
+toc: true
+---
+
+# Log Aggragarion with Syslog
+
+Information 
+
+Events 
+
+Warning 
+
+Alerts 
+
+Routers 
+
+Switches 
+
+Servers 
+
+SIM - Security Information management 
+
+SEM - Security Evnet management 
+
+SIEM Security information and event management .
+
+client - sends logs infor to the syslog server. 
+
+server - recived and stores all the logs from the clients
+
+the server sends data over 514 udp. 
+
+8 severity levels 0 to 7 
+
+0 - Emergency - system unstable 
+
+1 - alert - a condition should be corrected immediatly 
+
+2 - critical - faluie in the systems primary application 
+
+3 - error - something is preventing proper systme function 
+
+4 - warning- error will occor if action is not taken 
+
+5 - notice - the events are unusiual 
+
+6 - information - normal message no action required 
+
+7 - debugging - useful info for developers. 
+
+Traffic logs - info about traffic from the networks.
+
+# 📝 Log Aggregation with Syslog
+
+## 🔑 Purpose
+
+- Collects and centralizes **logs** from network devices and servers.
+- Provides visibility into **events, warnings, alerts, and traffic logs**.
+- Foundation for **monitoring, troubleshooting, and security analysis**.
+
+---
+
+## ⚙️ Syslog Components
+
+- **Client** → Device that sends logs (routers, switches, servers).
+- **Server (Syslog collector)** → Receives and stores logs.
+- **Transport** → Uses **UDP 514** by default (can use TCP/TLS for reliability).
+
+---
+
+## 📊 Syslog Severity Levels (0–7)
+
+- **0 – Emergency** → System unstable.
+- **1 – Alert** → Immediate action required.
+- **2 – Critical** → Failure in primary system function.
+- **3 – Error** → Preventing proper system function.
+- **4 – Warning** → Potential issue if no action is taken.
+- **5 – Notice** → Unusual but not an error.
+- **6 – Informational** → Normal events, no action needed.
+- **7 – Debug** → Developer-level detail.
+
+👉 **Exam Tip:** Severity levels run **0 (highest priority)** → **7 (lowest priority)**.
+
+---
+
+## 🔐 Log Management in Security
+
+- **SIM (Security Information Management)**
+    - Long-term **storage, analysis, reporting**.
+    - Historical data for compliance/forensics.
+- **SEM (Security Event Management)**
+    - **Real-time monitoring and alerting** of events.
+    - Focus on immediate response.
+- **SIEM (Security Information & Event Management)**
+    - Combines SIM + SEM.
+    - Centralized solution for **real-time monitoring + historical analysis**.
+
+---
+
+## ✅ Exam Tips
+
+- **Syslog uses UDP 514** (by default).
+- **Clients send logs → Server collects logs.**
+- **SIEM = SIM + SEM.**
+- **Logs provide visibility into traffic, warnings, and alerts.**
+- Be ready to **match severity codes with meanings** on the test.
+
+---
+
+⚡ Sample Question:
+
+*“A router logs a condition that requires immediate correction. Which Syslog severity level is this?”*
+
+→ **Level 1 – Alert**

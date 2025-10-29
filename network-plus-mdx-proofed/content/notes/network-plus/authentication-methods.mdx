@@ -1,0 +1,140 @@
+---
+title: "Authentication Methods"
+slug: "authentication-methods"
+date: "2025-10-29"
+status: "published"
+summary: "process of dtereming if someone or somethign is who they claim to be."
+tags: ["network+"]
+toc: true
+---
+
+# Authentication Methods
+
+process of dtereming if someone or somethign is who they claim to be. 
+
+Local - enter a username and password on the local device
+
+LDAP - Lighweight Directory Access Protocol - a database that is used to centralizze information about the clients and objects on the network simplified verson of x.500 port 389 plaintest LDAP secure 636. cross platform
+
+AD - organizes and manages everythign on a network including client, servers, devices, and users. 
+
+Kerberos - focustd on authentication within a windows domain environment. two way authentication contats domain controleor. users will have a primary and secondary domain congtroller in a clustered AD 
+
+SSO - single sign on - establish a profile and link the profile to all things the user needs. have a single strong password and use MFA. if user credentals are comprimised tehy have access to all allocated resources. using mulit factor makes single sign on more secure. like using google or aple to log in 
+
+SAML - security Assertion Markup Language - an XML based data format that is used to excyange authentification info between client and a. service. 
+
+paird with SOAP simple object adccess portal . used to provide SSO. 
+
+Servie provider 
+
+user agenet 
+
+identy providor
+
+Radius (remote authenticatn dial in user service - used for remote logins. 
+
+TACACS+ - uses tdp vs udp. 
+
+Time - Based Authentication - security mechinimazim that generates a temp one time passcode that’s good only once. 
+
+google authentacor, RSA key fob, text messages, authy normally used with 2fa
+
+# Authentication Methods
+
+### Core Concept
+
+- **Authentication = verifying identity** (proving you are who you say you are).
+
+---
+
+### Local Authentication
+
+- Username + password stored on the **local device**.
+- Simple, but doesn’t scale for enterprise.
+
+---
+
+### Directory Services
+
+- **LDAP (Lightweight Directory Access Protocol)**
+    - Centralized directory database (users, devices, objects).
+    - Port **389** (plaintext), **636** (LDAPS – secure with SSL/TLS).
+    - Based on X.500, works cross-platform.
+- **Active Directory (AD)**
+    - Microsoft directory service.
+    - Manages users, devices, servers, groups.
+    - Often paired with Kerberos for authentication.
+
+---
+
+### Kerberos
+
+- Default authentication for **Windows domain environments**.
+- Uses **tickets** and **two-way authentication** with Domain Controller (KDC).
+- Prevents replay attacks; scalable and secure.
+
+---
+
+### Single Sign-On (SSO)
+
+- One login grants access to multiple resources.
+- **Pros:** Convenience, fewer passwords.
+- **Cons:** If credentials are compromised, attacker gets *everything*.
+- **Best practice:** Pair with **MFA**.
+- Examples: Google login, Apple login, Microsoft 365.
+
+---
+
+### SAML (Security Assertion Markup Language)
+
+- XML-based format to exchange **authentication/authorization info**.
+- Often used with **SSO**.
+- Roles:
+    - **Identity Provider (IdP)** → authenticates the user.
+    - **Service Provider (SP)** → grants access.
+    - **User Agent** → browser/client.
+- Common in web-based SSO (e.g., logging into apps via Okta/Google).
+
+---
+
+### Remote Authentication Protocols
+
+- **RADIUS (Remote Authentication Dial-In User Service)**
+    - Centralized authentication for remote access (VPN, Wi-Fi).
+    - Uses **UDP ports 1812/1813** (or older 1645/1646).
+    - Encrypts only passwords.
+- **TACACS+ (Terminal Access Controller Access Control System Plus)**
+    - Cisco proprietary.
+    - Uses **TCP port 49**.
+    - Encrypts the **entire authentication process** (more secure than RADIUS).
+    - Often used for device admin logins.
+
+---
+
+### Time-Based Authentication
+
+- Uses **One-Time Passcodes (OTPs)** valid for a short time.
+- Examples: Google Authenticator, Authy, RSA key fobs, SMS codes.
+- Typically part of **2FA/MFA**.
+
+---
+
+✅ **Exam Must-Knows**
+
+- LDAP = 389 (plaintext), 636 (secure).
+- Kerberos = Windows domains, ticket-based, prevents replay.
+- SSO = convenient but risky; secure with MFA.
+- SAML = XML-based, used for federated identity & SSO.
+- RADIUS = UDP, encrypts only password.
+- TACACS+ = TCP, encrypts all data, Cisco proprietary.
+- Time-based auth = OTPs, MFA.
+
+---
+
+⚡Memory Trick:
+
+- **“Kerberos = Key Tickets”**
+- **“RADIUS = Remote Access”**
+- **“TACACS+ = Total Encryption”**
+- **“SAML = SSO with XML”**

@@ -1,0 +1,115 @@
+---
+title: "Address Translation"
+slug: "address-translation"
+date: "2025-10-29"
+status: "published"
+summary: "NAT -Network Address Translaton (NAT)"
+tags: ["network+"]
+toc: true
+---
+
+# Address Translation
+
+NAT -Network Address Translaton (NAT) 
+
+Translates priavre ip address to public ip address for routing over public networks. 
+
+DNAT - Dynamic NAT Automatically assigs an IP address from a pool and gives a one-to-one translation like if you shared keys to car with a group of people. 
+
+SNAT - Manually assigns an ip address and gives one-to-one translation. 
+
+PAT port address translation - sharing one public IP address by multiple private ip addresses which give a many to one translation . - 
+
+Inside local - privae iP address. inside gloval private ip address refenced an outside 
+
+outside global publice ip addess refrencing an outside device. 
+
+diagram of nat working…. 
+
+# NAT (Network Address Translation)
+
+### **Purpose**
+
+- Allows devices with **private IPs** (RFC1918) to communicate on **public networks**.
+- Translates between **private ↔ public addresses**.
+- Conserves IPV4 addresses.
+
+---
+
+## **Types of NAT**
+
+### **Dynamic NAT (DNAT)**
+
+- Uses a **pool of public IPs**.
+- Each private IP gets temporarily mapped to one public IP (one-to-one).
+- **Analogy:** “Borrowing a car key from a shared key pool.”
+
+---
+
+### **Static NAT (SNAT)**
+
+- A **fixed mapping** between one private IP and one public IP.
+- Always the same → often used for **servers** that must be reachable from outside.
+- **Analogy:** “Each driver has their own permanent key.”
+
+---
+
+### **PAT (Port Address Translation)**
+
+*(also called NAT overload)*
+
+- Many private IPs share **one public IP**, differentiated by **port numbers**.
+- **Most common type** (used in home routers).
+- **Analogy:** “One car, many drivers; the system tracks who’s who by seat number.”
+
+---
+
+## **NAT Address Terms**
+
+- **Inside Local:** Private IP of internal device.
+- **Inside Global:** Public IP representing that internal device to the outside.
+- **Outside Global:** Public IP of an external device.
+
+---
+
+### **Diagram (text version for memory)**
+
+```
+Private LAN (Inside Local)     Router/NAT       Internet (Outside Global)
+192.168.1.10  ───────────────> [NAT] ──────────> 66.51.41.112
+192.168.1.11  ───────────────> [NAT] ──────────> 66.51.41.112:1025
+192.168.1.12  ───────────────> [NAT] ──────────> 66.51.41.112:1026
+
+```
+
+- Here, **PAT** is in action: multiple inside locals mapped to a single inside global (public IP) with unique port numbers.
+
+---
+
+✅ **Exam Must-Knows**
+
+- **Static NAT = fixed one-to-one.**
+- **Dynamic NAT = pool one-to-one.**
+- **PAT = many-to-one (common in SOHO).**
+- **Inside local = private. Inside global = translated public.**
+- NAT is critical for IPV4 conservation.
+
+---
+
+⚡ Flashcards
+
+- **Q:** Which NAT type allows multiple private IPs to share one public IP?
+    
+    **A:** PAT.
+    
+- **Q:** Which NAT type uses a pool of public addresses?
+    
+    **A:** Dynamic NAT.
+    
+- **Q:** What does “inside local” mean?
+    
+    **A:** Private IP of an internal device.
+    
+- **Q:** What’s the most common NAT type in home routers?
+    
+    **A:** PAT (NAT overload).

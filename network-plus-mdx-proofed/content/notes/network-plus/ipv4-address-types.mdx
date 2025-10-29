@@ -1,0 +1,111 @@
+---
+title: "IPV4 Address types"
+slug: "IPV4-address-types"
+date: "2025-10-29"
+status: "published"
+summary: "Pulblic - routable uniqeu ip address assigned to each device on the internet that allows it to communciate with other addresses on the network . dotted decimal notatpoon eg 66.51.4"
+tags: ["network+"]
+toc: true
+---
+
+# IPV4 Address types
+
+Pulblic - routable uniqeu ip address assigned to each device on the internet that allows it to communciate with other addresses on the network . dotted decimal notatpoon eg 66.51.41.112 must be leashed or purchaed managed by 
+
+ICANN globally manages and leases publically roubable ip addresses
+
+NA ARIN, LA LACNIC , AFRIC AFNIC APNIC ASIA, RIPE eurpoe. 
+
+Private- private (non-routable) used within a local network thtat allows for the ommunicaton between devices within that network without usina. public ip address.  
+
+10 
+
+172 
+
+192
+
+NAT NETWORK ADDRESS TRANSLATION - method that allows a router to be an agent between a public ip address and a private address so that we don’t need to use so many public ip addresses. 
+
+RFCs request for comments formal publication from the intent society and the IETF 
+
+RFC 1918 
+
+Class A 10.0.0.0 -10.255.255.255
+
+Class B 172.26 - 172.31. ** careful with these on the exam. 
+
+Class C 192.168
+
+Loopback 127.0.0.1
+
+apipa range 169.254.0.0. to 169.254.255.255
+
+# IPV4 Addressing & Special Ranges
+
+### **Public IP**
+
+- **Routable, globally unique** addresses used on the Internet.
+- Must be purchased/leased from **ICANN/IANA** → delegated to Regional Internet Registries (RIRs):
+    - **ARIN** (North America)
+    - **LACNIC** (Latin America)
+    - **AFRINIC** (Africa)
+    - **APNIC** (Asia Pacific)
+    - **RIPE NCC** (Europe, Middle East, parts of Central Asia)
+
+---
+
+### **Private IP (RFC 1918)**
+
+- **Non-routable**; used inside LANs.
+- Requires **NAT** to reach the Internet.
+
+Ranges:
+
+- **Class A:** 10.0.0.0 – 10.255.255.255 (/8)
+- **Class B:** 172.16.0.0 – 172.31.255.255 (/12) ⚠️ *Exam trick: Only 172.16–31 is private; 172.0–15 and 172.32+ are public!*
+- **Class C:** 192.168.0.0 – 192.168.255.255 (/16)
+
+---
+
+### **Other Important Ranges**
+
+- **Loopback:** 127.0.0.1 (used to test TCP/IP stack).
+- **APIPA (Automatic Private IP Addressing):** 169.254.0.0 – 169.254.255.255
+    - Assigned when DHCP fails.
+    - Self-assigns an address, only valid on the local segment.
+
+---
+
+### **NAT (Network Address Translation)**
+
+- Allows private IP devices to access public networks by translating private ↔ public addresses.
+- **PAT (Port Address Translation):** many private devices share one public IP, differentiated by port numbers.
+
+---
+
+✅ **Exam Tips**
+
+- **RFC 1918 = private IP ranges.**
+- **APIPA = 169.254.x.x (DHCP failure fallback).**
+- **Loopback = 127.0.0.1.**
+- NAT is critical for conserving IPV4 addresses.
+
+---
+
+⚡ **Flashcards**
+
+- **Q:** What organization globally manages public IPs?
+    
+    **A:** ICANN/IANA.
+    
+- **Q:** Which RFC defines private IP ranges?
+    
+    **A:** RFC 1918.
+    
+- **Q:** What’s the Class B private IP block?
+    
+    **A:** 172.16.0.0 – 172.31.255.255.
+    
+- **Q:** What address range does Windows use when DHCP fails?
+    
+    **A:** 169.254.0.0/16 (APIPA).

@@ -1,0 +1,122 @@
+---
+title: "IoT"
+slug: "iot"
+date: "2025-10-29"
+status: "published"
+summary: "internet of things - global network of appliances and pwersonal devices that have been equipped with sensors, software and network connectivity to report state and configure data."
+tags: ["network+"]
+toc: true
+---
+
+# IoT
+
+internet of things - global network of appliances and pwersonal devices that have been equipped with sensors, software and network connectivity to report state and configure data. 
+
+heating systems, automation, 
+
+make sure they are properley secured,  no interfence and power is provided. 
+
+placing tese systems on buisness network is not a best practice. tehse devices should be separated off. 
+
+hackers used the HVAC controlers in the target attack. 
+
+IP video systems - video telcom and skype. 
+
+QoS 
+
+bandwidth 
+
+Upfront Cost for ip video systems. 
+
+some iot devices cannot be pathed. 
+
+hub and control systems - used as a central point of communication for many ioT devices. 
+
+smart deices - iOt devices that connect back to the hub and control system. the light that connects to the amazon alexa 
+
+weables - apple watch 
+
+sensors - measures things like temperature and other things. 
+
+understand endpoints. - understand the vulns and what the are. 
+
+track and manage devices - don’t let anyone just connect a device. 
+
+patch vulns - they can be insecure first. usea separate vlan. 
+
+conduct test and evaluation. - try to use a pen test. 
+
+change default credentials - 
+
+use encryption protocols. 
+
+segment Iot devices. 
+
+# 🌐 Internet of Things (IoT)
+
+**Definition:**
+
+Global network of **smart devices, appliances, and sensors** with software + network connectivity that collect and share data.
+
+Examples:
+
+- Smart thermostats, HVAC controllers, lighting, cameras, wearables (Apple Watch), Alexa/Echo, video systems (Skype, IP cams).
+
+---
+
+## 🔑 Key Concepts
+
+- **IoT Hub & Controllers**
+    - Central point of communication for IoT devices.
+    - Example: Smart home hub, Alexa, Google Home.
+- **Smart Devices**
+    - Individual IoT endpoints connected to the hub.
+    - Example: Smart lights, smart plugs.
+- **Sensors**
+    - Measure data (temperature, motion, pressure, etc.).
+- **Wearables**
+    - IoT devices worn on the body (e.g., fitness trackers, smart watches).
+
+---
+
+## ⚠️ IoT Risks & Challenges
+
+- **Security Vulnerabilities**
+    - Often shipped with weak/default passwords.
+    - Many cannot be patched → remain exposed.
+    - Can be used as entry points for attacks (*Target breach via HVAC controllers*).
+- **Performance Concerns**
+    - Heavy traffic (e.g., IP video systems) can impact **QoS and bandwidth**.
+    - Upfront cost for deployment can be high.
+- **Endpoint Management**
+    - Hard to track if devices aren’t inventoried.
+    - Shadow IoT = users adding devices without IT approval.
+
+---
+
+## 🛡️ Best Practices
+
+- **Network Segmentation**
+    - Place IoT on a **separate VLAN or subnet** (never on business-critical LAN).
+- **Default Credentials**
+    - Always change admin usernames & passwords.
+- **Encryption**
+    - Use secure protocols (TLS, WPA2/WPA3 for Wi-Fi).
+- **Patching**
+    - Keep firmware updated (if possible).
+    - Replace devices that cannot be patched.
+- **Monitoring & Testing**
+    - Conduct **vulnerability scans / penetration tests** on IoT segments.
+    - Monitor logs and traffic for anomalies.
+- **Access Control**
+    - Only authorized users should add/manage devices.
+    - Use NAC (Network Access Control) where possible.
+
+---
+
+## ✅ Exam Tips
+
+- IoT = **weakest link in many networks** due to poor security.
+- Always associate **Target HVAC attack** with IoT risks.
+- **Solution**: segment IoT, enforce strong credentials, patch if possible.
+- **QoS** may be needed for IoT video/audio traffic.

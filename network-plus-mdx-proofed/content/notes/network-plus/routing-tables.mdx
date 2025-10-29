@@ -1,0 +1,75 @@
+---
+title: "Routing Tables"
+slug: "routing-tables"
+date: "2025-10-29"
+status: "published"
+summary: "Routing table helps detemrin which route tenry is the best fit for the network."
+tags: ["network+"]
+toc: true
+---
+
+# Routing Tables
+
+Routing table helps detemrin which route tenry is the best fit for the network. 
+
+Directly connected route - learned by physical connection between two routers. 
+
+Static Route - manually configured by administrator 
+
+default static route 0.0.0.0 “if you dont know where to go, jsut go here. 
+
+Dynamic Route - learned by exchanging information between routers. 
+
+split horizon 
+
+poision reverse 
+
+# Routing Basics (N10-009)
+
+### **Routing Table**
+
+- Holds all known routes to destinations.
+- Router selects the **best match** (longest prefix match).
+- Routes learned by:
+    1. **Directly Connected Routes** – added automatically when an interface is configured and up.
+    2. **Static Routes** – manually configured by an admin.
+        - Example: `ip route 192.168.2.0 255.255.255.0 10.0.0.1`
+        - **Default Static Route**: `0.0.0.0/0` → “if you don’t know where to send it, send it here.”
+    3. **Dynamic Routes** – learned from other routers via routing protocols.
+
+---
+
+### **Dynamic Routing Concepts**
+
+- **Split Horizon:** Prevents routing loops by disallowing a router to advertise a route back out the interface it learned it on.
+- **Poison Reverse:** Instead of ignoring, router sends route update back with **infinite metric** (route cost = unreachable) to explicitly warn neighbors not to use that path.
+- Both help prevent **count-to-infinity loops** in distance vector protocols (e.g., RIP).
+
+---
+
+✅ **Must-Know for Exam**
+
+- **Directly connected = strongest (preferred first).**
+- **Static = admin-defined, takes priority over dynamic if both exist.**
+- **Default route (0.0.0.0/0)** = catch-all.
+- **Split Horizon + Poison Reverse** = loop prevention techniques.
+
+---
+
+⚡ **Flashcard Drill**
+
+- **Q:** Which route is automatically added when you configure an interface?
+    
+    **A:** Directly connected route.
+    
+- **Q:** What does `0.0.0.0/0` represent?
+    
+    **A:** Default route.
+    
+- **Q:** What prevents a router from advertising a route back the way it came?
+    
+    **A:** Split Horizon.
+    
+- **Q:** What sends back a route with infinite cost to avoid loops?
+    
+    **A:** Poison Reverse.

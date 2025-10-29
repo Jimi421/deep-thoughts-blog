@@ -1,0 +1,55 @@
+---
+title: "IPSEC"
+slug: "ipsec"
+date: "2025-10-29"
+status: "published"
+summary: "provides authentication encry[ton of packets to create an encrypted communicaion path between computers."
+tags: ["network+"]
+toc: true
+---
+
+# IPSEC
+
+provides authentication encry[ton of packets to create an encrypted communicaion path between computers. 
+
+Confiadentiality - encryyption
+
+Integretity - hashing
+
+auth a - verification 
+
+anty replay - sequence numbers. 
+
+main mode - conducts two three way exchanges. 
+
+1 agree which algorithim wwill be used 
+
+2 diffie helman exchange to generate shared key material to make the two keys 
+
+3 verify the identy of the others by looking at encrypted form of ip address
+
+agressive mode - fewer exhcnaes, resulter in fewer packets and faster initial connection vs main mode. 
+
+use phase 2 key 
+
+1 pc1 sends traffic to pc 2 
+
+1 router 1 and router 2 negodiate security 
+
+3 IKE phase 2 tunnel 
+
+4 tunnel is established 
+
+5 ipsec tunnel is torn down
+
+Transport mode - useses packet origional pen header used for client to site vpns. when using a client to site use transport mode no aded packet. 
+
+site to site - use tunneling mode - encapsulates the entire packet. increases size of the packet. 
+
+AH - authenticatio header provides connectionless intregrity preventing replay attacks. 
+
+ESP - encapsulationg security payload. - provides intregrity of the payload, 
+
+in transport use AH to profived intregiryt for tcp header and esp to encrypt it 
+
+in tunneling mode you can use both.

@@ -1,0 +1,80 @@
+---
+title: "Multiprotocol Label Switching (MPLS)"
+slug: "multiprotocol-label-switching-mpls"
+date: "2025-10-29"
+status: "published"
+summary: "Teahnique that is leveraged by service providers to elevate the efficency and flexibily of their networks."
+tags: ["network+"]
+toc: true
+---
+
+# Multiprotocol Label Switching (MPLS)
+
+Teahnique that is leveraged by service providers to elevate the efficency and flexibily of their networks. 
+
+opperates behindd the scenes and streamlines and speeds up the data flow. 
+
+introduces label switching - just fowrard data buy path info. 
+
+1 label assignment short fixed legenth ID. 
+
+2 label switching - router looks at the label and then determines the packets next hop. faster than route look up. 
+
+3 label removal - label is removed then it is back to normal TCP/IP routing. 
+
+Versatility - can carry any type of protocol. used by ISP and back haul. 
+
+Great for QoS can enforce traffic engineering. 
+
+Reliability 
+
+Redundancy 
+
+Used by servide providers for forwarding data in the back end. improved performance and service on modern networks. Above tradational IP routing.  
+
+MPLS = Label Routing
+
+# MPLS (Multiprotocol Label Switching)
+
+### Purpose
+
+- **Service provider technique** to improve **efficiency, flexibility, and speed** of data forwarding.
+- Works **behind the scenes** → faster than traditional IP routing.
+- Common in ISP backbones and enterprise WANs.
+
+---
+
+### How MPLS Works
+
+1. **Label Assignment**
+    - Packets entering an MPLS network are given a **short, fixed-length label**.
+2. **Label Switching**
+    - Routers (Label Switch Routers, LSRs) forward packets based on labels, not full IP lookups.
+    - Much faster than traditional routing.
+3. **Label Removal (Penultimate Hop Popping)**
+    - Before the packet exits the MPLS domain, the label is stripped.
+    - Normal IP routing resumes.
+
+---
+
+### Key Features
+
+- **Protocol-Agnostic** → can carry IPV4, IPV6, Ethernet, ATM, Frame Relay, etc.
+- **Performance** → faster forwarding than IP routing.
+- **Quality of Service (QoS)** → supports traffic engineering (prioritize voice/video).
+- **Reliability & Redundancy** → enables robust service provider backhaul.
+
+---
+
+✅ **Exam Must-Knows**
+
+- MPLS = **Label-based forwarding**, not IP header lookup.
+- **Improves QoS** (great for VoIP, streaming).
+- Used mainly by **ISPs & large enterprise WANs**.
+- **Steps:** Label assignment → Label switching → Label removal.
+
+---
+
+⚡Memory Trick:
+
+**MPLS = "Maps Packets with Little Stickers"** → Labels act like stickers that tell routers where to send the packet, no need to read the whole address.

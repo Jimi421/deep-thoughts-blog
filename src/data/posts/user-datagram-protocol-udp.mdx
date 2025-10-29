@@ -1,0 +1,130 @@
+---
+title: "User Datagram Protocol (UDP)"
+slug: "user-datagram-protocol-udp"
+date: "2025-10-29"
+status: "published"
+summary: "A communication protocol used across the internet especially for time-sensitive transmissions."
+tags: ["network+"]
+toc: true
+---
+
+# User Datagram Protocol (UDP)
+
+A communication protocol used across the internet especially for time-sensitive transmissions. 
+
+It’s best for situations where speed is critical and error handeling can be done by the application or is not that nessecary. 
+
+known for 
+
+low latency 
+
+reducd processing overhead
+
+it’s at layer 4. 
+
+tcp 3 way handshake ≠ UDP 
+
+Source dest port numbers, legenth field, check sums 
+
+packets are 8 bytes vs 20-60 for TCP. no error checking or recovery, but it is faster. 
+
+UDP’s Stateless natuere
+
+does not maintain the stae of the connection or keep track of the packers, fire and forget. 
+
+udp does not ned an acknowledgement from the recier, to may not arive or be out of synquence. 
+
+Udp IS use where the SPEED is the most important thing. online gaming VOIP, sttreaming. 
+
+UDP relies on ports to help diffenerate between multiple services or appicatons 
+
+UCP includes a chucksum to provide som minimal protection against data corruption during transsion. 
+
+# ⚡ UDP – User Datagram Protocol (Layer 4)
+
+**Lightweight, connectionless protocol** used when **speed and low latency** are more important than reliability.
+
+---
+
+## ✅ Core Characteristics
+
+| Feature | Description |
+| --- | --- |
+| **Connectionless** | No handshake or connection tracking |
+| **Unreliable Delivery** | No acknowledgments, no retransmissions |
+| **Low Overhead** | Only **8 bytes** per header (vs TCP’s 20–60 bytes) |
+| **Stateless** | Doesn’t maintain session state — “**fire and forget**” |
+| **Faster** | Ideal for **real-time applications** |
+| **Minimal error checking** | Includes a **checksum**, but no recovery or sequencing |
+
+---
+
+## 🔧 UDP Header Fields (8 bytes total)
+
+| Field | Purpose |
+| --- | --- |
+| **Source Port** | Identifies sender’s port |
+| **Destination Port** | Identifies receiving app/service |
+| **Length** | Total length of UDP header + data |
+| **Checksum** | Optional error detection (basic integrity check) |
+
+---
+
+## 🧠 Key Differences: TCP vs UDP
+
+| Feature | TCP | UDP |
+| --- | --- | --- |
+| Handshake | 3-way handshake | No handshake |
+| Reliability | Reliable (ACKs, retries) | Unreliable (no ACKs) |
+| Header Size | 20–60 bytes | 8 bytes |
+| Speed | Slower (more overhead) | Faster (low overhead) |
+| Use Cases | Web, Email, File Transfer | **Streaming, VoIP, Gaming** |
+| Stateful | Maintains connection state | **Stateless** |
+
+---
+
+## 🚀 When to Use UDP
+
+Use UDP when:
+
+- **Speed > Accuracy**
+- Some data loss is **acceptable**
+- App handles its own error correction (if needed)
+
+### 🔊 Common UDP Use Cases:
+
+- **VoIP (Voice over IP)**
+- **Streaming video/audio**
+- **Online multiplayer gaming**
+- **DNS queries**
+
+---
+
+## ⚡ Rapid Review Questions
+
+1. **What layer does UDP operate on?**
+    
+    → Layer 4 (Transport)
+    
+2. **What makes UDP faster than TCP?**
+    
+    → No handshake, smaller header, no tracking or retransmissions
+    
+3. **Does UDP guarantee delivery?**
+    
+    → No
+    
+4. **What’s a key reason UDP is used in streaming?**
+    
+    → **Low latency** – dropped packets don’t halt the stream
+    
+
+---
+
+### 🧠 Memory Trick:
+
+> "U Don’t Persist"
+> 
+> 
+> UDP doesn’t care about acknowledgment — it just sends and moves on.
+>

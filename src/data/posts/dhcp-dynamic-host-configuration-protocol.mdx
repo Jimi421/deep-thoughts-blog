@@ -1,0 +1,127 @@
+---
+title: "DHCP (Dynamic Host Configuration Protocol)"
+slug: "dhcp-dynamic-host-configuration-protocol"
+date: "2025-10-29"
+status: "published"
+summary: "Provides an ip address to every machine on the network and eliminates configuration errors."
+tags: ["network+"]
+toc: true
+---
+
+# DHCP (Dynamic Host Configuration Protocol)
+
+Provides an ip address to every machine on the network and eliminates configuration errors. 
+
+IP Conflicts happen when the sam IP gets assigned to multiple machines inside the same network. 
+
+SCOP- a list of valid app addresses availabel for DHCP to assign. 
+
+Discover- when a device joins is til ask. 
+
+offer - ip address offered from the serfer
+
+request - we take the address from the server 
+
+acknowledge - set’s the lease up. 
+
+ip adddress , subnet mask, default gatewa ip and DNS server are all configured. 
+
+dynamic assignemt 
+
+static assignemtn 
+
+if a device can’t reach the DHCP serer if dhcp fails it will default to the alternate configs. appipa or static ip address. 
+
+scope - subnet mask configured, default gateway configured, DNS server, and the lease time. 
+
+DHCP Relay Fowrards DHCP packeets between host and server. only needed if they are not on the same subnet or network. you can have a relay work across other server.
+
+DHCP oppersates using UDP . 
+
+IP helper forwards several cinds of UDP broadcasts across the router. if the serve and requester are not on the same network will need the IP helper. 
+
+# DHCP (Dynamic Host Configuration Protocol) (N10-009)
+
+### **Purpose**
+
+- Automatically provides **IP addressing and configuration** to devices.
+- Eliminates manual errors and IP conflicts.
+- Runs on **UDP ports 67 (server) & 68 (client).**
+
+---
+
+### **DHCP Process (DORA)**
+
+1. **Discover** – Client broadcasts to find a DHCP server.
+2. **Offer** – Server replies with an available IP from its scope.
+3. **Request** – Client requests that offered IP.
+4. **Acknowledge** – Server confirms and leases the IP.
+
+**Configured Values (from DHCP scope):**
+
+- IP Address
+- Subnet Mask
+- Default Gateway
+- DNS Server(s)
+- Lease time
+
+---
+
+### **Assignment Types**
+
+- **Dynamic Assignment** → DHCP picks from the pool, lease can expire.
+- **Static Assignment** → Admin manually sets IP on device.
+- **DHCP Reservation** → IP is dynamically given, but always the same for a specific MAC.
+
+---
+
+### **Scopes**
+
+- Scope = pool of valid IPs DHCP can hand out.
+- Includes **subnet mask, gateway, DNS, lease time.**
+
+---
+
+### **Failures**
+
+- If DHCP unavailable →
+    - **APIPA (169.254.x.x)** self-assignment (Windows).
+    - Or use preconfigured **alternate static IP.**
+
+---
+
+### **DHCP Relay (a.k.a. IP Helper)**
+
+- Forwards DHCP packets between client and server **if not on the same subnet.**
+- Router receives client’s broadcast → forwards as unicast to DHCP server.
+- IP Helper can also forward other UDP services (TFTP, DNS, NetBIOS, etc.).
+
+---
+
+✅ **Exam Must-Knows**
+
+- DHCP = UDP 67/68.
+- **DORA = Discover → Offer → Request → Acknowledge.**
+- Scope = list of assignable IPs + subnet/gateway/DNS/lease.
+- **DHCP Relay/IP Helper** needed across subnets.
+- **APIPA = DHCP failure fallback.**
+
+---
+
+⚡ Flashcards
+
+- **Q:** Which port does DHCP server listen on?
+    
+    **A:** UDP 67.
+    
+- **Q:** What does DORA stand for?
+    
+    **A:** Discover, Offer, Request, Acknowledge.
+    
+- **Q:** What happens if DHCP fails in Windows?
+    
+    **A:** APIPA 169.254.x.x.
+    
+- **Q:** What forwards DHCP across routers?
+    
+    **A:** DHCP Relay / IP Helper.

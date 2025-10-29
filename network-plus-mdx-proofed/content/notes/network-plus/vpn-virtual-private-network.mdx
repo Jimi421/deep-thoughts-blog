@@ -1,0 +1,116 @@
+---
+title: "VPN(Virtual Private Network)"
+slug: "vpn-virtual-private-network"
+date: "2025-10-29"
+status: "published"
+summary: "virtual private network - extends a private network across a public network. you can work in a remote office or work from home with a secure VPN tunnel."
+tags: ["network+"]
+toc: true
+---
+
+# VPN(Virtual Private Network)
+
+virtual private network - extends a private network across a public network. you can work in a remote office or work from home with a secure VPN tunnel. 
+
+site to site - two offices. 
+
+client to site - remote user to a corp network. 
+
+clientless - web browser.
+
+full tunnel -routes and encrypts all network requests through the VPN connection back to the headquarters. 
+
+split tunnel -Routes and encrypts only traffic bound for the hedquarters over the vpn the other the internet. 
+
+clientless VPN creates a secure, remote access VPN tunnel using a web browser weithout a full VPN 
+
+ssl secure socket layer - provides cryptograpy and reliaby using upper layers of the OSI model 
+
+ssl and tls use tcp to establish a secure collection. 
+
+DTLS UDP BASED VERSION OF tls AND THA IS faster with no overhead. 
+
+l2tp layer 2 
+
+L2F PROVIDES TUNNELING PROTOCOL FOR the P2P PROTOL BUT ALSO LACKS NATIve security and encryption. 
+
+pptp POINT TO POINT  tunneling - supports dialu p networks but lacks native security features when used with windows. 
+
+ipsec security - provides authentication and 
+
+# 🔐 Virtual Private Network (VPN)
+
+**Definition:**
+
+A VPN extends a **private network across a public network (Internet)**, creating a secure **encrypted tunnel** for data.
+
+- Enables **remote work** or **secure office-to-office connections**.
+
+---
+
+## 🌍 VPN Types
+
+- **Site-to-Site VPN**
+    - Connects **two offices/networks** over the internet.
+    - Example: HQ ↔ Branch office.
+- **Client-to-Site VPN**
+    - Connects a **remote user** to the corporate network.
+    - Example: Work-from-home employee.
+- **Clientless VPN**
+    - Uses a **web browser** (no client software required).
+    - Common for quick, limited access to internal apps.
+
+---
+
+## 🚦 Tunneling Modes
+
+- **Full Tunnel**
+    - All traffic (internet + internal) goes through the VPN.
+    - ✅ More secure.
+    - ❌ More bandwidth + latency.
+- **Split Tunnel**
+    - Only corporate traffic goes through VPN.
+    - Internet traffic goes directly out to ISP.
+    - ✅ Less overhead.
+    - ❌ More exposure.
+
+---
+
+## 📋 VPN Protocols
+
+- **SSL/TLS VPN**
+    - Operates at **Layer 5–7** (session/application).
+    - Uses **TCP** for encryption & reliability.
+    - Secure for browser-based or client VPNs.
+- **DTLS (Datagram TLS)**
+    - UDP-based version of TLS.
+    - Faster, less overhead (good for VoIP, video).
+- **L2TP (Layer 2 Tunneling Protocol)**
+    - Provides tunneling but **no encryption** alone.
+    - Usually combined with IPsec for security.
+- **L2F (Layer 2 Forwarding)**
+    - Cisco protocol, older, lacks native encryption.
+- **PPTP (Point-to-Point Tunneling Protocol)**
+    - Legacy (Windows dial-up).
+    - Weak security, mostly deprecated.
+- **IPsec (Internet Protocol Security)**
+    - Operates at **Layer 3 (Network)**.
+    - Provides **encryption, authentication, and integrity**.
+    - Commonly used with L2TP.
+    - Modes:
+        - **AH (Authentication Header):** integrity + authentication only.
+        - **ESP (Encapsulating Security Payload):** integrity + authentication + encryption.
+
+---
+
+## ✅ Exam Tips
+
+- **Site-to-Site = office ↔ office.**
+- **Client-to-Site = remote worker.**
+- **Clientless = browser-based VPN.**
+- **Full tunnel = all traffic through VPN.**
+- **Split tunnel = only corporate traffic through VPN.**
+- **SSL/TLS = modern, TCP.**
+- **DTLS = UDP, faster for real-time apps.**
+- **L2TP/PPTP = legacy, weak security unless paired with IPsec.**
+- **IPsec = Layer 3, strongest encryption.**

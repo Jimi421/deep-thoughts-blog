@@ -1,0 +1,89 @@
+---
+title: "Netflow Data"
+slug: "netflow-data"
+date: "2025-10-29"
+status: "published"
+summary: "full packet capture or netflow data can be used to check on network full packet capture will take up too much space."
+tags: ["network+"]
+toc: true
+---
+
+# Netflow Data
+
+full packet capture or netflow data can be used to check on network full packet capture will take up too much space. 
+
+most orgs will use netflow for flow aynalasya
+
+flow aynalasya - recording metada about stats about network performance. capture info about the data flow vs the actual data. 
+
+netflow and flow aynalis provide detailed metadaa. flow aynalis highlights trends and patterns. 
+
+normally have visualiation to see patterns easy. 
+
+NetFlow - a cisco developed means of reporting network flow info to a structured database. defines traffic flow based on packets that share the same charactristics ex. same sourse and dest ip . 
+
+network protocol interface, ip version type. 
+
+Zeek -  hybrid tool that passivly monitors, logs entire packet when it detects something that is interesting. performes normilization and puts it as JSON.
+
+MRTG - multi router traffic grapher. used to rcreate graphs to show network traffic flows going through network interfaces on different routers. 
+
+# 📊 NetFlow & Flow Data
+
+## 🔑 Full Packet Capture vs NetFlow
+
+- **Full Packet Capture**
+    - Records the **entire payload** of every packet.
+    - Very detailed, but consumes huge storage.
+    - Used in forensics, deep inspection.
+- **NetFlow (Flow Data)**
+    - Collects **metadata only** (not payload).
+    - Developed by **Cisco**.
+    - Defines a “flow” as packets with same:
+        - Source & Destination IP
+        - Source & Destination Port
+        - Protocol, Interface, IP version, ToS
+    - More efficient for **long-term monitoring & trend analysis**.
+
+---
+
+## 📈 Flow Analysis
+
+- Records **metadata & statistics** about network traffic.
+- Useful for:
+    - Bandwidth usage.
+    - Identifying top talkers (hosts using most traffic).
+    - Detecting anomalies (DDoS, scans, unusual spikes).
+- Visualization tools (e.g., NfSen, ntopng, MRTG) help spot patterns quickly.
+
+---
+
+## 🛠️ Tools
+
+- **NetFlow** → Cisco-originated, but industry-wide standard.
+- **Zeek (formerly Bro)**
+    - Hybrid tool: passively monitors, logs metadata.
+    - Captures **full packets only when something interesting is detected**.
+    - Outputs normalized logs (often JSON).
+    - Used in SOCs for security monitoring.
+- **MRTG (Multi Router Traffic Grapher)**
+    - Graphs network flows via SNMP polling.
+    - Often used for **traffic visualization over time**.
+
+---
+
+## ✅ Exam Tips
+
+- **NetFlow = metadata only, not payload.**
+- **Flow analysis = trends, anomalies, bandwidth patterns.**
+- **Packet capture = detailed forensics, but storage heavy.**
+- **Zeek = intelligent packet + flow hybrid tool.**
+- **MRTG = visual graphs of router/switch traffic.**
+
+---
+
+⚡ Sample Question:
+
+*“Which technology is most commonly used to analyze long-term trends in bandwidth usage while minimizing storage requirements?”*
+
+→ **NetFlow (flow analysis)**

@@ -1,0 +1,132 @@
+---
+title: "Assigning IP Addresses"
+slug: "assigning-ip-addresses"
+date: "2025-10-29"
+status: "published"
+summary: "static assignemnt: manually typing in the IP address. can be time consuming and prone to error. static assignemts is impractical on large enterprise neteorks."
+tags: ["network+"]
+toc: true
+---
+
+# Assigning IP Addresses
+
+static assignemnt: manually typing in the IP address. can be time consuming and prone to error. static assignemts is impractical on large enterprise neteorks. 
+
+Dynamic Assignment - Dunamic allocation of i addresses. 
+
+most SOHO network devices already run a DHCP server. 
+
+IP address, Subnet mask, Default gateway, DNS server 
+
+DNS domain name server - converts domain name to IP address. 
+
+winswindows intenr naming sevice - identifies netbios names and converts it to a 
+
+bootp - Dynamically assigns ip addresses and allwos workstatons to load a copy of the boot image offer the network. 
+
+DHCP - Dynamic host configuration protocol 0 assigns an ip address automatically based on a scope. will provide all the needed info . 
+
+DHCP is the modern impelemtntation off Boot 
+
+Automatic private iPA addressing (Apipa) used with a device does not have a static IP address or cannot reach the DHCP server. these will automatialy set up a network, but cannot reach the internet. 
+
+Zero configuratpion (zeroconf) newer tech based on apippa can assign an IPV4 link local address to a cline. resolve computer names to ip addesses with MDNS perform a service diesovery on a newtork. called Bonjour on apple, called LLMNR on windows, on lynix it’s called system D. 
+
+# IP Address Assignment & Name Resolution (N10-009)
+
+### **Static Assignment**
+
+- **Manual configuration** of IP, subnet mask, gateway, DNS.
+- **Pros:** Full control, predictable.
+- **Cons:** Time-consuming, error-prone, impractical in large networks.
+- Common for **servers, printers, network appliances** (devices that need consistent addressing).
+
+---
+
+### **Dynamic Assignment**
+
+- Done with **DHCP (Dynamic Host Configuration Protocol)**.
+- Provides:
+    - **IP address**
+    - **Subnet mask**
+    - **Default gateway**
+    - **DNS server** (and more, like lease times).
+- Used in **SOHO and enterprise networks**.
+- Modern replacement for **BOOTP** (Bootstrap Protocol).
+
+---
+
+### **BOOTP**
+
+- Early protocol for dynamic addressing.
+- Could assign IP + allow loading of a **boot image** from the network.
+- Predecessor of DHCP.
+
+---
+
+### **DHCP**
+
+- **Modern, automated IP assignment** based on a **scope/pool**.
+- Reduces admin overhead.
+- Can integrate with **DNS** for dynamic updates.
+
+---
+
+### **APIPA (Automatic Private IP Addressing)**
+
+- Range: **169.254.0.0 – 169.254.255.255** (/16).
+- Used when:
+    - No static IP set.
+    - DHCP server unavailable.
+- Allows local communication (link-local) but **not Internet access**.
+- **Exam Tip:** If you see **169.254.x.x** → DHCP failure.
+
+---
+
+### **Zero Configuration (Zeroconf)**
+
+- Builds on APIPA with **extra features**:
+    - Assigns IPV4 link-local address.
+    - Resolves names with **mDNS** (multicast DNS).
+    - Service discovery.
+- Implementations:
+    - **Apple → Bonjour**
+    - **Windows → LLMNR**
+    - **Linux → systemd-resolved**
+
+---
+
+### **Name Resolution Services**
+
+- **DNS (Domain Name System):** Converts domain names ↔ IP addresses.
+- **WINS (Windows Internet Naming Service):** Legacy; resolved **NetBIOS names → IP**. Deprecated but may appear in older environments.
+
+---
+
+✅ **Exam Must-Knows**
+
+- **DHCP = modern BOOTP.**
+- **APIPA = 169.254.x.x (DHCP failure).**
+- **Static vs Dynamic = servers vs clients.**
+- **Zeroconf** adds mDNS + service discovery (Bonjour, LLMNR).
+- **WINS = NetBIOS to IP (old Windows).**
+
+---
+
+⚡ Flashcard Drill
+
+- **Q:** Which protocol replaced BOOTP?
+    
+    **A:** DHCP.
+    
+- **Q:** What address range indicates DHCP failure?
+    
+    **A:** 169.254.0.0/16 (APIPA).
+    
+- **Q:** What protocol converts domain names to IPs?
+    
+    **A:** DNS.
+    
+- **Q:** What replaced WINS in modern Windows environments?
+    
+    **A:** DNS.

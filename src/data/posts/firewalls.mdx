@@ -1,0 +1,120 @@
+---
+title: "Firewalls"
+slug: "firewalls"
+date: "2025-10-29"
+status: "published"
+summary: "Uses a set of rules defining the types of trafffic permitted on our networks."
+tags: ["network+"]
+toc: true
+---
+
+# Firewalls
+
+Uses a set of rules defining the types of trafffic permitted on our networks. 
+
+Software/hardware 
+
+virtual/physical 
+
+hostbased/network-based
+
+NAT 
+
+PAT
+
+packet filtering fireall - permits or denies traffic based on packet header. 
+
+session based firewall will allow info if yo uclick the link. 
+
+combine ACL and permit and deny with a stateful capibilities. 
+
+Next Gen firewall NGWF conducts deep paceet inspection . 
+
+layers 5 6 and 7 to get indepth info. WAF
+
+ACL access control list. a set of rules
+
+switch - MAC address 
+
+router ip address 
+
+firewall - ip address . 
+
+UTM unified threat managemt - combines firewall router, IDS , andimalware and other features into a singl edevice. 
+
+# 🔥 Firewalls
+
+## Purpose
+
+- Control inbound/outbound traffic using a **set of rules**.
+- Provide **network security, segmentation, and monitoring**.
+
+---
+
+## Types of Firewalls
+
+- **Hardware vs. Software**
+    - Hardware: dedicated appliances.
+    - Software: runs on servers/PCs.
+- **Physical vs. Virtual**
+    - Physical: standalone devices.
+    - Virtual: runs inside VMs/cloud.
+- **Host-Based**
+    - Protects a **single device**.
+    - Example: Windows Defender Firewall.
+- **Network-Based**
+    - Protects an **entire network or subnet**.
+    - Placed at perimeter or between VLANs.
+
+---
+
+## Firewall Methods
+
+- **Packet Filtering Firewall**
+    - Inspects packet **headers** (IP, port, protocol).
+    - Works at **Layer 3/4** (Network/Transport).
+    - Basic, fast, but limited.
+- **Stateful Firewall (Session-Based)**
+    - Tracks **active sessions**.
+    - Allows return traffic if the session was initiated from inside.
+    - More secure than stateless.
+- **Next-Gen Firewall (NGFW)**
+    - Performs **deep packet inspection**.
+    - Can inspect traffic at **Layers 5–7 (Session, Presentation, Application)**.
+    - Detects malware, intrusion attempts, application-level threats.
+- **Web Application Firewall (WAF)**
+    - Specialized firewall for **HTTP/HTTPS traffic**.
+    - Protects web apps from **SQLi, XSS, CSRF, etc.**
+- **Unified Threat Management (UTM)**
+    - All-in-one appliance.
+    - Combines **firewall, IDS/IPS, anti-malware, VPN, NAT/PAT**.
+    - Easier to manage, but single point of failure.
+
+---
+
+## Supporting Concepts
+
+- **NAT (Network Address Translation)**
+    - Translates **private IPs → public IPs**.
+    - Hides internal structure.
+- **PAT (Port Address Translation / NAT Overload)**
+    - Many private IPs share **one public IP**.
+    - Uses **unique port numbers** to distinguish sessions.
+- **ACL (Access Control List)**
+    - Firewall/router rules that **permit or deny traffic**.
+    - Based on IP, port, protocol, etc.
+    - Example:
+        - Switch → filters by **MAC address**.
+        - Router → filters by **IP address**.
+        - Firewall → filters by **IP + ports/protocols**.
+
+---
+
+✅ **Exam Tips:**
+
+- **Packet filter = header only**
+- **Stateful = tracks sessions**
+- **NGFW = deep packet inspection (Layer 7)**
+- **WAF = protects websites**
+- **UTM = all-in-one security box**
+- **NAT/PAT = hide internal IPs**

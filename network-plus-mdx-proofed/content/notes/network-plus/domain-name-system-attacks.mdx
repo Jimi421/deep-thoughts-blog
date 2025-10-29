@@ -1,0 +1,104 @@
+---
+title: "Domain Name System Attacks"
+slug: "domain-name-system-attacks"
+date: "2025-10-29"
+status: "published"
+summary: "DNS ATTCKS - translates ip to hostname."
+tags: ["network+"]
+toc: true
+---
+
+# Domain Name System Attacks
+
+DNS ATTCKS - translates ip to hostname. 
+
+DNS Cache poising - Involves corrupting DNS resolver cashe with false information to redirect traffic. Use DNSSEC. Impliment secure network configurations and firewalls. 
+
+DNS amplification attacks - attacker attacks the DNS resolusion process to overwhelm the target. limit the size of DNS responses or reate limit it. 
+
+DNS tunneling it - using the DNS protocol to encapsulate non DNS traffic to attempt to overwrite the access rules and firewall. 
+
+Regulary moniotry DNS logs is important. 
+
+Domain Hijacking (Domain Theft) 
+
+Changing the registration of a domain name without the permission of the owner, can redirec the users to the fake site. 
+
+conduct regular updates 
+
+endusre that the account registration info is secure. use domain registry lock 
+
+DNS one transfer attacks- an attacker tries to get a copy of the einire DNS zone by pretending to be an autoized syste. 
+
+DNS cache poisingin. 
+
+DNS amplificaiton attacks 
+
+DNS tunneling 
+
+Domain hijacking are the common attack types . 
+
+# ARP Attacks (Address Resolution Protocol)
+
+### Purpose of ARP
+
+- Maps **IP address → MAC address** on a LAN.
+- Stored in local ARP cache/table.
+
+---
+
+### ARP Spoofing
+
+- Attacker sends **fake ARP replies** to a victim.
+- Maps attacker’s MAC to a **legitimate IP** (like the gateway or server).
+- Used for **targeted on-path (MITM)** attacks → attacker intercepts victim’s traffic.
+
+---
+
+### ARP Poisoning
+
+- Broader version: corrupts ARP caches of **multiple hosts** on the LAN.
+- Attacker associates their MAC with many IPs → traffic is redirected.
+- Often done by **ARP flooding**.
+- Can disrupt the entire LAN.
+
+---
+
+### Impacts
+
+- **Data Interception** → attacker can read/modify traffic.
+- **On-Path Attacks** → attacker invisibly relays traffic between hosts.
+- **Network Disruption** → corrupted ARP tables break connectivity.
+
+---
+
+### Tools / Methods
+
+- Attackers scan for IP-MAC pairs, then inject **fake ARP responses**.
+- Tools: Ettercap, Cain & Abel, arpspoof.
+
+---
+
+### Mitigation
+
+- **ARP Monitoring Tools:** Detect unusual IP–MAC mappings.
+- **IDS/IPS:** Alert on suspicious ARP traffic.
+- **Static ARP Entries:** Hard-code mappings for critical devices.
+- **Dynamic ARP Inspection (DAI):** Switches validate ARP against trusted IP–MAC bindings.
+- **Network Segmentation (VLANs):** Reduce broadcast domains, limit scope.
+- **Encryption (VPN/SSL):** Even if intercepted, traffic is unreadable.
+
+---
+
+✅ **Exam Must-Knows**
+
+- **ARP Spoofing = Targeted MITM.**
+- **ARP Poisoning = Broad LAN disruption.**
+- Both rely on **sending fake ARP replies**.
+- **Defense = DAI, static entries, monitoring, VLANs, encryption.**
+
+---
+
+⚡Memory Trick:
+
+**“Spoof = Single Target. Poison = Poison the whole LAN.”**

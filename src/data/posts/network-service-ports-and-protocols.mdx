@@ -1,0 +1,107 @@
+---
+title: "Network Service Ports and Protocols"
+slug: "network-service-ports-and-protocols"
+date: "2025-10-29"
+status: "published"
+summary: "Different services that ensure that network devices can discover each other communicat efficently and relya importan system information to each other."
+tags: ["network+"]
+toc: true
+---
+
+# Network Service Ports and Protocols
+
+Different services that ensure that network devices can discover each other communicat efficently and relya importan system information to each other. 
+
+DNS: Domain name system, used to translate human-friendly domaninnames to an IP address that computers can use to find a computer. uses PORT 53. uses TCP,large message and UDP, small messages
+
+DHCP : Dynamic Host Configuration Protool DHCP- used to automate the assignment of ip addresses, submets, mass gateways, and otehr networking paramerers to a client device. listen for client requetst to port 67 and the clients will receive on port 86
+
+SQL Services - Protocols used by database servers to manae queries an control operati0ons from the client applicaton sthat are requeting  them. Microsoft SQL - 1433 MY SQL 3306 can manage 
+
+sSNMP -simple network management protocol. Used for collection information from and configureing diffent network devices like servers, hubs, printers, routers 161 and 162. used by SNMP managers port 162 
+
+Syslog - Stanard for message logging that allows devices to send event messages adcros IP networks to an event message collector known as a syslog server. port 514 using UDP or TCP. 
+
+needed for the managmt fo the network
+
+DNS 53 phone book 
+
+DHCP - IP ADDRESSES 67 / 68 
+
+SQL port 1433/ port 3306 database mamane
+
+SNMP 161/162
+
+syslog port 514 for system logs. 
+
+## **Network Service Ports & Protocols (High-Yield)**
+
+Services that let devices discover each other, communicate efficiently, and exchange essential system info.
+
+---
+
+### **1. DNS – Domain Name System**
+
+- **Purpose:** Translates human-friendly domain names → IP addresses.
+- **Ports:**
+    - **53 TCP** → large queries (e.g., zone transfers)
+    - **53 UDP** → small queries (most lookups)
+- **Exam Tip:** Think of DNS as the **phonebook of the internet**.
+
+---
+
+### **2. DHCP – Dynamic Host Configuration Protocol**
+
+- **Purpose:** Automatically assigns IP addresses, subnet masks, default gateways, and DNS info to clients.
+- **Ports:**
+    - **67 UDP** → server listens (requests from client)
+    - **68 UDP** → client listens (responses from server)
+- **Exam Tip:** DHCP **DISCOVER → OFFER → REQUEST → ACK** (DORA process).
+
+---
+
+### **3. SQL Services**
+
+- **Purpose:** Manage database queries and operations between client apps and database servers.
+- **Common Ports:**
+    - **1433 TCP** → Microsoft SQL Server
+    - **3306 TCP** → MySQL
+- **Must Know:** Often targeted in attacks (SQL injection).
+
+---
+
+### **4. SNMP – Simple Network Management Protocol**
+
+- **Purpose:** Monitors and configures network devices (routers, switches, printers).
+- **Ports:**
+    - **161 UDP** → manager queries agents
+    - **162 UDP** → agents send traps to manager
+- **Versions:** v1, v2c (community strings), v3 (secure with encryption/authentication).
+
+---
+
+### **5. Syslog**
+
+- **Purpose:** Standard for sending event/log messages across IP networks to a central log server.
+- **Ports:**
+    - **514 UDP/TCP**
+- **Use:** Network monitoring & SIEM integration.
+
+---
+
+### **Quick Port Reference Table**
+
+| Service | Port(s) | Protocol | Notes |
+| --- | --- | --- | --- |
+| DNS | 53 TCP/UDP | Name resolution | TCP for large queries, UDP for normal |
+| DHCP | 67/68 UDP | IP config automation | DORA process |
+| Microsoft SQL | 1433 TCP | Database | Server-based DB |
+| MySQL | 3306 TCP | Database | Open-source DB |
+| SNMP | 161/162 UDP | Network mgmt | v3 = secure |
+| Syslog | 514 UDP/TCP | Log collection | Centralized logging |
+
+---
+
+**Memory Trick:**
+
+**"Do Data Services So Smartly"** → **DNS (53), DHCP (67/68), SQL (1433/3306), SNMP (161/162), Syslog (514)**

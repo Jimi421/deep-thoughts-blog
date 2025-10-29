@@ -1,0 +1,136 @@
+---
+title: "Transmission Crontol Protocol (TCP)"
+slug: "transmission-crontol-protocol-tcp"
+date: "2025-10-29"
+status: "published"
+summary: "A fundamental protocol within the internet protocol suite that consists of set of rules that goven the exchange of data/"
+tags: ["network+"]
+toc: true
+---
+
+# Transmission Crontol Protocol (TCP)
+
+A fundamental protocol within the internet protocol suite that consists of set of rules that goven the exchange of data/
+
+Error checking 
+
+Data checking a
+
+Acknowledgemetn 
+
+Works at laeyer 4 of the oci MODEL. 
+
+tcp ensure reliable transmission of data by breaking down larger messages into smaller packets. 
+
+TCP == 3 WAY HANDSHAKE 
+
+SYN > syn ack > ack 
+
+Error checking and flow control. 
+
+Employs flow control 
+
+Windowing: Allows the reciver to specify the amount of data it can handle at a time.
+
+Port a numerical identifier in TCP/IP and other network protocols that helps distinguish between differnet services or applications. 
+
+Source and Destination IP 
+
+Source and Destionation Ports. 
+
+Ports are important in the communiation process because these ports allow for multiple network applications. 
+
+# 🔁 TCP – Transmission Control Protocol (Layer 4)
+
+**A fundamental protocol of the Internet Protocol Suite**
+
+Ensures **reliable**, **ordered**, and **error-checked** delivery of data between devices.
+
+---
+
+## ✅ Key Features of TCP
+
+| Feature | Description |
+| --- | --- |
+| **Connection-oriented** | Establishes a session using **3-way handshake** |
+| **Reliable** | Guarantees delivery, **retransmits lost packets** |
+| **Sequencing** | Ensures packets arrive in correct order |
+| **Acknowledgments** | Confirms receipt of data |
+| **Flow Control** | Prevents sender from overwhelming the receiver |
+| **Error Checking** | Uses **checksums** to verify data integrity |
+
+---
+
+## 🤝 TCP 3-Way Handshake
+
+```
+pgsql
+CopyEdit
+Client                           Server
+  | ----------- SYN ---------->  |
+  | <-------- SYN-ACK ---------  |
+  | ----------- ACK ----------> |
+  ✅ Connection Established
+
+```
+
+---
+
+## 🔳 Windowing (Flow Control Mechanism)
+
+- **Receiver tells sender how much data it can handle**
+- Helps prevent **congestion or dropped packets**
+- TCP dynamically adjusts the **window size** for efficiency
+
+> 🧠 Bigger window = more data at once
+> 
+> 
+> **Smaller window = slower, more reliable transfer**
+> 
+
+---
+
+## 🔢 Ports: Identifiers for Network Services
+
+- **Numerical values** used to distinguish between different apps/services
+- Work with **IP addresses** to complete connections
+
+| Element | Example |
+| --- | --- |
+| **Source IP** | 192.168.1.10 |
+| **Destination IP** | 10.0.0.5 |
+| **Source Port** | 49512 (ephemeral) |
+| **Destination Port** | 443 (HTTPS) |
+
+> 🔑 Ports enable multiple network apps to run at once on the same device
+> 
+
+---
+
+## 🧠 Memory Aid
+
+> TCP = "Total Care Protocol" → Reliable, caring, confirms delivery
+> 
+> 
+> **Ports = App Doors** → Each port = entry for a different network service
+> 
+
+---
+
+## ⚡ Rapid Review Questions
+
+1. **What layer does TCP operate on?**
+    
+    → Layer 4 (Transport)
+    
+2. **What’s the purpose of the TCP 3-way handshake?**
+    
+    → To establish a reliable connection
+    
+3. **How does TCP ensure reliable transmission?**
+    
+    → Error checking, sequencing, acknowledgments, and flow control
+    
+4. **Why are ports important in TCP/IP?**
+    
+    → They direct traffic to the correct application or service

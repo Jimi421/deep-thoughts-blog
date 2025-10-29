@@ -1,0 +1,155 @@
+---
+title: "Take 2"
+slug: "take-2"
+date: "2025-10-29"
+status: "published"
+summary: "**Scenario:** Monitor all traffic at gateway + block content types."
+tags: ["network+"]
+toc: true
+---
+
+# Take 2
+
+## ❌ Missed Q20
+
+**Scenario:** Monitor all traffic at gateway + block content types.
+
+**Correct Answer:** **NIPS on internal + firewall on external**
+
+**Why:**
+
+- Firewall (external) = blocks malicious inbound traffic.
+- NIPS (internal) = inspects traffic, can block based on content/signatures.
+- NIDS = monitor only (no blocking).
+
+**Exam Tip:**
+
+> Firewall = first line defense.
+> 
+> 
+> NIPS = *inside protection + filtering*.
+> 
+
+---
+
+## ❌ Missed Q25
+
+**Scenario:** Adequate signal but intermittent connectivity + slow speeds.
+
+**Correct Answer:** **Signal degradation or loss**
+
+**Why:** Strength ≠ Quality. Noise, interference, or attenuation can corrupt frames.
+
+**Exam Tip:**
+
+> Strong but noisy signal = retransmissions = slow speeds.
+> 
+
+---
+
+## ❌ Missed Q45
+
+**Flag to request TCP termination:** **FIN**
+
+- **FIN** = graceful close (end of session).
+- **RST** = immediate abort/reset.
+- **SYN** = connection start.
+- **ACK** = acknowledgment.
+
+**Memory Trick:**
+
+> FIN = Finished session, RST = Reset NOW.
+> 
+
+---
+
+## ❌ Missed Q53
+
+**Windows tool to check route to host:** **tracert**
+
+- **Windows** = tracert
+- **Linux/macOS** = traceroute
+- **ping** = connectivity only
+- **ip** = interface mgmt on Linux
+
+**Exam Tip:**
+
+> tracert = Windows | traceroute = Linux/macOS.
+> 
+
+---
+
+## ❌ Missed Q57
+
+**Wi-Fi with DFS + TPC (radar avoidance):** **802.11h**
+
+- Required in Europe + radar-sensitive regions.
+- DFS = Dynamic Frequency Selection.
+- TPC = Transmit Power Control.
+
+**Exam Tip:**
+
+> Only 802.11h has regulatory compliance features.
+> 
+
+---
+
+## ❌ Missed Q77
+
+**Authorized person knowingly lets attacker in:** **Piggybacking**
+
+- **Piggybacking** = intentional.
+- **Tailgating** = accidental (unaware).
+- **Shoulder surfing** = spying screens.
+- **Phishing** = fraudulent messages.
+
+**Memory Trick:**
+
+> Piggybacking = permission | Tailgating = tricking.
+> 
+
+---
+
+## ❌ Missed Q83
+
+**Cable worked PC→PC but not PC→Switch:** **Crossover cable**
+
+- **Crossover** = used to connect like devices (PC ↔ PC).
+- **Straight-through** = unlike devices (PC ↔ Switch).
+- **Rollover/console** = PC ↔ router console port.
+
+**Exam Tip:**
+
+> PC ↔ Switch = Straight-through.
+> 
+
+---
+
+## ❌ Missed Q84
+
+**Protocol to avoid Layer 2 loops:** **802.1d (Spanning Tree Protocol)**
+
+- 802.1q = VLAN tagging.
+- RIPv2 = Layer 3 routing.
+- OSPF = Layer 3 link-state routing.
+
+**Memory Trick:**
+
+> d = STP = Don’t loop.
+> 
+
+---
+
+## ❌ Missed Q87
+
+**Router repaired in 4 hours:** **MTTR (Mean Time To Repair)**
+
+- **MTTR** = repair duration.
+- **MTBF** = avg time between failures.
+- **RPO** = max acceptable data loss.
+- **RTO** = time to restore service.
+
+**Exam Tip:**
+
+> Repair time = MTTR.
+>

@@ -1,0 +1,114 @@
+---
+title: "File Transer Protocol & ports"
+slug: "file-transer-protocol-ports"
+date: "2025-10-29"
+status: "published"
+summary: "File transfer prots and protocols"
+tags: ["network+"]
+toc: true
+---
+
+# File Transer Protocol & ports
+
+File transfer prots and protocols 
+
+Specilaized rues and procedures that are utilized for the transmission of files across netorks, operate on deignated ports, and act as doorws for data trnasfer activietes. 
+
+FTP: File Transfer Protocol - used for transferring data over the network. not encrypted but sent as plaintext. 
+
+port 20 sending the data
+
+port 21 sending control command.
+
+SFTP - Secure file transfer protocol/ ssh file transfer protocol (secure ftp) 
+
+Createc to address the iinsecurity of FTP. Tunnls FTP throuh an SSH connection which alreay has been encrypted. 
+
+TFTP - Trivial file transfer protocol, simple more basic form of FTP and operates over port 69, it’s used when minimal security is succificent. 
+
+SMB: Server message block operates over port 445 and allows computer apps to read and write to files over a computer network, used for windows file sharing. Works with Samba on linux also. 
+
+SMB is used inside of local networks, and is not used to send data across the internet/ .
+
+FTP port 20/21
+
+SFTP port 22
+
+TFTP port 69
+
+SMB port 445
+
+## 📁 File Transfer Protocols & Ports
+
+> 🧠 Definition: Specialized rules and procedures that enable the transmission of files across a network. Each operates on designated ports, acting like “doors” for data transfer.
+> 
+
+---
+
+### 🔄 FTP (File Transfer Protocol)
+
+- **Purpose**: Transfers files over a network
+- **Security**: ❌ **Not encrypted** – transfers credentials and data in **plaintext**
+- **Ports**:
+    - `Port 21` → Control commands
+    - `Port 20` → Actual data transfer
+
+> ⚠️ Exam Tip: FTP is insecure! Avoid using it for sensitive data.
+> 
+
+---
+
+### 🔐 SFTP (SSH File Transfer Protocol)
+
+- **Purpose**: Secure file transfers
+- **Built On**: **SSH**
+- **Port**: `22`
+- **Security**: ✅ Uses **SSH tunneling** – encrypted end-to-end
+- **Not** the same as FTPS (which uses SSL/TLS)
+
+> 🧠 Memory Trick: SFTP = Secure FTP over SSH → Port 22
+> 
+
+---
+
+### 🧼 TFTP (Trivial File Transfer Protocol)
+
+- **Purpose**: Lightweight, fast file transfers (e.g., firmware, boot files)
+- **Port**: `69`
+- **Security**: ❌ Minimal to **no authentication**
+- **Used for**: Simpler devices, PXE booting, VoIP configs
+
+> ⚠️ Not used where authentication or encryption is needed.
+> 
+
+---
+
+### 🪟 SMB (Server Message Block)
+
+- **Purpose**: Allows **file and printer sharing** over a local network
+- **Port**: `445`
+- **Used by**: **Windows** systems and **Samba** on Linux
+- **Security**: Used mostly in **trusted local networks**, not designed for internet
+
+> 🧠 Common Use Case: File sharing between Windows machines on the same LAN
+> 
+
+---
+
+## 📊 Port Reference Table
+
+| Protocol | Port | Security | Usage |
+| --- | --- | --- | --- |
+| FTP | 20 (data), 21 (control) | ❌ No | Basic file transfer |
+| SFTP | 22 | ✅ Yes (SSH) | Secure file transfer |
+| TFTP | 69 | ❌ No | Simple file transfers, PXE boot |
+| SMB | 445 | ⚠️ Local only | File/printer sharing on LAN |
+
+---
+
+## ✅ Exam Review Points
+
+- FTP is **not secure**, while SFTP **is**.
+- TFTP is **lightweight and insecure**, used where speed matters more than security.
+- SMB is **for internal file sharing**, not internet transfers.
+- Know the **port numbers by heart**.

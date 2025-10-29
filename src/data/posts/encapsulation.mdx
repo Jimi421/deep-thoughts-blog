@@ -1,0 +1,61 @@
+---
+title: "Encapsulation"
+slug: "encapsulation"
+date: "2025-10-29"
+status: "published"
+summary: "The process of putting headers (and trailers) around some data.  similar to putting a letter in an envalope. when someone takes it out the envelope that’s decapsulation."
+tags: ["network+"]
+toc: true
+---
+
+# Encapsulation
+
+The process of putting headers (and trailers) around some data.  similar to putting a letter in an envalope. when someone takes it out the envelope that’s decapsulation. 
+
+As data moves up or down the OSI it’s being encapsulating and decapsulated. as you move down its’s encapsulated. 
+
+PDU(protocol data units) as data is moved you get the layers header. 
+
+L7 PDU 
+
+1 bit , 2 fram3, 3 packet, 4 segment, datagramds. you’re adding headers all the way down. 
+
+At layer 4 you get the header for TCP. 20 byts
+
+![image.png](/images/network-plus/f492b341-image.png)
+
+source, dest helps determine where data is being sent and where it’s going. 
+
+SYN - Syncrinization: used to syncronize the connetion during tht 3 way handshake, 
+
+ACK (Ackwledgement) : Used durint the threeway handshake but also ue to acknowledg the successful recipt of packets. 
+
+FIN (Finished): used to tear down the virtual connection
+
+RST(Reset) : when a client or server recives a packet that it was not expecting. 
+
+PSH(push) used to ensure tata is given priorty and is processed at the sending
+
+URG(urgent) similar to PSH and identifies data as urgent. process immediataly. 
+
+UDP header is 8 bytes. 
+
+![image.png](Encapsulation/image%201.png)
+
+Layer 3. You add another header the IP HEADER. 
+
+![image.png](Encapsulation/image%202.png)
+
+Layer 2 you add th ethernet header. 
+
+![image.png](Encapsulation/image%203.png)
+
+MAC address: Physical address that is used to ID a network card on a local network
+
+EtherTYPE used to indicate which protocol is being encaplacated. 
+
+Frame at layer 2 also has a payload. 
+
+by default 1500 mtu is the default, if yo uneed more then you have to enable jumbo frames. 
+
+As data moves to from 7 to 1 you’re adding the headers at each layer, at layer 4 add the ports at layer 3 add the ip address at layer 2 you add the MAC address at layer 1 you’re adding the pulses. then it’s encapsulated bac up.

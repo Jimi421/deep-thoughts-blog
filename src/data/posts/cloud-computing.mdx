@@ -1,0 +1,104 @@
+---
+title: "Cloud Computing"
+slug: "cloud-computing"
+date: "2025-10-29"
+status: "published"
+summary: "High availability - services experience verry little downetime when using the cloud. should have 99.999% availability or 5 mins and 15 secs of downtime per year. to do this have to"
+tags: ["network+"]
+toc: true
+---
+
+# Cloud Computing
+
+High availability - services experience verry little downetime when using the cloud. should have 99.999% availability or 5 mins and 15 secs of downtime per year. to do this have to have reliable systems that are highly available. atleast two webservers. 
+
+scalability - Ability to increase the numver of people or systems. linear sacal vs expotential scale. Facebook, google, linkedin, you can just go to amazon and use some of their compute power. 
+
+Vertical scale - you can scale up the processors ram storage bandwidth on one machine. 
+
+horizintal scale. additional resources, instead of one larger compute go from one to two. 
+
+Rapid elasticity - you use virtualization so only using portions or all at a time. Elaciticy is the sysems 
+
+Metered utiization - being charged for a service on a pay per use , number of users, number of connections, number of stored data.  
+
+AWL lambda for every 1 million requests it’s about 20 cents. 
+
+Measured - is the ability to pay for something on a concumption service. you pay a monthly fee for a certan amount of usage oncce you hit the limit your service may stop or you pay an additional amount. old school data plans. 
+
+cloud is mostly metered. 
+
+Shared resources - ability to minimize costs by putting VMs on someone elses servers. Divding an expensive server for virtual machinees for shared use is more efficnet. 
+
+File Synchronization - ability to store data whic can then spread to other places depending on configuration. 
+
+# Cloud Concepts – Exam Essentials
+
+### High availability (HA)
+
+- **Goal:** Very little downtime.
+- **“Five Nines” (99.999%)** → ~5 min 15 sec downtime/year.
+- Achieved by **redundancy** (e.g., at least 2 web servers, load balancers, failover systems).
+
+---
+
+### Scalability
+
+- Ability to **grow capacity** as demand increases.
+- **Vertical Scaling (Scale Up):** Add CPU, RAM, storage to one server.
+- **Horizontal Scaling (Scale Out):** Add more servers (e.g., 1 → 2 → 10).
+- **Linear vs Exponential:** Small apps grow linearly; big platforms (Google, FB) scale horizontally using cloud compute.
+
+---
+
+### Rapid Elasticity
+
+- Resources can **expand or shrink quickly** based on demand.
+- Enabled by **virtualization**.
+- Example: AWS auto-scales web servers during traffic spikes.
+
+---
+
+### Metered / Measured Utilization
+
+- **Pay-per-use** model (like electricity).
+- You are billed for **CPU hours, storage used, requests, bandwidth, or users**.
+- Example: AWS Lambda ≈ $0.20 per 1M requests.
+- Old analogy: cell phone “minutes” or data plan caps.
+
+---
+
+### Resource Pooling / Shared Resources
+
+- Providers pool hardware (multi-tenancy).
+- One large server runs many **virtual machines (VMs)** for different customers.
+- Increases efficiency, lowers cost.
+
+---
+
+### File Synchronization
+
+- Cloud keeps **files consistent across devices/locations**.
+- Examples: OneDrive, Google Drive, Dropbox.
+- Data replicated across multiple servers or regions for availability and convenience.
+
+---
+
+✅ **Exam Must-Knows**
+
+- **High availability = redundancy + failover.**
+- **Scalability:** Vertical = bigger box; Horizontal = more boxes.
+- **Elasticity = automatic scaling up/down.**
+- **Metered use = pay only for what you consume.**
+- **Resource pooling = multi-tenant efficiency.**
+
+---
+
+⚡Memory Trick:
+
+Think **SHaRe-M** for cloud features:
+
+- **S**calability
+- **H**igh availability
+- **R**apid elasticity
+- **M**etered use

@@ -1,0 +1,98 @@
+---
+title: "Virtual Local Access Networks (vLAN)"
+slug: "virtual-local-access-networks-vlan"
+date: "2025-10-29"
+status: "published"
+summary: "Logical subdivision of a given network that segments into separate broacdcast domains. Acheived through a sowfware configuration."
+tags: ["network+"]
+toc: true
+---
+
+# Virtual Local Access Networks (vLAN)
+
+Logical subdivision of a given network that segments into separate broacdcast domains. Acheived through a sowfware configuration. 
+
+using VLANs different switchports can be used for different VLANs. 
+
+When a switch is configured to utilized a vlan it will tag each frame of data with a VLAN ID as it passes through the swithc. 
+
+enhanced securety 
+
+improved performcnae - reduces the sie of a broadcast domain to 
+
+increased management - providing greatoer control over the managemtn of the networks to implement the policy changes and troubleshoot 
+
+improved cost efficency - breaking the exisgin network into smaller logica lsegments, less hardware is needed. 
+
+Effective VLANs must maintain a VLAN databse that contains all the VLAN info fro the switch 
+
+VLAN ID 
+
+vlan NAME 
+
+VLAN.DAT
+
+SWITCH VIRTUAL INTERFACE - svi allows switchigng to route traffic between VLANs without needing a separate router. can handle the routing descisions for a vlan
+
+# Virtual LANs (VLANs) (N10-009)
+
+### **Definition**
+
+- **Logical subdivision** of a physical network.
+- Segments a switch into **separate broadcast domains** using **software configuration**.
+- Achieved via **VLAN tagging** (IEEE 802.1Q standard).
+
+---
+
+### **How VLANs Work**
+
+- Switchports can be assigned to **different VLANs**.
+- Each VLAN = separate broadcast domain.
+- Switch adds a **VLAN ID (tag)** to Ethernet frames so traffic stays in the correct VLAN.
+- **VLAN database (VLAN.dat):**
+    - VLAN ID
+    - VLAN Name
+    - Stored on switch for persistence.
+
+---
+
+### **Benefits of VLANs**
+
+1. **Security:** Users/devices segmented, traffic isolated.
+2. **Performance:** Reduces size of each broadcast domain.
+3. **Management:** Easier policy enforcement, troubleshooting.
+4. **Cost Efficiency:** One switch can serve multiple VLANs → less hardware required.
+
+---
+
+### **Switch Virtual Interface (SVI)**
+
+- Logical interface on a switch that allows it to **route traffic between VLANs**.
+- Provides **Layer 3 functionality** (routing) without needing a separate router.
+- Used in **Inter-VLAN routing**.
+- Example: VLAN 10 and VLAN 20 on same switch can communicate through the SVI.
+
+---
+
+✅ **Must-Know Exam Points**
+
+- **VLAN = logical broadcast domain.**
+- **802.1Q = VLAN tagging standard.**
+- **SVI = enables inter-VLAN routing on a Layer 3 switch.**
+- VLANs provide **segmentation, security, performance, and management.**
+
+---
+
+⚡ Flashcard Drill
+
+- **Q:** What standard is used for VLAN tagging?
+    
+    **A:** IEEE 802.1Q.
+    
+- **Q:** Each VLAN is its own…?
+    
+    **A:** Broadcast domain.
+    
+- **Q:** What allows inter-VLAN routing on a switch?
+    
+    **A:** Switch Virtual Interface (SVI).

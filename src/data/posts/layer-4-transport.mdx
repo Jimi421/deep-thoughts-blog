@@ -1,0 +1,218 @@
+---
+title: "Layer 4 (Transport)"
+slug: "layer-4-transport"
+date: "2025-10-29"
+status: "published"
+summary: "Transport layer - Dividing line between the upper layers and the lower layers of the OSI model."
+tags: ["network+"]
+toc: true
+---
+
+# Layer 4 (Transport)
+
+Transport layer - Dividing line between the upper layers and the lower layers of the OSI model. 
+
+We have segments and datagramd
+
+TCP Connection-oriented protocol that is a reliable way to transport segments across the network.  Three way handshake. syn synack ack. like a certified mail where you get a response that your packge was delivered. 
+
+UDP - user datagram protocol. connetionless protocol that is unreliable way to transport segments across the network. if a datgram is dropped then there is no notice to the sender. good for video and audio streaming. no need for the cheks and balances. 
+
+tcp = segments
+
+udp = datagram. 
+
+TCP vs UDP 
+
+| Tcp | udp |
+| --- | --- |
+| Reliable  | Unreliable |
+| Connetion-oriented | connectionless, fire and forget |
+| segment retrnamission and flow control through windowing | no windoing or retransmsssion |
+| sequencing | no sequencing.  |
+| Acknowleges segments | no acknowledgment |
+|  |  |
+
+Use TCP when you need to ensure someone recives something. 
+
+UDP is better for audo streaming and vidoe steming does not need every single pice of data. 
+
+Windowing: Allows the clients to adjust the amount of data in each segment. if you’re sending too large semgents and get retransmissions then close the window. always opening and closing to ensure you’re the most throughput. that’s why it starts at one time and up to another time. more data is being sent so it decrases re transmissions .. Wndowing siends info while getting the max throughput. 
+
+Buffering - occurs when devices allocate memory to store segments if bandwidth is not readily availab.e. it can happen with routers where they are getting too much info in from other clients, add don’t have the bandwidth for the output to the modem next node.
+
+TCP and UDP Devices. 
+
+WAN accelerators - add compressin and send packets faster. 
+
+Load balancers and firewalls. blocking ports 80 for TCP blocking the layer 4 protocol. 
+
+# 📦 Layer 4 – Transport Layer (OSI Model)
+
+**Dividing line between the upper layers (5–7) and lower layers (1–3)**. Responsible for **end-to-end communication**, **segmentation**, and **reassembly**.
+
+---
+
+## ✅ Core Functions
+
+- **Segmentation & Reassembly** – Breaks data into **segments** (TCP) or **datagrams** (UDP)
+- **Flow Control** – Manages data rate (e.g. **windowing**)
+- **Error Checking** – Ensures integrity (TCP only)
+- **Multiplexing** – Uses **ports** to direct traffic to the right application
+
+---
+
+## 📨 TCP (Transmission Control Protocol)
+
+- **Connection-oriented**
+- **Reliable**
+- Uses **3-way handshake**:
+    1. `SYN`
+    2. `SYN-ACK`
+    3. `ACK`
+- **Sequencing**
+- **Acknowledgments**
+- **Windowing** for flow control
+- Retransmits lost data
+
+> 🧠 Think: Certified Mail – confirmed delivery
+> 
+
+---
+
+## 📡 UDP (User Datagram Protocol)
+
+- **Connectionless**
+- **Unreliable (no ACKs)**
+- **No sequencing**
+- **No retransmissions**
+- Minimal overhead → **Faster**
+
+> 🧠 Think: Postcard – no delivery confirmation
+> 
+
+---
+
+## 🧪 TCP vs. UDP Quick Comparison
+
+| Feature | TCP | UDP |
+| --- | --- | --- |
+| Connection | Connection-oriented | Connectionless |
+| Reliability | Reliable (ACKs) | Unreliable |
+| Flow Control | Windowing | None |
+| Sequencing | Yes | No |
+| Retransmissions | Yes | No |
+| Use Cases | Web, Email, File Transfer | Video, VoIP, DNS, Gaming |
+| Data Unit Name | Segment | Datagram |
+
+---
+
+## 🧰 Layer 4 Devices & Examples
+
+- **Load Balancers** – Direct Layer 4 traffic based on **port** or **protocol**
+- **Firewalls** – Block/allow **TCP/UDP ports**
+- **WAN Accelerators** – Compress data for faster transmission
+
+---
+
+## ⚙️ TCP Windowing
+
+- **Dynamic flow control**
+- Sender adjusts segment size based on ACKs
+- Avoids congestion and optimizes throughput
+
+> 📌 If retransmissions increase, the window shrinks
+> 
+
+---
+
+## 💾 Buffering
+
+- **Temporary storage** for segments when bandwidth is unavailable
+- Used in routers, firewalls, etc.
+- Prevents data loss when links are saturated
+
+---
+
+## 🔢 TCP Header Fields (Simplified)
+
+| Field | Description |
+| --- | --- |
+| Source/Dest Port | Identifies sending/receiving app |
+| Sequence Number | Order of segments |
+| ACK Number | Confirms received segments |
+| Flags | SYN, ACK, FIN, RST, URG, PSH |
+| Window Size | Controls flow rate |
+| Checksum | Error detection |
+
+---
+
+## 🔢 UDP Header Fields (Simplified)
+
+| Field | Description |
+| --- | --- |
+| Source/Dest Port | Identifies app/service |
+| Length | Header + data size |
+| Checksum | Optional for error detection |
+
+---
+
+### 📈 TCP 3-Way Handshake Diagram
+
+```
+pgsql
+CopyEdit
+Client                          Server
+  | ----------- SYN ----------> |
+  | <-------- SYN-ACK -------- |
+  | ----------- ACK ----------> |
+Connection Established!
+
+```
+
+---
+
+## 🎯 Exam Tips
+
+> ✅ TCP is used when reliability is critical (e.g., HTTPS, SSH)
+> 
+
+> ✅ UDP is used when speed is more important than reliability (e.g., VoIP, video streaming, DNS)
+> 
+
+> ⚠️ Know the differences in headers, flags, and use cases
+> 
+
+---
+
+### 🧠 Memory Trick
+
+> "T" in TCP = Trust → you trust it to deliver
+> 
+> 
+> **"U" in UDP = Unreliable** → fast but no guarantees
+> 
+
+---
+
+## ⚡ Rapid Review Questions
+
+1. **What protocol uses windowing?**
+    
+    → `TCP`
+    
+2. **What protocol is best for video streaming?**
+    
+    → `UDP`
+    
+3. **What are the three steps in the TCP handshake?**
+    
+    → `SYN`, `SYN-ACK`, `ACK`
+    
+4. **What field in TCP helps reassemble data in order?**
+    
+    → `Sequence Number`
+    
+5. **What's the term for temporary memory holding segments?**
+    
+    → `Buffer`

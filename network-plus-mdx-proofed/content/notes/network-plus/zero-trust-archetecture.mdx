@@ -1,0 +1,105 @@
+---
+title: "Zero Trust Archetecture"
+slug: "zero-trust-archetecture"
+date: "2025-10-29"
+status: "published"
+summary: "nroamly IT sec built a strong wall like a castle. But now those things are changing. normally using firewalls and ect."
+tags: ["network+"]
+toc: true
+---
+
+# Zero Trust Archetecture
+
+nroamly IT sec built a strong wall like a castle. But now those things are changing. normally using firewalls and ect. 
+
+now we must protet the systems and data using encruyption. secure protocols, data-level authentication and other host based protecgion mechanisims. needed because of the cloud. 
+
+Zero Trust - used to ensure the security of the corporate network and corporate ddata. 
+
+“Trut nothing and verify everything” 
+
+Zero trust verfication for every device user, and transation within a network regardless of its origin. 
+
+control plane - framewowrk responsible for defining manaaging and enforcing the polices related to user and system access. 
+
+data plane
+
+Adaptive Identitey - relies on real tiem validation thtat takes into accounts behavour, device location, etc. 
+
+Threat scope reducton - limit user’s access to only work-related tasks. 
+
+Polidy - Driven Access control. - entails devoloping managing and enforcing user access policies based on their roles and responsigbilites. 
+
+secured zones - isolated environs in a network for sensitibe data. 
+
+control plane - layout 
+
+subject systems - an individual or entitiy that’s attempting to gain access. 
+
+Policy engine - cross refrence rules vs subject to see if able to be authroized. 
+
+policy administrator - used to establish the access policies. 
+
+the policy administrator and policy engine are the backbone 
+
+policy enforcement point - where access descisions are executed. 
+
+no user or system is trusted by default. 
+
+# 🏰 Zero Trust Architecture (ZTA)
+
+**Old Model (“Castle & Moat”):**
+
+- Strong perimeter (firewalls, IDS, VPN).
+- Inside = trusted by default.
+- Doesn’t fit cloud/mobile environments.
+
+**New Model (Zero Trust):**
+
+- *“Trust nothing, verify everything.”*
+- Every **user, device, and transaction** must be authenticated and authorized, no matter where it originates.
+
+---
+
+## 🔑 Core Principles
+
+- **Never trust, always verify** → all requests validated each time.
+- **Least privilege access** → only what’s required for the role/task.
+- **Microsegmentation** → break network into secured zones for sensitive data.
+- **Strong authentication** → MFA, certificates, identity-based policies.
+- **Encryption everywhere** → protect data in transit and at rest.
+
+---
+
+## 🛠️ ZTA Components
+
+- **Control Plane** → defines, manages, and enforces access policies.
+- **Data Plane** → handles the actual traffic flow.
+- **Policy Engine** → checks rules vs. subject (user/device/transaction).
+- **Policy Administrator** → establishes and manages policies.
+- **Policy Enforcement Point (PEP)** → executes access decisions at the resource.
+
+---
+
+## 🔐 Supporting Features
+
+- **Adaptive Identity** → context-aware checks (behavior, device posture, location).
+- **Policy-Driven Access Control** → role/responsibility based rules.
+- **Threat Scope Reduction** → minimize what a user/system can touch.
+
+---
+
+## ✅ Exam Tips
+
+- **Phrase to remember:** *“Never trust, always verify.”*
+- **Backbone of Zero Trust** = **Policy Engine + Policy Administrator.**
+- **PEP (Policy Enforcement Point)** = where decisions are enforced.
+- **Reason for ZTA**: Cloud, mobile work, IoT → perimeter security no longer enough.
+
+---
+
+⚡ Sample Exam Question:
+
+*“Which security model assumes no user or device is trusted by default and requires verification for every access request?”*
+
+→ **Zero Trust Architecture**

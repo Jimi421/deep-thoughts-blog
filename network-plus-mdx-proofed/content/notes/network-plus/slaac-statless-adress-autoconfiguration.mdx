@@ -1,0 +1,51 @@
+---
+title: "SLAAC - statless address autoconfiguration."
+slug: "slaac-statless-address-autoconfiguration"
+date: "2025-10-29"
+status: "published"
+summary: "SLAAC allows for automatic iP addresses without DHCP. Forsterr self sufficency and reduce administrative overhead of adding IP addresses."
+tags: ["network+"]
+toc: true
+---
+
+# SLAAC - statless address autoconfiguration.
+
+SLAAC allows for automatic iP addresses without DHCP. Forsterr self sufficency and reduce administrative overhead of adding IP addresses. 
+
+5 setp process. 
+
+Domain Name System - DNS - helps resolve a hostname from an ip address. convetrts name to numbers and numbers to names. 
+
+Fully-Qalified Domain Name - when a domain name is with a top level provider. 
+
+Root - answer requests in the root zone
+
+top level domain com .net .uk 
+
+second-level domain jimi421.com
+
+subdomain [blog.jimi421.com](HTTP://blog.jimi421.com), mail.jimi421.com
+
+host - refers to a specefic machine
+
+URL - uniform resource locator. 
+
+Host file - simple text file taht servs as the first point of contact when a device wants to seek out communication with another device on a network. 
+
+Malicious attackers can exploit this. 
+
+# SLAAC (Stateless Address Autoconfiguration) – IPV6
+
+- Allows devices to **self-assign IPV6 addresses** without DHCP.
+- Reduces admin overhead → plug-and-play networking.
+- Works with **Router Advertisements (RA)**.
+
+**5-Step SLAAC Process:**
+
+1. **Device Init** – Generates temporary link-local address.
+2. **Router Solicitation** – Device asks local routers for info.
+3. **Router Advertisement** – Router provides network prefix.
+4. **Address Configuration** – Device combines prefix + unique ID (often EUI-64 from MAC).
+5. **Duplicate Address Detection** – Device checks for conflicts before finalizing.
+
+**Exam Tip:** SLAAC = IPV6 self-config, DHCP not required.

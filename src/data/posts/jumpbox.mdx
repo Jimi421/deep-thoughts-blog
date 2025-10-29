@@ -1,0 +1,64 @@
+---
+title: "Jumpbox"
+slug: "jumpbox"
+date: "2025-10-29"
+status: "published"
+summary: "internet-facing host - any host that accepts inbound and connections from the internet."
+tags: ["network+"]
+toc: true
+---
+
+# Jumpbox
+
+internet-facing host - any host that accepts inbound and connections from the internet. 
+
+Bastion Host - host or servers in the screened subnet not configured with any services that run on the local network. 
+
+jumpbox - hardened server that provides access to other hosts within the screened subnet. must be very hardened. 
+
+admin connects to the jumpbox and the jumpbox connects to the hosts in the screened subnet. can be a VM. 
+
+The jumpbox and the management workstation should have the minimum required software to perform their job. must be fully hardened. 
+
+# 🖥️ Jumpbox (Bastion Host)
+
+## 🔑 Key Definitions
+
+- **Internet-Facing Host**
+    - Any host that accepts inbound connections from the internet.
+    - High-risk; must be locked down.
+- **Bastion Host**
+    - A host placed in the **screened subnet (DMZ)**.
+    - Does **not** run internal LAN services.
+    - Purpose: safely handle external traffic.
+- **Jumpbox (Jump Server)**
+    - A **hardened server** in the DMZ that admins use as a **secure gateway** to access internal resources.
+    - Only host exposed to the internet for admin access.
+    - Can be physical or a VM.
+
+---
+
+## 🔐 How It Works
+
+1. Admin connects from outside → **Jumpbox** (via SSH/RDP).
+2. Jumpbox → connects to **internal servers** (in DMZ or Trusted LAN).
+3. Prevents direct admin access from internet to internal LAN.
+
+---
+
+## ⚙️ Hardening Requirements
+
+- **Minimal software** → only what’s needed (e.g., SSH, RDP).
+- **Patching & Updates** → always current.
+- **Least Privilege** → admin-only, role-based access.
+- **Network segmentation** → firewall rules restrict its access.
+- **Monitoring/Logging** → all connections logged.
+
+---
+
+## ✅ Exam Tips
+
+- **Jumpbox = secure gateway** for admins into screened subnet.
+- **Bastion Host** = hardened server in DMZ.
+- Should **not run unnecessary services**.
+- Often tested alongside concepts like **DMZ, least privilege, and hardening**.

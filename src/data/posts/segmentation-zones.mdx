@@ -1,0 +1,81 @@
+---
+title: "Segmentation Zones"
+slug: "segmentation-zones"
+date: "2025-10-29"
+status: "published"
+summary: "We can set up rules based on zones."
+tags: ["network+"]
+toc: true
+---
+
+# Segmentation Zones
+
+We can set up rules based on zones. 
+
+Trusted - intranet or the local area network. 
+
+Untrusted - internet or external network. 
+
+screened subnet - connects devices that should have restricted access from the untrested or outside zone. the inbetween zone. the part where we segmetn off the screened subnet, weberver, email server,
+
+Screened subnet - email serer or weberever. open up port 80 and 443 25 ect.. on those servers. but not on the internal network. you allow the servers on the internel subnet are allowed. IDS IPS Firewalls Unified threat management. 
+
+# 🌐 Segmentation Zones
+
+**Why it matters:**
+
+Segmentation improves **security and performance** by isolating traffic into logical/physical zones. Firewalls and ACLs enforce the boundaries.
+
+---
+
+## 🔑 Key Zones
+
+- **Trusted Zone**
+    - Internal LAN (intranet).
+    - Users, workstations, internal file/app servers.
+    - High trust; minimal exposure to outside threats.
+- **Untrusted Zone**
+    - External/public networks (Internet).
+    - Considered hostile — all inbound traffic **blocked by default**.
+- **Screened Subnet (DMZ / Demilitarized Zone)**
+    - Buffer zone between Trusted and Untrusted.
+    - Hosts **public-facing servers**: web server (80/443), email server (25), DNS, FTP, etc.
+    - Rules:
+        - Allow outside users → DMZ servers only (specific ports).
+        - Prevent outside users → Internal LAN.
+        - Internal users → DMZ servers (as needed).
+
+---
+
+## 🚧 Security Controls in Zones
+
+- **Firewalls** → enforce segmentation between LAN, WAN, and DMZ.
+- **IDS/IPS** → monitor/stop suspicious traffic in DMZ.
+- **UTM (Unified Threat Management)** → bundle firewall, IPS, anti-malware.
+- **ACLs** → define exactly which IPs/ports can cross zone boundaries.
+
+---
+
+## ✅ Exam Tips
+
+- **DMZ = screened subnet** (most exam questions use “DMZ”).
+- Public servers go in the **DMZ**, not the internal LAN.
+- **Trusted ↔ DMZ** traffic is allowed (with restrictions).
+- **Untrusted ↔ Trusted** traffic is **never direct**. Must go through DMZ/firewall.
+- Default stance = **deny all, then allow what’s required**.
+
+---
+
+### Possible Question Styles:
+
+1. *“Where should you place a public web server to prevent direct internet access to the LAN?”*
+    
+    → **Screened subnet/DMZ**
+    
+2. *“What zone is considered hostile by default?”*
+    
+    → **Untrusted (Internet)**
+    
+3. *“What rule prevents the internet from directly accessing the internal LAN?”*
+    
+    → **Implicit deny between Untrusted and Trusted zones**

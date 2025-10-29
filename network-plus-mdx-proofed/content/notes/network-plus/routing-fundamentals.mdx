@@ -1,0 +1,65 @@
+---
+title: "Routing Fundamentals"
+slug: "routing-fundamentals"
+date: "2025-10-29"
+status: "published"
+summary: "Router forwards traffic between subnets, between interneal network and externetal neteork, or two extenal networks.. each subnet or external netwrok is going to be it’s own broadca"
+tags: ["network+"]
+toc: true
+---
+
+# Routing Fundamentals
+
+Router forwards traffic between subnets, between interneal network and externetal neteork, or two extenal networks.. each subnet or external netwrok is going to be it’s own broadcast domain. 
+
+Multilayer switches alwos perform routing functions. forwards and routes, but remember on the exam switch is layer 2. 
+
+switch = layer 2 
+
+multilayer switch = router. 
+
+device sends an arp request if the switch does not have the ip forward to the default gaateway the default gaatewy will send to the next router on the other network. 
+
+---
+
+# Routers & Multilayer Switches
+
+### Router
+
+- **Layer 3 device** (Network Layer).
+- Forwards packets based on **IP addresses**.
+- Connects **different subnets** or networks.
+- Each router interface/subnet = its own **broadcast domain**.
+- Routes between:
+    - Internal ↔ Internal (different VLANs/subnets)
+    - Internal ↔ External (LAN to WAN/Internet)
+    - External ↔ External (e.g., ISP backbone routers)
+
+### Default Gateway
+
+- Router interface that devices send packets to when destination is outside local subnet.
+- If switch doesn’t know where to send traffic, it forwards to the **default gateway**.
+
+### Multilayer Switch
+
+- Switch that can also perform **Layer 3 routing**.
+- Acts like a switch at Layer 2 but has routing functions (static routes, dynamic routing, VLAN routing).
+- Used heavily in enterprise networks (routing between VLANs without an external router).
+- **Exam tip**: If CompTIA just says “switch,” assume **Layer 2 only**. Only call it a router if they say “multilayer switch” or “Layer 3 switch.”
+
+---
+
+## ARP & Forwarding
+
+1. Device sends an **ARP request** to learn the MAC address of another device in the subnet.
+2. If destination IP is outside the subnet, ARP resolves the **default gateway’s MAC**.
+3. Packet goes to router (gateway). Router checks its routing table and forwards toward the destination network.
+
+---
+
+✅ **Must Know for N10-009**
+
+- **Switch = Layer 2. Router = Layer 3. Multilayer switch = Router.**
+- **Each subnet = separate broadcast domain.**
+- **Default gateway** is how hosts reach other networks.
+- **ARP** resolves IP → MAC before frames can be delivered.

@@ -1,0 +1,124 @@
+---
+title: "Interface Port Issues"
+slug: "interface-port-issues"
+date: "2025-10-29"
+status: "published"
+summary: "increasing interface counters for CFC"
+tags: ["network+"]
+toc: true
+---
+
+# Interface Port Issues
+
+increasing interface counters for CFC 
+
+port status issues. 
+
+1 CRC error - any error when the check of a data block’s intregrity upon recpton does not match the checksum during transmittion. 
+
+the data has been corruptied during the transmision. 
+
+increasing numbe of CRc there is a oise or other physical issues impacting network connectifvity 
+
+electrical interferance
+
+cable damage 
+
+hardware fault 
+
+2 increased errors with Runts - frams that are smaller that the minimum frame size.. may be from collisions. 
+
+runts can be from nic malfunciton, cable issue, but they are small by natuer. 
+
+3 increasing counter with giants thosre are frames that exceed the maximum frame size. can cause conjestion. 
+
+many will drop giant frames, if so the number of jiants. 
+
+monitor nextork traffic to address root cause. 
+
+drops - buffer is full and cannont accomidate incoming frames or packets. if beyond netowrk capabalities, will reduce dataflow and efficency. 
+
+5 issues associated with error-disabled - uesed to indicate that a port has experienced an isud. 
+
+issues with admin down port status- network has been intiontially disabled by a network administrator. may have shut it down to upgrade or modify it. it will show as admiistrativily down . issue a specefic command within the devand . 
+
+no shutdown 
+
+ensure that the port is ready to be reactivated to prevent any issues. 
+
+issues assocuated with susspended port stause. -viiolation of policy or protocol within the network, if a port may cause an error or loop, it will be suspended. 
+
+to solve resolve the underlying isse to make sure it is correctly configured. 
+
+# 🔌 Interface & Port Issues (Network+)
+
+### 1. CRC Errors
+
+- **Definition**: Data fails checksum integrity check on receipt.
+- **Causes**:
+    - Electrical interference (EMI/RFI)
+    - Damaged cable
+    - Faulty NIC/switch port
+- **Exam Tip**: *A growing CRC counter = physical layer problem*.
+
+---
+
+### 2. Runts
+
+- **Definition**: Frames **smaller than the minimum Ethernet frame size** (64 bytes).
+- **Causes**:
+    - Collisions
+    - NIC malfunction
+    - Cable issues
+- **Impact**: Dropped by switches; indicates a physical or NIC issue.
+
+---
+
+### 3. Giants
+
+- **Definition**: Frames **larger than the maximum Ethernet frame size** (1518 bytes without VLAN tagging).
+- **Causes**:
+    - Misconfiguration (e.g., mismatched MTU)
+    - Congestion
+    - Faulty NICs generating oversized frames
+- **Impact**: Often dropped; monitor traffic to find root cause.
+
+---
+
+### 4. Drops
+
+- **Definition**: Frames/packets discarded when a buffer is full.
+- **Causes**:
+    - Congestion beyond capacity
+    - Overloaded switch/port
+- **Impact**: Reduced efficiency, higher latency.
+
+---
+
+### 5. Error-Disabled Ports
+
+- **Definition**: Port automatically shut down by the switch due to an error (e.g., security violation, loop).
+- **Fix**: Investigate cause, then re-enable port.
+
+---
+
+### 6. Administratively Down
+
+- **Definition**: Port manually disabled by a network admin.
+- **Fix**: Use the `no shutdown` command (Cisco IOS) after confirming readiness.
+
+---
+
+### 7. Suspended Port Status
+
+- **Definition**: Port disabled by system policy/protocol violation (e.g., spanning tree loop prevention).
+- **Fix**: Resolve misconfiguration or violation, then re-enable.
+
+---
+
+⚡ **Must Know for Exam:**
+
+- CRC errors = **Layer 1 (Physical)** issues.
+- Runts & Giants = frame size anomalies.
+- “Administratively down” ≠ hardware failure → it’s **intentional** by admin.
+- Cisco loves `no shutdown` as a PBQ answer.

@@ -1,0 +1,100 @@
+---
+title: "Digital Certificate"
+slug: "digital-certificate"
+date: "2025-10-29"
+status: "published"
+summary: "Digitally signed electronic document that binds a publuc key with a users identiy"
+tags: ["network+"]
+toc: true
+---
+
+# Digital Certificate
+
+Digitally signed electronic document that binds a publuc key with a users identiy
+
+Wildcard certificate - allow for all subdomains to use the same public key cert. can be easy to manage. 
+
+if server is compromised and it’s revoked it effects all subdomains. 
+
+Subnject alternat name field - cert that specifies what additional domaind and IP addresses are going to be supported. 
+
+single-sided certificate - only requires the server to be validated 
+
+dual-sided certificate - - requires both server adn user to be validated 
+
+self signed certificate - signed by the same entity whose identy it is claimed. 
+
+third prty certificates - signed and trused by a trused certificate authority 
+
+root of trust - each cert if validated using the root of trust, all sub certs are trusted becuase they are trused on the path. 
+
+RA registration authority - requests info and creates the certificate for the user. 
+
+CSR - block of coded text recoding the info from the signing authority 
+
+crl CERTIFICATE revocation list - list of certs that it has been revoked, normally due to a databreech. 
+
+key recovery agent - speceliazed type of software that allows the restoration of corrupted or lost keys. 
+
+# 🔑 Digital Certificates
+
+## Core Definition
+
+- A **digitally signed electronic document** that binds a **public key** to a user, device, or organization’s identity.
+- Ensures **authentication, integrity, and trust**.
+
+---
+
+## Types of Certificates
+
+- **Wildcard Certificate**
+    - Covers **all subdomains** of a domain.
+    - Easier management.
+    - ⚠️ If revoked/compromised, **all subdomains** are affected.
+- **Subject Alternative Name (SAN) Certificate**
+    - Lists **multiple domains, subdomains, or IPs** in one cert.
+    - Common for organizations with several domains.
+- **Single-Sided Certificate**
+    - Only the **server** is validated.
+    - Example: Standard HTTPS website.
+- **Dual-Sided (Mutual) Certificate**
+    - Both **server and client** validate each other.
+    - Example: VPNs, high-security enterprise networks.
+- **Self-Signed Certificate**
+    - Signed by the same entity it certifies.
+    - Not trusted by browsers by default.
+    - Used in labs or internal testing.
+- **Third-Party (CA-Issued) Certificate**
+    - Signed by a **trusted Certificate Authority (CA)**.
+    - Widely trusted in browsers and systems.
+
+---
+
+## Supporting Concepts
+
+- **Root of Trust**
+    - Trust starts with a **root CA certificate**.
+    - All subordinate certificates are trusted if the root is trusted.
+- **Registration Authority (RA)**
+    - Verifies user info on behalf of the CA.
+    - Issues certificates after approval.
+- **Certificate Signing Request (CSR)**
+    - A block of text with organization details and public key.
+    - Submitted to a CA to request a certificate.
+- **CRL (Certificate Revocation List)**
+    - A list of revoked certificates.
+    - Typically revoked for compromise, expiration, or policy violations.
+- **Key Recovery Agent (KRA)**
+    - Special tool/service that can **restore lost or corrupted keys**.
+
+---
+
+✅ **Exam Tips:**
+
+- **Wildcard = all subdomains**
+- **SAN = multiple domains/IPs**
+- **Single vs Dual = who’s validated**
+- **Self-signed = not trusted by default**
+- **CRL = revoked cert list**
+
+---

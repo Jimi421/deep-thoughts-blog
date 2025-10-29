@@ -1,0 +1,156 @@
+---
+title: "Wireless Security"
+slug: "wireless-security"
+date: "2025-10-29"
+status: "published"
+summary: "pre-shared key (psk) - Security authentication where the same password or key is bieng use on both th ewireless access point and any connecting clintdevices trying to gain acess to"
+tags: ["network+"]
+toc: true
+---
+
+# Wireless Security
+
+pre-shared key (psk) - Security authentication where the same password or key is bieng use on both th ewireless access point and any connecting clintdevices trying to gain acess to the network. 
+
+Problems: Scalabiliity every employee will know the password, ansd it will not be a secret. 
+
+no individiual user acountability. 
+
+Enterpsie authentication system.  - use individual user credentals. Most widley used enterprise-grade autnentication method.  
+
+802.1x 
+
+WEP - Wired Equivalent Privacy (WEP) Origional 802.11 wireless security standard in wich is an insure security protocol.  - uses a pre shared key, can be brute forces. Relys on RC4 WEP USES A 24-BIT initilition vector (IV) if enough are captured. you can use aircrak-ng and crack it in about 2 minutes. 
+
+WPA - Wi‑Fi protected access. desgined as a replaement for WEP uses TKIP is a new type of auth. Can quickly be cracked, . helps prevent an on-path. uses MIC message intregrity check. Allow’s to use interprise mode. 
+
+WPA2 created as part of the IEEE 802.11i starndard and was first used wit wireless g and n and wirelss a and ac networks. 
+
+CCMP - confidentality 
+
+uses AES 128 bit key more security and confidentality. personal mode and enterprise mode. 
+
+personal mode, uses a pre shared key 
+
+enterprise mode - with centralized authentication. 
+
+WPA3 Introduced in 2018 - SAE increased increption str. and supports GCM. larger encryption keys 
+
+SAE - security protoocols that was designed to enhcned the handshake process used in wi-fi 
+
+WPS - Wi‑Fi protected setup - network security standard aimed at simplifiying the setup of a secure network. designed to make it eaiser for non techincal users to set up secure networkds. 
+
+WPS is vulnurable to brute force. disable to use of wpa. 
+
+push buttton 
+
+or NFS 
+
+1 open networks - no securitu 
+
+2 WEP initilation vector. 
+
+3 WPA is associated with the terms TKIP and RC4. 
+
+4 wpa2 is associated with the terms of CCMP and AES 
+
+5 WPA3 is assocated with SAE 
+
+6 WPS use a push buton and should be disbled, insecure 
+
+7 pre shared key - password used in personal mode 
+
+8 enterprise mode is associate with using a username and password for each user. 
+
+# Wireless Security Standards (N10-009)
+
+### **Open Networks**
+
+- **No security.**
+- All traffic is in cleartext.
+- **Exam Tip:** "Open = insecure."
+
+---
+
+### **WEP (Wired Equivalent Privacy)**
+
+- **Original 802.11 standard** (very insecure).
+- **Encryption:** RC4 stream cipher.
+- **24-bit IV** (too small, reused often).
+- Can be cracked in **minutes** with tools like **Aircrack-ng**.
+- **Exam Tip:** *Obsolete, don’t use*.
+
+---
+
+### **WPA (Wi-Fi Protected Access)**
+
+- Temporary replacement for WEP.
+- **Encryption:** TKIP (Temporal Key integrity Protocol).
+- Uses **RC4**, adds **MIC (Message integrity Check)**.
+- More secure than WEP but **still weak** — vulnerable to attacks.
+- Supports **Personal (PSK)** and **Enterprise (802.1X)**.
+
+---
+
+### **WPA2 (Wi-Fi Protected Access 2)**
+
+- Standardized in **802.11i**.
+- Introduced with 802.11g and beyond.
+- **Encryption:** AES with **CCMP** (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol).
+- **Much stronger security**.
+- Two modes:
+    - **Personal (PSK):** Shared password.
+    - **Enterprise (802.1X):** Centralized authentication with RADIUS (unique usernames/passwords or certificates).
+
+---
+
+### **WPA3 (Wi-Fi Protected Access 3)**
+
+- Introduced in **2018**.
+- **Stronger encryption (192-bit in Enterprise mode).**
+- **SAE (Simultaneous Authentication of Equals):**
+    - Replaces PSK handshake → prevents offline brute force.
+- Supports **GCM (Galois/Counter Mode)** for integrity.
+- Stronger protection against password guessing and on-path attacks.
+
+---
+
+### **WPS (Wi-Fi Protected Setup)**
+
+- Designed to simplify Wi-Fi setup.
+- Methods: **Push-button** or **PIN (NFC option on some gear).**
+- **Major Vulnerability:** PIN method is brute-forceable.
+- **Best Practice:** Disable WPS.
+
+---
+
+# ✅ Must-Know Exam Associations
+
+1. **Open Networks** → No security.
+2. **WEP** → RC4 + 24-bit IV → easily cracked.
+3. **WPA** → TKIP + RC4 + MIC.
+4. **WPA2** → AES + CCMP.
+5. **WPA3** → SAE handshake + stronger encryption.
+6. **WPS** → Push-button/PIN setup → insecure → disable it.
+7. **PSK (Pre-Shared Key)** → Shared password (Personal mode).
+8. **Enterprise Mode (802.1X)** → **Unique username/password** per user via RADIUS.
+
+---
+
+⚡ Flashcard Drill:
+
+- **Q:** Which Wi-Fi security uses RC4 with a 24-bit IV?
+    
+    **A:** WEP.
+    
+- **Q:** Which protocol introduced CCMP with AES?
+    
+    **A:** WPA2.
+    
+- **Q:** Which WPA version uses SAE?
+    
+    **A:** WPA3.
+    
+- **Q:** Which setup method should be disabled for security?
+    
+    **A:** WPS.

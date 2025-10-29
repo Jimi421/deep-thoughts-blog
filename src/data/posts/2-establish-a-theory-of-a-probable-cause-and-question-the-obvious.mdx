@@ -1,0 +1,156 @@
+---
+title: "2. Establish a theory of a probable cause and question the obvious."
+slug: "2-establish-a-theory-of-a-probable-cause-and-question-the-obvious"
+date: "2025-10-29"
+status: "published"
+summary: "Establish a theory - try to guess what the problem is."
+tags: ["network+"]
+toc: true
+---
+
+# 2. Establish a theory of a probable cause and question the obvious.
+
+Establish a theory - try to guess what the problem is. 
+
+and question the obvious. 
+
+probable cause- the most likley cause among all the different possible causes that may have happened. 
+
+question the obvious - think about what is most likley to be the issue 
+
+use tools and esources. ex.. netflix not working go to down detector. 
+
+conduct research based on the symptoms that you’re observing. 
+
+look at the machine listen do you hear the fan, are the lights on . are there clicking sounds, do you hear something burning. 
+
+burning smell, dmaaed processor. 
+
+clicking grinding -failing hard drive 
+
+no fan spinning - no power or broken fan. 
+
+try to reproduce the problem. - there may be times between when the issue happened and when you respond to the incident. 
+
+use logs and other inter markers 
+
+Top to bottom approach using the OSI model working from applicaton to the bottom. try port 80, then check encrypton, ext.. 
+
+bottom up approach. start at layer 1 of the OSI model and work your way up to the top. “is it plugged in”.. are we getting connection to the switch. can i ping the router.. how about ping 8.8.8.8
+
+Divide and conquer. start in the middle of the OSI mode. 
+
+# Step 2 — Establish a Theory of Probable Cause (and Question the Obvious)
+
+### Goal
+
+- Form the **most likely** explanation based on symptoms, and **test the simple stuff first**.
+
+---
+
+## Quick Routine (Fast Wins)
+
+- **Power & cabling:** device on? fan/lights? firmly seated cables? correct port?
+- **Link status:** NIC/switch link light, speed/duplex (mismatches cause slow/erratic).
+- **IP basics:** `ipconfig/ifconfig` → valid IP (not 169.254.x.x), subnet, **default gateway**, **DNS**.
+- **Wireless basics:** correct SSID/VLAN, signal strength, not on captive portal.
+- **Recent change?** (patch, config, move, new cable) → rollback/test.
+- **Scope:** one user, a VLAN, a site, or the Internet? (narrows layers fast)
+
+> Exam Tip: 169.254.x.x (APIPA) ⇒ DHCP problem.
+> 
+> 
+> Can reach IP, not hostname ⇒ **DNS**.
+> 
+> Can reach gateway, not Internet ⇒ **routing/ACL/NAT**.
+> 
+
+---
+
+## Build & Rank Theories
+
+1. **List hypotheses** from most common/simple to complex.
+2. **Test minimally invasive checks** first.
+3. **Change one thing at a time**; note the result.
+
+**Use your senses:**
+
+- **Burning smell/overheating** ⇒ PSU/fan/thermal.
+- **Clicking/grinding** ⇒ failing HDD.
+- **No fan/no LEDs** ⇒ power/fan failure.
+
+---
+
+## Reproduce & Gather Evidence
+
+- Try to **reproduce** the issue; note exact errors/pop-ups.
+- **Check logs**: Event Viewer/journalctl, app logs, syslog/SIEM.
+- **Timing/patterns**: only at peak hours? only on Wi-Fi?
+
+---
+
+## Choose a Strategy (OSI)
+
+- **Top-Down (App → Physical):** good when a **specific app** fails (e.g., web app 500s).
+    - Tools: browser dev tools, `nslookup/dig`, `tracert/traceroute`, `ping`.
+- **Bottom-Up (Physical → App):** good when **nothing works**.
+    - Tools: check link, swap cable/port, cable tester, `ping` gateway/8.8.8.8.
+- **Divide & Conquer:** start mid-stack (Layer 3).
+    - If you can **ping the gateway**: L1–L2 likely OK; look at routing/DNS.
+    - If you **can’t ping the gateway**: focus on L1–L2 (cable/VLAN/port).
+
+---
+
+## Tools to Confirm/Refute Theories
+
+- **Connectivity:** `ping`, `tracert`/`traceroute`, `arp -a`.
+- **Name resolution:** `nslookup`/`dig`.
+- **Interfaces:** `ipconfig/ifconfig`, `netstat`, `ethtool`/`nmcli`.
+- **Capture:** Wireshark/tcpdump (SYNs, DNS failures, resets).
+- **External checks:** DownDetector, ISP status, speed test.
+
+---
+
+## Symptom → Likely Cause (Must Know)
+
+- **“Connected, no Internet”** → DNS or default gateway/NAT.
+- **Slow + CRC/FCS errors** → bad cable/EMI; check speed/duplex.
+- **Intermittent Wi-Fi** → channel overlap, weak RSSI, AP overload.
+- **One VLAN only** fails → switchport VLAN/tagging, DHCP scope for that VLAN.
+- **Only one app fails** → app/server, ports, ACL, cert/TLS.
+
+---
+
+## Mini Scenario (How to Think)
+
+> “Netflix won’t load on one PC.”
+> 
+- Obvious: other sites? other devices? Wi-Fi vs Ethernet?
+- Check IP/DNS; try `ping 8.8.8.8` (works?) then `nslookup netflix.com`.
+- If names fail but IP works → DNS theory strengthened. Try alternate DNS; test again.
+
+---
+
+### Common Question
+
+**Q:** When should I use top-down vs bottom-up?
+
+**A:** **Top-down** for **specific app** symptoms; **bottom-up** when **nothing works** (start with L1). **Divide & conquer** when time is short—test L3 (gateway) first.
+
+---
+
+### Memory Trick
+
+**OOPS:** **O**bvious checks → **O**SI strategy → **P**robable cause list → **S**ingle-change tests.
+
+---
+
+## 5 Rapid Review Qs
+
+1. User has 169.254.x.x. What’s your top theory?
+2. Host pings gateway but not 8.8.8.8. Where do you look?
+3. Name resolves fail, IP pings succeed. Likely cause?
+4. Tons of CRC errors on one port. First action?
+5. Only VLAN 20 hosts can’t reach DHCP. Hypothesis?
+
+**Answers:** 1) DHCP issue. 2) Upstream routing/NAT/ISP. 3) DNS. 4) Replace cable/check duplex. 5) Trunk/access VLAN config or DHCP helper for VLAN 20.

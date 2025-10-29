@@ -1,0 +1,97 @@
+---
+title: "Intrusision Detection Systems (IDS/IPS)"
+slug: "intrusision-detection-systems-ids-ips"
+date: "2025-10-29"
+status: "published"
+summary: "Recognizes network attacks and and ips can respond accordingly. will look at signature and behaviour based. SNORT is an IDS/IPS it’s a passive device.  if it see’s something it wil"
+tags: ["network+"]
+toc: true
+---
+
+# Intrusision Detection Systems (IDS/IPS)
+
+Recognizes network attacks and and ips can respond accordingly. will look at signature and behaviour based. SNORT is an IDS/IPS it’s a passive device.  if it see’s something it will make an alert to the administrator. 
+
+if it works as an iPS then it’s inline. everything has to go through it. 
+
+IPS functions like an ids BUT also blocks or drops offending traffic. wh
+
+why IDS ofer IPS . IPS can drop legitamate traffice 
+
+signature based - detection is triggered by a signature that contains a byte string. IPS will block matching signatures that is not threatining. 
+
+policy based - relys on specefic declaration of.a security policy. 
+
+anomaly based - done through statistical or non statscal anomaly. 
+
+stat. anomaly based - watches traffic patterns to build baseline and flag. 
+
+non statistical - admin defines pattern or baseline. 
+
+host based. network and host based systems can work together for more protection. 
+
+# 🛡️ Intrusion Detection & Prevention Systems (IDS/IPS)
+
+## 🔑 Core Functions
+
+- **IDS (Intrusion Detection System)**
+    - Monitors traffic.
+    - Passive → detects, then alerts admin.
+    - Example: **Snort (IDS mode)**.
+- **IPS (Intrusion Prevention System)**
+    - Inline → all traffic passes through it.
+    - Detects **and blocks/drops** malicious traffic.
+    - More proactive but risk of **false positives**.
+
+---
+
+## 📊 Detection Methods
+
+- **Signature-Based**
+    - Matches known patterns (byte strings, rules).
+    - ✅ Accurate for known threats.
+    - ❌ Can’t detect zero-day/unknown attacks.
+- **Policy-Based**
+    - Uses defined **security policies/rules**.
+    - Example: “No FTP traffic allowed.”
+    - Limited by the completeness of policies.
+- **Anomaly-Based**
+    - Detects deviations from normal traffic.
+    - **Statistical:** builds a baseline of normal behavior.
+    - **Non-Statistical:** admin manually defines expected behavior.
+    - Useful for catching zero-days.
+
+---
+
+## 🖥️ Deployment Types
+
+- **Host-Based IDS/IPS (HIDS/HIPS)**
+    - Runs on individual hosts.
+    - Monitors system calls, file access, logs.
+- **Network-Based IDS/IPS (NIDS/NIPS)**
+    - Monitors entire network segments.
+    - Detects threats across multiple devices.
+
+👉 Best practice: use **both** together for layered defense.
+
+---
+
+## ✅ Exam Tips
+
+- **IDS = alert only, IPS = alert + block**.
+- **Snort** = popular open-source IDS/IPS.
+- **IPS is inline**, IDS is passive.
+- **False positives** are why some orgs prefer IDS over IPS.
+- **Signature = known attacks**, **Anomaly = new/unusual attacks**.
+
+---
+
+⚡ Sample Question:
+
+*“Which intrusion detection method relies on comparing traffic to a baseline of normal activity?”*
+
+→ **Anomaly-based (statistical)**
+
+---
+
+👉 Do you want me to also make a **comparison table (IDS vs IPS, Signature vs Policy vs Anomaly)** so you have it all in one glance for quick recall?

@@ -1,0 +1,114 @@
+---
+title: "VLAN Configuration"
+slug: "vlan-configuration"
+date: "2025-10-29"
+status: "published"
+summary: "802.1Q Tagging -  VLAN tagging refers to the standard that allows the frame to have a ethernet tag inserted into it to help the switch to ID. creates the logical separation on the "
+tags: ["network+"]
+toc: true
+---
+
+# VLAN Configuration
+
+802.1Q Tagging -  VLAN tagging refers to the standard that allows the frame to have a ethernet tag inserted into it to help the switch to ID. creates the logical separation on the VLANs. 
+
+Trunking the transmission of traffic from different VLANs on the same cable, but keeping it separate. used 
+
+Native VLAN the one VLAN on a trunk port that does not get a vlan tag. need to rename the native vlan. 
+
+Voice VLAN - dedicated toi voice or VOIP. voice traffic is hightly sensive to packet loss. You can prioritize it above other traffice to reduce latency , jitter and packet loss. 
+
+Link Aggregation - port channeling or bonding as a wey to combine mulitple ntwork connections into one link. commonly used to support trunking lines between the switches. by aggriagion 4 ine gigabit lines you get a 4gigabit connection, and creates redundancy. 
+
+Speed and Duplex Configurations. - the settings that tdetermine the rate at which commincation will happen and the mode of communicatipon. 
+
+Auto negotion may pick this for you. if you have legacy systems, then you may want to use auto configs. 
+
+# VLAN & Switching Features (N10-009)
+
+### **802.1Q VLAN Tagging**
+
+- Standard for **VLAN tagging** on Ethernet frames.
+- Inserts a **4-byte VLAN ID tag** into the frame header.
+- Allows switches to identify which VLAN the traffic belongs to.
+- Provides logical separation of VLANs across shared infrastructure.
+
+---
+
+### **Trunking**
+
+- A **single physical link** can carry **multiple VLANs** using 802.1Q tagging.
+- Common between **switch-to-switch** or **switch-to-router** connections.
+- Keeps VLAN traffic separate while sharing the same cable.
+
+---
+
+### **Native VLAN**
+
+- VLAN on a trunk port that is **not tagged**.
+- By default = VLAN 1.
+- **Best Practice:** Rename/change it (security hardening).
+
+---
+
+### **Voice VLAN**
+
+- Special VLAN for **VoIP traffic**.
+- Voice is highly sensitive to **latency, jitter, and packet loss**.
+- Traffic can be prioritized (QoS) over data VLAN traffic.
+- Ensures **clear, low-delay calls**.
+
+---
+
+### **Link Aggregation**
+
+- Also called **Port Channeling / Bonding / LACP (802.3ad)**.
+- Combines multiple physical links into a single logical connection.
+- Benefits:
+    - **Increased bandwidth** (e.g., 4 × 1 Gb = 4 Gb).
+    - **Redundancy** (if one link fails, traffic continues).
+- Commonly used for **trunk links between switches**.
+
+---
+
+### **Speed & Duplex Configurations**
+
+- **Speed:** Transmission rate (e.g., 100 Mbps, 1 Gbps, 10 Gbps).
+- **Duplex:**
+    - **Half-duplex:** Send OR receive at one time (old hubs).
+    - **Full-duplex:** Send AND receive simultaneously (modern switches).
+- **Auto-Negotiation:**
+    - Devices detect best speed/duplex automatically.
+    - **Legacy systems** may require manual config to prevent mismatches.
+    - **Duplex mismatch** = common cause of slow or erratic network performance.
+
+---
+
+✅ **Must-Know Exam Points**
+
+- **802.1Q** = VLAN tagging standard.
+- **Trunk link** = multiple VLANs over one cable.
+- **Native VLAN** = untagged VLAN; default is VLAN 1, should be changed.
+- **Voice VLAN** = prioritizes VoIP traffic.
+- **Link Aggregation (LACP)** = bandwidth + redundancy.
+- **Full-duplex on switches** eliminates collisions.
+
+---
+
+⚡ Flashcard Drill
+
+- **Q:** What VLAN is untagged on a trunk port?
+    
+    **A:** Native VLAN.
+    
+- **Q:** Which standard defines link aggregation?
+    
+    **A:** IEEE 802.3ad (LACP).
+    
+- **Q:** What does 802.1Q provide?
+    
+    **A:** VLAN tagging.
+    
+- **Q:** What’s a common cause of slow speeds due to misconfiguration?
+    
+    **A:** Duplex mismatch.

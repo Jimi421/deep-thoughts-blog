@@ -1,0 +1,263 @@
+---
+title: "Take 1"
+slug: "take-1"
+date: "2025-10-29"
+status: "published"
+summary: "**Correct:** Rollover (console) cable"
+tags: ["network+"]
+toc: true
+---
+
+# Take 1
+
+# Rapid Remediation Notes (by question)
+
+## Q6 – Console cable
+
+**Correct:** Rollover (console) cable
+
+**Must Know:** RJ-45 ↔ DB-9, pinout is reversed end-to-end; used to reach router/switch CLI via console.
+
+**Memory Trick:** *“Roll over to the **console**.”*
+
+**Common Confusion:** 
+
+Crossover = device↔device Ethernet;
+
+ Straight-through = host↔switch; RG-6 = coax.
+
+---
+
+## Q13 – Traffic directions
+
+**Correct:** North (exiting the DC); South (entering); East/West (inside DC).
+
+**Exam Tip:** If it **crosses** the perimeter device (FW/router) → North/South. Inside only → East/West.
+
+**Memory Trick:** *North = up/out, South = down/in.*
+
+---
+
+## Q14 – Fast switch swap
+
+**Correct:** Configuration backup
+
+**Must Know:** Swap spare switch → restore saved config → instant parity.
+
+**Common Question:** MTTR depends on having backups + spares.
+
+---
+
+## Q17 – Anomaly alerting
+
+**Correct:** Streamlined analysis of security logs
+
+**Must Know:** Alerts bubble up weird patterns so analysts don’t sift raw logs first.
+
+---
+
+## Q21 – Loop prevention (Layer 2)
+
+**Correct:** 802.1D (STP)
+
+**Must Know:** STP/RSTP stop L2 loops; 802.1Q = VLAN tagging; RIP/OSPF handle L3 routing (use split horizon, poisoning—not L2 loops).
+
+**Memory Trick:** *D = “Don’t loop” (STP). Q = “VLAN tag.”*
+
+---
+
+## Q23 – OSI travel down the stack
+
+**Correct:** Encapsulation (L7→L1)
+
+**Must Know:** Sender = encapsulate; Receiver = de-encapsulate. Tunneling is separate concept; Tagging is 802.1Q at L2.
+
+---
+
+## Q24 – Survive disasters
+
+**Correct:** Hot site / Cold site
+
+**Must Know:** Only option that keeps the **business running** if the building is lost.
+
+---
+
+## Q27 – Monitor + block at gateway
+
+**Correct:** Firewall on **external** interface + NIPS on **internal** interface
+
+**Must Know:** Firewall takes the inbound beating; NIPS inspects/blocks content entering LAN and outbound as needed.
+
+**Exam Tip:** Don’t put NIPS on the raw internet side (risk “fail open”).
+
+---
+
+## Q30 – Port for Fast Ethernet device
+
+**Correct:** 100 Mb/s **full-duplex**
+
+**Must Know:** Avoid auto-negotiation gotchas in mixed environments on the exam.
+
+---
+
+## Q35 – Microsecond sync
+
+**Correct:** PTP (IEEE 1588)
+
+**Must Know:** NTP = ms-level; PTP = μs-level.
+
+---
+
+## Q38 – Control bandwidth use
+
+**Correct:** Traffic shaping
+
+**Must Know:** Prioritize/delay classes; not the same as load balancing/HA/fault tolerance.
+
+---
+
+## Q41 – Radar compliance (DFS/TPC)
+
+**Correct:** 802.11h
+
+**Must Know:** DFS/TPC features (think 5 GHz radar coexistence).
+
+---
+
+## Q42 – Syslog severity: error
+
+**Correct:** Level **3**
+
+**Must Know (0–7):** 0-Emerg, 1-Alert, 2-Crit, 3-Err, 4-Warn, 5-Notice, 6-Info, 7-Debug.
+
+**Memory Trick:** *“Every Alert Can Error While Notices Inform Debugging”* (0→7).
+
+---
+
+## Q49 – Bond links for speed + resiliency
+
+**Correct:** LACP (802.3ad)
+
+**Must Know:** LLDP = discovery, LDAP = directory, L2TP = tunneling.
+
+---
+
+## Q50 – Evening Wi-Fi slowdowns
+
+**Correct:** Signal degradation (channel crowding/medium contention)
+
+**Must Know:** Peak-time contention + co-channel interference = weaker effective SNR/throughput.
+
+---
+
+## Q51 – Auto-propagate VLANs
+
+**Correct:** VTP
+
+**Must Know:** Centralize VLAN adds/changes across a VTP domain. STP = loop-free tree; bonding = bandwidth; IGRP = routing.
+
+---
+
+## Q52 – 4 hours to fix device
+
+**Correct:** MTTR
+
+**Must Know:** MTBF = between failures; RTO = time goal to restore service; RPO = allowable data loss.
+
+---
+
+## Q59 – Link cut didn’t re-route
+
+**Correct:** Static routing
+
+**Must Know:** Dynamic protocols would reconverge automatically.
+
+---
+
+## Q60 – Kerberos special sauce
+
+**Correct:** Tickets
+
+**Must Know:** Kerberos = KDC/TGS, time-based tickets; RADIUS/Diameter ≠ ticket model.
+
+---
+
+## Q62 – Windows path tool
+
+**Correct:** `tracert` (Windows) vs `traceroute` (Linux/macOS)
+
+**Must Know:** `ping` = reachability RTT; `ip` = interface/route config (Linux).
+
+---
+
+## Q68 – Default gateway redundancy
+
+**Correct:** FHRP (HSRP/VRRP/GLBP)
+
+**Must Know:** Creates a virtual gateway; seamless failover.
+
+---
+
+## Q71 – 30 m copper limit at 40 Gb
+
+**Correct:** Cat 8 (40 Gb up to 30 m; 10 Gb to 100 m)
+
+**Exam Tip:** Cat6/6a do 10 Gb longer than Cat8’s 40 Gb spec.
+
+---
+
+## Q73 – Wi-Fi name term
+
+**Correct (per item):** ESSID
+
+**Reality check:** SSID is the common term; ESSID is the 802.11 “extended service set” term spanning multiple APs. If the stem emphasizes multi-AP coverage, “ESSID” appears.
+
+---
+
+## Q78 – Test T1 CSU/DSU interface
+
+**Correct:** Loopback adapter
+
+**Must Know:** Loops TX↔RX to validate the port and let carrier test to demarc.
+
+---
+
+# Flashcards (one-liners)
+
+- Console cable → **Rollover** (RJ-45↔DB-9).
+- North/South vs East/West → **Perimeter vs internal**.
+- Fast swap switch → **Config backup + spare**.
+- Anomaly alerts → **Faster log triage**.
+- L2 loops → **STP (802.1D)**.
+- L7→L1 → **Encapsulation**.
+- DR continuity site → **Hot/Cold site**.
+- Gateway protect/inspect → **FW (outside) + NIPS (inside)**.
+- Fast Ethernet port → **100 Mb full-duplex**.
+- μs sync → **PTP**.
+- Bandwidth control → **Traffic shaping**.
+- DFS/TPC radar → **802.11h**.
+- Syslog “error” → **Level 3**.
+- Link aggregation → **LACP**.
+- Peak Wi-Fi slowdown → **Channel contention**.
+- VLAN propagation → **VTP**.
+- 4-hour fix metric → **MTTR**.
+- No failover on cut → **Static routing**.
+- Kerberos → **Tickets**.
+- Windows traceroute → **tracert**.
+- Gateway redundancy → **FHRP**.
+- 40 Gb @ 30 m → **Cat 8**.
+- Multi-AP Wi-Fi name → **ESSID**.
+- Test T1 CSU/DSU → **Loopback plug**.
+
+# 10 Quick Check Questions (no answers shown)
+
+1. Which STP standard accelerates convergence compared to 802.1D?
+2. Which syslog level is “critical”?
+3. In FHRP, what term describes the shared IP clients use?
+4. What two placements satisfy “inspect content + block inbound floods” at a gateway?
+5. Which 802.11 amendment introduced OFDMA and BSS coloring?
+6. Which metric targets **data loss** tolerance in BC/DR?
+7. What duplex/speed would you set for a legacy 10BASE-T device?
+8. Which protocol bonds multiple switch ports into one logical channel automatically?
+9. What Linux command is the counterpart to Windows `tracert`?
+10. Which cable/conne

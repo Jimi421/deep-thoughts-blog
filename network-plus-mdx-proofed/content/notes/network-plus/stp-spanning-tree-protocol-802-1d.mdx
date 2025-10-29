@@ -1,0 +1,129 @@
+---
+title: "STP (Spanning Tree Protocol) 802.1d"
+slug: "stp-spanning-tree-protocol-802-1d"
+date: "2025-10-29"
+status: "published"
+summary: "PERMITS REDUNTAND links between switches and prevenets looping. you have to have the multiple links for the 5 9s."
+tags: ["network+"]
+toc: true
+---
+
+# STP (Spanning Tree Protocol) 802.1d
+
+PERMITS REDUNTAND links between switches and prevenets looping. you have to have the multiple links for the 5 9s. 
+
+Broadcast strm - mulple copies of frmaes being forwarded back and forth which consumes network resources. 
+
+Root Bridge - switch with thelowest bridge ID sis mae of a prioryt value and.a MAC address. 
+
+Non- Root bridge all other switches in the topology. 
+
+Root port - every no n rood bridge has a single root porth hich is to closest to the root bridge in terms of cost. if all same losest port number. faster cables have a lower coast whils slower cables have a higer cost. 
+
+Designated port - every network segment has a designated port which is the closest to the root bridge. All the port on the root bridge are designated ports. 
+
+non0designated ports. ports that block traffic . 
+
+non-designated ports recbe bpduS AND STOP IT. 
+
+Blocking - BPDUs are recived but not forwarded. 
+
+Listining-  populates the MAC address table but does not forward the frames. 
+
+Leanring - processes BPDU abd determines its role. 
+
+Forwarding - forwards frames for operations. 
+
+Link cost - assocaiated with the speed of the connection. slower the connection the higher the cost. the numbers may bre differnet becaus of long STP. just know that faster cables, have lower cost. 
+
+# Spanning Tree Protocol (STP) (N10-009)
+
+### **Purpose**
+
+- Prevents **loops** in a switched network with redundant links.
+- Without STP → loops cause **broadcast storms** (frames endlessly circulating, consuming bandwidth & CPU).
+- Ensures redundancy (important for **99.999% uptime, the “five 9s”**) while keeping a **loop-free topology**.
+
+---
+
+### **Key STP Concepts**
+
+- **Bridge ID (BID):** Combination of **priority value + MAC address**.
+    - Lower BID = more likely to be the **Root Bridge**.
+- **Root Bridge:**
+    - Switch with the lowest BID.
+    - All its ports = **Designated Ports**.
+- **Non-Root Bridges:**
+    - All other switches in the network.
+    - Each has exactly one **Root Port** (closest to Root Bridge).
+
+---
+
+### **Port Roles**
+
+- **Root Port (RP):**
+    - On each non-root bridge.
+    - The **lowest cost path** to reach the Root Bridge.
+    - If equal → lowest port number wins.
+- **Designated Port (DP):**
+    - One per network segment.
+    - The port closest to the Root Bridge.
+    - Always **forwarding** traffic.
+- **Non-Designated Port (NDP):**
+    - Put into a **blocking state** to prevent loops.
+    - Still listens to BPDUs but doesn’t forward.
+
+---
+
+### **Port States**
+
+1. **Blocking:** Receives BPDUs but doesn’t forward data.
+2. **Listening:** Listens for BPDUs, doesn’t forward data yet.
+3. **Learning:** Populates MAC address table, still not forwarding.
+4. **Forwarding:** Fully operational; forwards frames.
+
+*(Newer versions like RSTP simplify these states, but exam expects you to know classic STP.)*
+
+---
+
+### **Link Cost**
+
+- Cost is based on **speed**:
+    - Faster link = **lower cost**.
+    - Slower link = **higher cost**.
+- Example (typical STP values, may vary by standard):
+    - 10 Mbps = Cost 100
+    - 100 Mbps = Cost 19
+    - 1 Gbps = Cost 4
+    - 10 Gbps = Cost 2
+
+---
+
+✅ **Exam Must-Knows**
+
+- **STP prevents loops** → stops broadcast storms.
+- **Root Bridge** = lowest BID.
+- **Root Port** = path to root (non-root bridges).
+- **Designated Port** = best port per segment (always forwarding).
+- **Non-designated port** = blocking.
+- **Faster links = lower cost**.
+
+---
+
+⚡ Flashcard Drill
+
+- **Q:** Which switch becomes Root Bridge?
+    
+    **A:** One with lowest Bridge ID (priority + MAC).
+    
+- **Q:** Which port on a non-root switch leads to the root?
+    
+    **A:** Root Port.
+    
+- **Q:** What prevents broadcast storms?
+    
+    **A:** Spanning Tree Protocol.
+    
+- **Q:** Which port state actually forwards frames?
+    
+    **A:** Forwarding.

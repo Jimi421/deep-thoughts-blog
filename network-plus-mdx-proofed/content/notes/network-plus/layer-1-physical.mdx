@@ -1,0 +1,176 @@
+---
+title: "Layer 1 - (Physical)"
+slug: "layer-1-physical"
+date: "2025-10-29"
+status: "published"
+summary: "Where transmission of bits across the network occurs. Includes the physical and electrical network characteristics. It is bits, 1 and 0. Yes and no on and off. If it’s a copper wir"
+tags: ["network+"]
+toc: true
+---
+
+# Layer 1 - (Physical)
+
+Where transmission of bits across the network occurs. Includes the physical and electrical network characteristics. It is bits, 1 and 0. Yes and no on and off. If it’s a copper wire it’s 0 volts for 0 and .1 volts for 1. 
+
+- Transition Modulation. If it changes during the clock ttime. if it changes during the cicle it’s represented as 1 if not is’s a 0.
+
+The cables are a part of the physical network. The connete is wired is tepend on the standard
+
+- crossover cables 568 A on one side and B on the other side.
+- straight - through cables 568B on both sides.
+
+Topology of the network: - Layer 1 devices view a network from a physical topology perspective. If you drew them out what pattern would it make. 
+
+Data Syncrinization: - 
+
+- acricinious syncrinizaiton: One can talk at a time, you do it and another person does it. Use a start and stop bit to indicaansmissions orccur from the sender to reciver. te when tr
+- Syncrinious: If both are talking at the stame time. Uses a refrence clock to coodinate the transmissions by both sender and reciver.
+
+How to use the bandwidth of the cable. 
+
+Broadband: divide the bandwidth into separate channels. 
+
+Baseband:sue all aailable frequencies all of the time. telephone. - uses a refrence clock. Wired home ethereth. 
+
+Time - Division Multiplexing - each session takes a turn using the time slocs, to share the medium between all users. 
+
+Statistical time-Division Multiplexing (StatTDM)- Allocates the time clots on an as needed basis. everyont takes turns based on the needs. 
+
+Multiplesxing involves optimizing a limited amount of resources for more efficent utilization 
+
+Multiplexing enables simultainius use of a base band connetion by multple users. 
+
+Examples: 
+
+Media: Fiber optic cable, Ethernet Cable, Coaxial cable
+
+Wireless: Bluetooth, Wi-fi, NFC
+
+Infrastructure: Hubs, Accesspoints, Media converters/ 
+
+Layer 1 devices are just repeaters. 
+
+## 🧱 **OSI Layer 1 — Physical Layer**
+
+> Where raw bit transmission occurs
+> 
+> 
+> Concerned with physical and electrical characteristics of the network — **1s and 0s**, on/off signals, voltages, light pulses, and radio waves.
+> 
+
+---
+
+### 🧬 **Core Concepts**
+
+- **Bit Transmission**: Raw data (bits) is transmitted across physical media (copper, fiber, RF).
+- **Signal Representation**:
+    - On copper: `0` volts = binary 0, small voltage (e.g. 0.1v) = binary 1
+    - Light (fiber) or radio signals may use different representations
+
+---
+
+### 🔄 **Transition Modulation**
+
+- Interprets bits based on **changes in signal during the clock cycle**:
+    - **Change = 1**
+    - **No change = 0**
+
+---
+
+### 🔌 **Media & Cabling**
+
+- **Part of the physical layer** (cables literally *are* Layer 1):
+    - **Ethernet cables**
+    - **Fiber optic**
+    - **Coaxial cable**
+
+### Ethernet Cable Types:
+
+- **Straight-through cable**: Same standard on both ends (e.g. 568B ↔ 568B)
+    
+    Used to connect **unlike devices** (PC → Switch).
+    
+- **Crossover cable**: 568A on one end, 568B on the other
+    
+    Used to connect **like devices** (PC → PC, Switch → Switch).
+    
+
+---
+
+### 🛰️ **Network Topology (Physical)**
+
+- Layer 1 devices **only see physical topology**:
+    - What shape would the network make if you drew out all the cables?
+    - Examples: star, mesh, ring, bus.
+
+---
+
+### 🕰️ **Data Synchronization Types**
+
+### 1. **Asynchronous Transmission**:
+
+- Only **one party transmits at a time**
+- Uses **start and stop bits** to indicate transmission boundaries
+
+### 2. **Synchronous Transmission**:
+
+- **Both sender and receiver share a reference clock**
+- Enables simultaneous transmission and better efficiency
+
+---
+
+### 📶 **Bandwidth Usage**
+
+| Term | Description |
+| --- | --- |
+| **Baseband** | Uses the **entire bandwidth** for one channel. Example: Ethernet |
+| **Broadband** | Splits bandwidth into **multiple channels**. Example: Cable TV |
+
+---
+
+### ⏱️ **Multiplexing (MUX)**
+
+> Used to optimize limited bandwidth by allowing multiple signals to share the same medium.
+> 
+
+### Types:
+
+- **TDM (Time Division Multiplexing)**:
+    - Each session gets a turn in fixed time slots
+- **Statistical TDM (StatTDM)**:
+    - Time slots allocated **as needed**, more efficient
+
+---
+
+### 🧱 **Layer 1 Devices (Physical Layer Hardware)**
+
+| Device Type | Description |
+| --- | --- |
+| **Repeater** | Regenerates signals to extend distance (true Layer 1 device) |
+| **Hub** | Multiport repeater — broadcasts all incoming traffic |
+| **Media Converter** | Converts media types (e.g., fiber ↔ Ethernet) |
+| **Transceivers (SFP, GBIC)** | Send and receive signals over different mediums |
+| **Access Point** | (Partially Layer 1 for RF, also Layer 2) |
+| **Cables and Connectors** | Copper, fiber, coax, RJ45, etc. |
+
+---
+
+### 📡 **Layer 1 Examples**
+
+### **Media**:
+
+- Ethernet cable
+- Fiber optic cable
+- Coaxial cable
+
+### **Wireless Signals**:
+
+- Bluetooth
+- Wi-Fi
+- NFC (Near Field Communication)
+
+### **Infrastructure Devices**:
+
+- Hubs
+- Access points (partial Layer 1)
+- Media converters

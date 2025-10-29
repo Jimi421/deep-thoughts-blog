@@ -1,0 +1,67 @@
+---
+title: "MAC Flooding"
+slug: "mac-flooding"
+date: "2025-10-29"
+status: "published"
+summary: "Comprimize the switch by compromisign the MAC table. send too many fake MAC address tables the switch will enter fail safe and will act as a HUB"
+tags: ["network+"]
+toc: true
+---
+
+# MAC Flooding
+
+Comprimize the switch by compromisign the MAC table. send too many fake MAC address tables the switch will enter fail safe and will act as a HUB 
+
+Data snooping - occurs when an attacker captures sensitive data from the network the attacker can eavedrop in promiscous mode during the mac flood attack. 
+
+Disrupting services - degrades network peformandce and sets the maca dderss 
+
+Byassing security meaures - MAC flooding can bypass security measures like MAC address filtering. Switches may fail to enfore restrictions allowing unaothrorized devixes to access the network. 
+
+use anomoly based IDS and employ netorm mononotring tools. c
+
+configure port security to limit MAC addresses per port. 
+
+Set limits on mac per seitch port. 
+
+implivment VLANs to segregrate traffic. 
+
+overflows the targest mac table. 
+
+# MAC Flooding Attack
+
+### Concept
+
+- Attacker floods a switch with **fake MAC addresses** until the **CAM (MAC) table overflows**.
+- When full, the switch enters **fail-open mode** and acts like a **hub**.
+- Result: Traffic is broadcast to all ports, exposing data to the attacker.
+
+---
+
+### Impacts
+
+1. **Data Snooping**
+    - Attacker runs NIC in **promiscuous mode** to eavesdrop on traffic.
+2. **Disrupting Services**
+    - Network performance degrades as switch broadcasts all frames.
+3. **Bypassing Security**
+    - **MAC filtering / access controls** may fail, allowing unauthorized devices.
+
+---
+
+### Mitigation
+
+- **Port Security:** Limit number of MAC addresses per port.
+- **Anomaly-Based IDS/IPS:** Detect unusual flooding activity.
+- **Network Monitoring:** Watch for abnormal MAC learning rates.
+- **VLAN Segmentation:** Contain broadcast domains, reduce impact.
+
+---
+
+✅ **Exam Must-Knows**
+
+- **MAC Flooding = Switch → Hub behavior.**
+- Enables **data snooping + bypass of MAC filtering.**
+- **Prevention:** Port security, IDS/IPS, VLANs.
+
+---

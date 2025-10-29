@@ -1,0 +1,69 @@
+---
+title: "Network Performance metrics"
+slug: "network-performance-metrics"
+date: "2025-10-29"
+status: "published"
+summary: "Network Performnce Monitoring. looking at overall end user performance to check network."
+tags: ["network+"]
+toc: true
+---
+
+# Network Performance metrics
+
+Network Performnce Monitoring. looking at overall end user performance to check network. 
+
+latency - measure of the time it takes for data to reach its destination. 
+
+bandwidth - maxum rate of data transfer across a given network at ideal conditions. 
+
+Throughput actual amount as it is successfully transfered. 
+
+jitter - varation in the delay of the packets causing an error in the connecction. speed up and slow down. caused by packet loss. 
+
+the buffers can free up and can swiftly send the data. ensure network is uding QoS prioritisse 
+
+# 📊 Network Performance Monitoring (NPM)
+
+**Purpose:**
+
+Measures how well the network is performing from the **end-user perspective**. Helps identify congestion, misconfigurations, or failures.
+
+---
+
+## 🔑 Key Metrics
+
+- **Latency**
+    - Time it takes for data to travel from source → destination.
+    - Measured in **milliseconds (ms)**.
+    - Example: High latency = slow video calls or lag in games.
+- **Bandwidth**
+    - The **maximum possible data rate** of a network link under ideal conditions.
+    - Example: ISP plan “up to 100 Mbps.”
+- **Throughput**
+    - The **actual data transfer rate achieved**.
+    - Often lower than bandwidth due to congestion, errors, or overhead.
+- **Jitter**
+    - Variation in packet arrival times.
+    - Causes choppy audio, frozen video.
+    - Often related to **packet loss** or **buffering issues**.
+
+---
+
+## 🛠️ Performance Optimization
+
+- **QoS (Quality of Service)**
+    - Prioritizes certain types of traffic (e.g., VoIP, video conferencing) over less critical traffic (e.g., file downloads).
+    - Reduces latency/jitter for time-sensitive apps.
+- **Buffers**
+    - Store packets temporarily to smooth bursts of traffic.
+    - If buffers overflow → packet loss.
+
+---
+
+## ✅ Exam Tips
+
+- **Latency = delay** (time).
+- **Bandwidth = maximum capacity**.
+- **Throughput = actual achieved performance**.
+- **Jitter = inconsistent delay**, hurts real-time traffic.
+- **QoS = prioritize voice/video traffic** to reduce jitter and latency.

@@ -1,0 +1,133 @@
+---
+title: "Subnetting"
+slug: "subnetting"
+date: "2025-10-29"
+status: "published"
+summary: "Subnetting - take a large network to split it up into smaller netowkr.s"
+tags: ["network+"]
+toc: true
+---
+
+# Subnetting
+
+Subnetting - take a large network to split it up into smaller netowkr.s 
+
+Subnet masks modify netorks and create subnets. 
+
+10.0.0.0/x 16.7
+
+10.0.0.0/8 16.7 million 
+
+10.0.0.0/24 256 IPs
+
+10.0.1.0/24 256 ips 
+
+10.0.2.0/24 256 
+
+A 16.7 MIL, class b 65,5543, class c 254 
+
+/25 , /26, /27 etc can increase the networks, and reduce the host’s per nework. 
+
+2^s = numer of hosts 
+
+you need to use the -2 for the netowrk and the broadcast the first and last in the rnge. 
+
+2h -2  h= number of hosts. 
+
+CIDR notation. 
+
+classless interdomain routing. 192.168.1.0/26 
+
+Variable - Legnth subnet mask (VLSM) 
+
+Allows subnets of vaious size to be used and requirs a protocol that supports it. 
+
+RIP OSPF egrip all support it.  it’s a subnet of subnets. 
+
+chart ffrom /24 to /30 with ips and number of subnets. will help with test day. 
+
+# Subnetting (N10-009)
+
+### What it is
+
+- Breaking a larger network into **smaller subnets** to improve performance, security, and address use.
+
+### Masks & CIDR
+
+- **Subnet mask** splits **network bits (1s)** and **host bits (0s)**.
+- **CIDR notation**: `/prefix` = number of network bits.
+    - Example: `10.0.0.0/8` (~16.7M host addresses total), `10.0.0.0/24` (256 addresses), `10.0.1.0/24`, `10.0.2.0/24`, etc.
+
+### Core formulas (memorize)
+
+- **Usable hosts per subnet**: `2^(host bits) − 2`
+- **Number of subnets when you borrow s bits** (from an original block): `2^s`
+- **Block size** in the changing octet: `256 − mask_octet`
+    - e.g., mask `255.255.255.192` → `256 − 192 = 64` → subnets start at .0, .64, .128, .192
+
+### VLSM (Variable Length Subnet Mask)
+
+- Use **different prefix lengths** in the same major network to fit varied host needs.
+- **Supports VLSM**: **RIPv2**, **OSPF**, **EIGRP**, **IS-IS**, **BGP**
+    - **Does NOT support**: **RIPv1** (exam trap)
+
+---
+
+## High-Yield Example
+
+Need about **60 hosts**? Choose **/26**: mask **255.255.255.192**, **62 usable**.
+
+Subnets of `192.168.1.0/24` split to /26 (block size 64):
+
+- `192.168.1.0/26` → hosts **.1–.62**, bcast **.63**
+- `192.168.1.64/26` → hosts **.65–.126**, bcast **.127**
+- `192.168.1.128/26` → hosts **.129–.190**, bcast **.191**
+- `192.168.1.192/26` → hosts **.193–.254**, bcast **.255**
+
+---
+
+## Quick Subnet Chart (/24 to /30)
+
+| Prefix | Mask | Usable Hosts | Block Size (4th octet) |
+| --- | --- | --- | --- |
+| /24 | 255.255.255.0 | 254 | 1 |
+| /25 | 255.255.255.128 | 126 | 128 |
+| /26 | 255.255.255.192 | 62 | 64 |
+| /27 | 255.255.255.224 | 30 | 32 |
+| /28 | 255.255.255.240 | 14 | 16 |
+| /29 | 255.255.255.248 | 6 | 8 |
+| /30 | 255.255.255.252 | 2 | 4 |
+
+**Memory trick:** block sizes walk down by halves: **128, 64, 32, 16, 8, 4** → /25 → /30.
+
+---
+
+## Must-Know Classful Defaults (legacy but tested)
+
+- **Class A** `/8` (255.0.0.0) → ~16.7M addresses
+- **Class B** `/16` (255.255.0.0) → 65,536 addresses
+- **Class C** `/24` (255.255.255.0) → 256 addresses
+    
+    *(Usable = total − 2)*
+    
+
+---
+
+## Exam Tips (rapid)
+
+- “~60 hosts?” → **/26**. “~30?” → **/27**. “~14?” → **/28**.
+- **Network** = first address (all host bits 0). **Broadcast** = last (all host bits 1).
+- **RIPv1** no VLSM; **RIPv2/OSPF/EIGRP** yes VLSM.
+- **Block size** trick saves time on finding ranges.
+
+---
+
+### 5 Rapid Review Qs
+
+1. Usable hosts in **/27**? → **30**
+2. Block size for **255.255.255.224**? → **32**
+3. First usable in `10.0.5.64/26`? → **10.0.5.65**
+4. Broadcast of `172.16.10.0/28`? → **172.16.10.15**
+5. Protocol that **doesn’t** support VLSM? → **RIPv1**
+
+Want a printable **one-page subnetting cheat sheet** with more prefixes (/16–/32) and quick practice?

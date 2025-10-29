@@ -1,0 +1,35 @@
+---
+title: "Routing protocols"
+slug: "routing-protocols"
+date: "2025-10-29"
+status: "published"
+summary: "internal gateway protocols - used in interner networks."
+tags: ["network+"]
+toc: true
+---
+
+# Routing protocols
+
+internal gateway protocols - used in interner networks. 
+
+exterior gateway protocols. used in exterior networks . 
+
+Router Advertisement method  - the way the route it let known to the other devices. 
+
+Distance Vector - number of hops is more important. Sends full copy of routing table to it’s directly connecty neibourghs at regular intervals. Slow convergence time. 
+
+HOld-down timer - prevents updates for a spwecefi period of time and speeds up convergence. 
+
+Link State - concerend more with link speed. concerend with going across the fastesst network connection. requires all routers to know about al the paths that all the other routers can reach in the network, link states have a faster convrcendce time and and use cost or other factors as a metric. 
+
+RIP - Routing information protocol - distance vector protocl that uses hop count( maximum hops of 15 ;16 is infinite) oldest protocol. updates every 30 seconds. Easy to configure, runs over UDP. 
+
+OSPF Link state protocol that uses cost is 
+
+IS-IS intermediate system to intermediate system - link state protocol that also used cost and functions like ospf, but not as popular. 
+
+enhanced interiro gateway routing protocol EIGRP- hybrid distance vector and link state protocols - deveolped by sicco and is popular in cisco netorks. 
+
+border gateway protocol - BGP exteriror gateway protocol. - path vector that uses the number of autonomous system hops insted of router hopts. backbone of the internet - widespead utilization, slow convergence. 
+
+Hybrid

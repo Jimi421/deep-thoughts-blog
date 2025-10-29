@@ -1,0 +1,110 @@
+---
+title: "ipconfig, ifconfig, and ip"
+slug: "ipconfig-ifconfig-and-ip"
+date: "2025-10-29"
+status: "published"
+summary: "ipconfig - ip configuration - diplays all the current TCP/IP also used to configure DHCP on windows. pf you have appipa dhcp issues."
+tags: ["network+"]
+toc: true
+---
+
+# ipconfig, ifconfig, and ip
+
+ipconfig - ip configuration - diplays all the current TCP/IP also used to configure DHCP on windows. pf you have appipa dhcp issues. 
+
+ipconfig /release  removes DHCP address. 
+
+ipconfig /renew activates DORA
+
+ipconfig /all show’s all details 
+
+ifconfig -a all available interfaces. 
+
+the difference between ifconfig and ipcong is that ifconfig provides all the info on all interfaces all the time. 
+
+ip assignes an address to a network interdface or configure a network inerface on unix, linux or osx OS. 
+
+ip can be used to change ip accress 
+
+ip can be used to set a MAC address manually 
+
+ip can be used to set promiscious mode. for packet niffer
+
+you can use ip to set a interface dwon
+
+ping - checks connectivitiy between two devices. 
+
+ping www.jimi421.com
+
+tracert checks for any hop between the client and dest. 
+
+tracert and the hostname
+
+tracert www.jimi421.com
+
+first ping google.com
+
+if that fails ping 8.8.8.8 google DNS server, always up. that means internet connection is working but most likley DNS. if this fails, ping default gateway. 
+
+---
+
+# Network CLI Tools
+
+### **Windows: ipconfig**
+
+- Displays and configures **TCP/IP settings**.
+- **Common switches:**
+    - `ipconfig` → Show basic IP info.
+    - `ipconfig /all` → Show full details (MAC, DNS, DHCP info).
+    - `ipconfig /release` → Drop DHCP lease.
+    - `ipconfig /renew` → Request new DHCP lease (**runs DORA**).
+    - `ipconfig /flushdns` → Clear DNS cache.
+
+---
+
+### **Linux/Unix/macOS: ifconfig**
+
+- Shows/sets network interface parameters.
+- **Examples:**
+    - `ifconfig -a` → Show all interfaces.
+    - `ifconfig eth0 down` → Disable interface.
+    - `ifconfig eth0 up` → Enable interface.
+- **Note:** Being phased out in favor of the `ip` command.
+
+---
+
+### **Linux/Unix/macOS: ip** (modern replacement)
+
+- **More powerful** than ifconfig.
+- Examples:
+    - `ip addr` → Show IP addresses.
+    - `ip addr add 192.168.1.10/24 dev eth0` → Assign IP.
+    - `ip link set eth0 down` → Disable interface.
+    - `ip link set eth0 address 11:22:33:44:55:66` → Change MAC.
+    - `ip link set eth0 promisc on` → Enable promiscuous mode (for sniffing).
+
+---
+
+### **Connectivity & Path Testing**
+
+- **ping**
+    - Tests connectivity (ICMP Echo).
+    - `ping www.jimi421.com` → Tests DNS + connectivity.
+    - Troubleshooting method:
+        1. `ping default gateway` → Test LAN.
+        2. `ping 8.8.8.8` (Google DNS) → Test Internet without DNS.
+        3. `ping domain.com` → Test Internet with DNS.
+- **tracert (Windows) / traceroute (Linux)**
+    - Displays each hop between client and destination.
+    - Helps locate where connectivity breaks.
+    - Example: `tracert www.jimi421.com`.
+
+---
+
+✅ **Exam Must-Knows**
+
+- `ipconfig /release` + `/renew` = DHCP troubleshooting.
+- `ipconfig /flushdns` = DNS troubleshooting.
+- **ifconfig = legacy**; **ip = modern** Linux tool.
+- `ping gateway` → LAN check; `ping 8.8.8.8` → Internet w/o DNS; `ping domain` → DNS test.
+- `tracert/traceroute` = find broken hop in path.

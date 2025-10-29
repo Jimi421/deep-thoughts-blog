@@ -1,0 +1,134 @@
+---
+title: "Ethernet Fundamentals"
+slug: "ethernet-fundamentals"
+date: "2025-10-29"
+status: "published"
+summary: "Origionally Ethernet was run over coaxial cables using BNC connectors and vampire taps 10Base2 and 10Base5 thinket and thicknet."
+tags: ["network+"]
+toc: true
+---
+
+# Ethernet Fundamentals
+
+Origionally Ethernet was run over coaxial cables using BNC connectors and vampire taps 10Base2 and 10Base5 thinket and thicknet. 
+
+10BASE-T Ethernet allowe up to 10Mbps networks to be run over a twisted pair cable known as a category 3 or CAT 3. 
+
+could only go over 100 meters.  
+
+Deterministic - means the network access shoul be very organized and orderly. like each device has to raise it’s hand to send info. 
+
+Contention-based : used to determine who can get to use the network at a time. like a conversaton at a pub. you wait for your turn then you are able to speak. when doing this you may have collisions. conenton-based models can become extremely chaotiotic. 
+
+Ethernet is a contintion-based networkijng protocol. - lower overhead, don’t need to pass the token, and anyone can talk at any time. 
+
+CSMA/CD - Carrier sense multiple access. with collision detection. - you wait for the gap then send data, if there is a collision then you pause and resend. 
+
+CS - carrirer sensing - listen to the network to see if there is.a signal. 
+
+MA multiple access - many devices that are able to use the network at the same time. 
+
+CD collision detection - if a collision is detected they devices have to decide who goes first. if so they stop and both will resend at a reandom time to talk again. 
+
+Random backoff timer - allows devices to retransmit when the countdown is done. 
+
+so a device sends then has to wait for a random time to send it’s time. 
+
+the more devices communiction on a single network segment the more collisons that you will have. 
+
+Colision domain - each area of the netowrk that shares a single segment. Devices opperate in half duples when connected to a hub. 
+
+Keep collision domains small inside networks.
+
+Ethernet swithc - increase the scaliblity of our networks. each switchport is it’s own collision domain. 
+
+Devices opperate in full-duplex mode when connected to a switch. 
+
+use switches instead of hubs. 
+
+# Ethernet Standards & Access Methods (N10-009)
+
+### **Early Ethernet**
+
+- **10BASE5 (Thicknet):**
+    - Coaxial cable with **vampire taps**.
+    - Max segment: 500 m.
+- **10BASE2 (Thinnet):**
+    - Coaxial with **BNC connectors**.
+    - Max segment: 185 m.
+
+---
+
+### **10BASE-T**
+
+- Introduced **twisted pair (Cat3)** cabling.
+- Speed: **10 Mbps**.
+- Distance: **100 m per segment**.
+- Became the foundation for modern Ethernet over twisted pair.
+
+---
+
+# Deterministic vs. Contention
+
+- **Deterministic Access (Token Ring, Token Bus):**
+    - Orderly, “raise your hand to talk.”
+    - Uses tokens, no collisions.
+- **Contention-Based Access (Ethernet):**
+    - “Pub conversation” model.
+    - Anyone can speak, collisions possible.
+    - Lower overhead (no token passing).
+
+---
+
+# CSMA/CD (Ethernet Legacy)
+
+**Carrier Sense Multiple Access with Collision Detection**
+
+- **CS (Carrier Sense):** Device listens for quiet network before sending.
+- **MA (Multiple Access):** Many devices share the medium.
+- **CD (Collision Detection):** If collision occurs → stop, wait, and resend.
+- **Random Backoff Timer:** Devices wait a random time before retrying.
+- **Issue:** More devices = more collisions.
+
+---
+
+# Collision Domains
+
+- **Collision Domain:** Segment where collisions can occur.
+    - On a hub, **all devices share one collision domain**.
+    - Devices operate in **half-duplex**.
+- **Switches:**
+    - Each switchport = its own collision domain.
+    - Devices operate in **full-duplex** → no collisions.
+- **Best Practice:** Use **switches** instead of hubs.
+
+---
+
+✅ **Must-Know Exam Points**
+
+- **10BASE2 = BNC, 185 m.**
+- **10BASE5 = vampire taps, 500 m.**
+- **10BASE-T = Cat3, 100 m, 10 Mbps.**
+- **Ethernet = contention-based (CSMA/CD).**
+- **Switch = each port its own collision domain, full duplex.**
+- **Hub = one big collision domain, half duplex.**
+
+---
+
+⚡ Flashcard Drill:
+
+- **Q:** Which Ethernet standard used vampire taps?
+    
+    **A:** 10BASE5 (Thicknet).
+    
+- **Q:** What replaced hubs to eliminate collisions?
+    
+    **A:** Switches.
+    
+- **Q:** What does CSMA/CD stand for?
+    
+    **A:** Carrier Sense Multiple Access with Collision Detection.
+    
+- **Q:** What duplex mode do switches support?
+    
+    **A:** Full-duplex.

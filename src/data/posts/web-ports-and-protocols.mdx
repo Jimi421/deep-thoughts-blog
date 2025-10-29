@@ -1,0 +1,127 @@
+---
+title: "Web Ports and Protocols"
+slug: "web-ports-and-protocols"
+date: "2025-10-29"
+status: "published"
+summary: "Rules for internet communication,"
+tags: ["network+"]
+toc: true
+---
+
+# Web Ports and Protocols
+
+Rules for internet communication,
+
+ports are
+
+port 80: httphypertext transfer protocol - foundataion of communication on the internet. Applicaton layer protocol that enables plaintet communication betweeen clients and servers. Not secure. 
+
+Eavesdropping and on path attack(MITM) vunerable. 
+
+port 443: HTTPs Hypertext transfer protocol secure. same as HTTP but it encrypts it with. SSL or TLS tunnle is more current. ensures that any coms between client and webpage is encrypted. 
+
+over 95% of web traffic now uses HTTPs. 
+
+SEO and trust modern HTTPs and search engines will see more traffic going there an will rank the site higher. 
+
+ere’s a clean, test-ready summary of **Web Ports and Protocols** for the **CompTIA Network+ (N10-009)** exam, based on the official objectivesComptia+Network+(N10-00…:
+
+---
+
+## 🌐 Web Ports and Protocols (High-Yield for Exam)
+
+### 🔒 Secure vs. Non-Secure Web Services
+
+| Protocol | Port | Description |
+| --- | --- | --- |
+| **HTTP** | 80 | Basic web traffic (insecure) |
+| **HTTPS** | 443 | Encrypted web traffic using TLS/SSL |
+
+> ✅ Exam Tip: Know the difference between HTTP (port 80) and HTTPS (port 443). If a service needs encryption, it will use HTTPS.
+> 
+
+---
+
+### 🔑 Authentication & Remote Access Protocols
+
+| Protocol | Port | Use Case |
+| --- | --- | --- |
+| **SSH** | 22 | Secure command-line remote login |
+| **Telnet** | 23 | Insecure remote terminal (legacy) |
+
+> ⚠️ Common Question: SSH vs Telnet — SSH is encrypted, Telnet is not. You’ll always choose SSH for security.
+> 
+
+---
+
+### 📦 File Transfer Protocols
+
+| Protocol | Port(s) | Notes |
+| --- | --- | --- |
+| **FTP** | 20 (data), 21 (control) | Basic file transfer, unencrypted |
+| **SFTP** | 22 | Secure file transfer over SSH |
+| **TFTP** | 69 | Lightweight, UDP-based file transfer (no auth) |
+
+> 🔁 Must Know: FTP = 20/21; SFTP = 22 (same as SSH); TFTP = 69 (UDP, often used for boot files)
+> 
+
+---
+
+### 📧 Email Protocols (also web-relevant)
+
+| Protocol | Port | Purpose |
+| --- | --- | --- |
+| SMTP | 25 | Sending email |
+| SMTPS | 587 | Secure sending |
+| IMAP (not listed, FYI) | 143 (IMAPS 993) | Retrieve email |
+| POP3 (FYI) | 110 (POP3S 995) | Download email |
+
+> 💡 Memory Trick:
+> 
+- **S**ecure ports are often in the 400+ or 600+ range
+- **SMTPS = 587** (Think: 5 → S for Secure)
+
+---
+
+### 🔍 Web Infrastructure & Support
+
+| Protocol | Port | Description |
+| --- | --- | --- |
+| **DNS** | 53 | Resolves domain names to IPs |
+| **DHCP** | 67/68 | Assigns IP addresses automatically |
+| **NTP** | 123 | Syncs time |
+| **Syslog** | 514 | Logging system messages |
+| **SNMP** | 161/162 | Network monitoring (161 queries, 162 traps) |
+| **LDAP** | 389 | Directory services |
+| **LDAPS** | 636 | Secure LDAP |
+
+> 🔧 Sysadmin Tip: These support protocols often work behind the scenes but are essential for networked web services.
+> 
+
+---
+
+### 🖥️ Remote Access for Web-Based Tools
+
+| Protocol | Port | Usage |
+| --- | --- | --- |
+| RDP | 3389 | Remote desktop to Windows machines |
+| SIP | 5060/5061 | Voice over IP call signaling |
+
+---
+
+### 🎯 Traffic Types (Web Related)
+
+- **Unicast** – one-to-one
+- **Broadcast** – one-to-all (local subnet)
+- **Multicast** – one-to-many (specific group)
+- **Anycast** – one-to-nearest (often used in CDN/web edge services)
+
+---
+
+## 🔁 Rapid Review Questions
+
+1. **Which port does HTTPS use?**
+2. **What protocol uses ports 67 and 68?**
+3. **Which is more secure, Telnet or SSH?**
+4. **What port is used for DNS?**
+5. **Which protocol would you use to securely transfer a file via the command line?**

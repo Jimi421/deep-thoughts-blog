@@ -1,0 +1,131 @@
+---
+title: "interface statistice"
+slug: "interface-statistice"
+date: "2025-10-29"
+status: "published"
+summary: "link state- communicates weather an interface is up or down."
+tags: ["network+"]
+toc: true
+---
+
+# interface statistice
+
+link state- communicates weather an interface is up or down. 
+
+reliability 
+
+txload 
+
+rxload 
+
+drop - number that have been dropped 
+
+flush - sounts selective pact discards 
+
+spd - DISCARDS lower priority packets. 
+
+throttle - interface fails to buffer current flow
+
+CRC - number of packets that recived but do not match the checksum
+
+frame - number of packets where a crc non over ru 
+
+Igored 
+
+# 📡 Interface & Link-State Monitoring
+
+**Purpose:**
+
+Track the **health and performance of network interfaces** (router, switch ports). Helps with troubleshooting and capacity planning.
+
+---
+
+## 🔑 Key Metrics
+
+- **Link State**
+    - Shows if an interface is **up or down**.
+    - If down → cable, port, or hardware failure.
+- **Reliability**
+    - Measure of interface stability.
+    - Expressed as a value (higher = more reliable).
+- **Txload (Transmit Load)**
+    - Load on the **outbound (sending)** traffic.
+    - Indicates how much of the available bandwidth is being used.
+- **Rxload (Receive Load)**
+    - Load on the **inbound (receiving)** traffic.
+    - Shows if the interface is saturated with incoming data.
+
+---
+
+## 📉 Error & Drop Counters
+
+- **Drop**
+    - Packets dropped due to congestion or buffer overflow.
+- **Flush**
+    - Selective packet discards (often due to QoS policy).
+- **SPD (Selective Packet Discard)**
+    - Router/switch discards **lower-priority packets** first when congested.
+- **Throttle**
+    - Indicates the interface is unable to buffer/handle current traffic load.
+- **CRC Errors (Cyclic Redundancy Check)**
+    - Packets received but **checksum doesn’t match**.
+    - Often due to **cabling issues, interference, or duplex mismatch**.
+- **Frame Errors**
+    - Corrupted frames that fail checks beyond CRC.
+    - Could indicate alignment or physical layer problems.
+- **Ignored**
+    - Packets dropped because the interface input queue was full.
+    - Indicates **buffer/queue overflow**.
+
+---
+
+## ✅ Exam Tips
+
+- **Link-state up/down** = physical or Layer 1 status.
+- **Txload/Rxload** = utilization (capacity vs actual load).
+- **CRC/frame errors** = Layer 1 issues (bad cables, interference).
+- **Ignored/Drop/Throttle** = congestion or buffer problems.
+- **SPD/Flush** = QoS-related selective discards.
+
+---
+
+⚡ Sample Question:
+
+*“An interface shows increasing CRC errors. What is the most likely cause?”*
+
+→ **Faulty cabling or physical interference.**
+
+---
+
+# 🛠️ Interface/Link-State Troubleshooting Cheat Sheet
+
+| **Metric / Symptom** | **Likely Cause** |
+| --- | --- |
+| **Link state down** | Cable unplugged, bad port, power failure, or hardware fault. |
+| **High Txload / Rxload** | Interface congestion, bandwidth saturation, too much traffic. |
+| **Drops increasing** | Queue/buffer overflow due to congestion. |
+| **Flush (selective discards)** | QoS policy dropping packets selectively. |
+| **SPD (Selective Packet Discard)** | Router/switch dropping **low-priority packets** under congestion. |
+| **Throttle events** | Interface unable to buffer → too much traffic for current speed/CPU. |
+| **CRC errors** | Faulty cabling, bad connectors, interference, duplex mismatch, or damaged NIC. |
+| **Frame errors** | Alignment errors, collisions, physical layer faults, or bad transceivers. |
+| **Ignored packets** | Input queue full (buffer overflow), device overwhelmed. |
+| **High error rate overall** | Misconfigured speed/duplex, bad cabling, failing hardware, EMI/RFI interference. |
+
+---
+
+## ✅ Exam Tips
+
+- **CRC = bad cables / interference**.
+- **Drops/Ignored = congestion/buffers full**.
+- **SPD/Flush = QoS discarding lower-priority packets**.
+- **Link state = Layer 1 issue (cable/port)**.
+- **Txload/Rxload = traffic utilization**.
+
+---
+
+⚡ Sample Question:
+
+*A switch port shows rising CRC errors but low utilization. What’s the most likely issue?*
+
+→ **Bad cable or interference (physical layer problem).**

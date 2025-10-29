@@ -1,0 +1,123 @@
+---
+title: "Internet Control Message Protocol ICMP"
+slug: "internet-control-message-protocol-icmp"
+date: "2025-10-29"
+status: "published"
+summary: "Intergral part of the Internet Protocol Suite which is a set of nteworking protocls used on the network."
+tags: ["network+"]
+toc: true
+---
+
+# Internet Control Message Protocol ICMP
+
+Intergral part of the Internet Protocol Suite which is a set of nteworking protocls used on the network.  
+
+Its a network layer protocol that’s for diagnosing problems, and trouble shottign. It’s a layer 3 protocol. 
+
+When a service or host in unreachable 
+
+whena. packet’s time is too long
+
+type , code, checksum 
+
+Icmp lacks the reliablilty of the TCP protocol. 
+
+ICMP prioritizes speed and simplitiry over data intregrity and security. 
+
+ICMP flood attack and ping atack are threat actions using icmp 
+
+icmp FLOOd sends overwhelming amount of icmp packets
+
+DDoS wher an attacker uses a botnet to send the ping flood. 
+
+Ping of Death 
+
+Attack that exploits older unpatched systems. sents a packet lardger thatn 65,535 
+
+Network admins may choose to block icmp traffic. 
+
+# 📡 ICMP – Internet Control Message Protocol
+
+**Layer:** 3 (Network Layer)
+
+**Purpose:** Used for **diagnosing network issues**, not for transferring data.
+
+---
+
+## ✅ Key Functions of ICMP
+
+| Feature | Description |
+| --- | --- |
+| **Error Reporting** | Notifies sender if packet delivery fails |
+| **Diagnostics** | Used by tools like `ping` and `traceroute` |
+| **Speed & Simplicity** | Prioritizes speed over reliability or security |
+| **Not reliable** | No acknowledgments, no session tracking (unlike TCP) |
+
+---
+
+## 🔍 Common ICMP Use Cases
+
+- **Ping** – Checks if a host is reachable
+- **Traceroute** – Maps the path to a host
+- **Destination Unreachable** – Notifies when a route fails
+- **Time Exceeded** – TTL expired (used in `traceroute`)
+
+---
+
+## 🧱 ICMP Message Structure
+
+| Field | Purpose |
+| --- | --- |
+| **Type** | Indicates the message purpose (e.g., echo request = 8, echo reply = 0) |
+| **Code** | Gives context for the type |
+| **Checksum** | Basic error detection |
+
+---
+
+## ☠️ ICMP Attack Types
+
+| Attack Type | Description |
+| --- | --- |
+| **ICMP Flood** | Sends large numbers of ping requests to overwhelm a target (aka **Ping Flood**) |
+| **DDoS via ICMP** | Uses **botnets** to launch large-scale ICMP floods |
+| **Ping of Death** | Sends ICMP packets **larger than 65,535 bytes**, crashing older systems |
+
+> 💡 Modern OSs are patched against Ping of Death, but it's still testable knowledge.
+> 
+
+---
+
+## 🚫 ICMP Blocking
+
+- **Network admins often block ICMP** at firewalls to prevent abuse
+- Can hinder diagnostic tools like **ping** or **traceroute**
+
+---
+
+## 🧠 Memory Trick
+
+> "ICMP = I Can Manage Problems"
+> 
+> 
+> Not for transferring data, just **reporting issues** or testing connectivity
+> 
+
+---
+
+## ⚡ Rapid Review Questions
+
+1. **What OSI layer does ICMP operate at?**
+    
+    → Layer 3 (Network)
+    
+2. **What is ICMP used for?**
+    
+    → Diagnostics and error reporting (not data transfer)
+    
+3. **What’s a common attack that abuses ICMP?**
+    
+    → ICMP Flood / Ping Flood
+    
+4. **Why might ICMP be blocked on a network?**
+    
+    → To prevent DDoS attacks and scanning abuse

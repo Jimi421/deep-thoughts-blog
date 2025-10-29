@@ -1,0 +1,100 @@
+---
+title: "VLAN Hopping"
+slug: "vlan-hopping"
+date: "2025-10-29"
+status: "published"
+summary: "Vlan used to partin any boradcast domain to isolate it from the rest of the network"
+tags: ["network+"]
+toc: true
+---
+
+# VLAN Hopping
+
+Vlan used to partin any boradcast domain to isolate it from the rest of the network 
+
+Layer 3 routing is used, enabiling access control list to segregate filters. 
+
+As a pen tester, a breaking out of a vlan from a user’s workstation is nessessary to access sensetive info. 
+
+vlan hopping a techinque that exploits a misconfiguration to direct traffic to a different VLAN without authorization. 
+
+Double Tagging - a method where the attacker tries to reach a different VLAN using vulnerabilites in the trunk port configuration . i if they are on the sam interface as the untagged. 
+
+inner tag true destination, outer tag removed ..native vlan. 
+
+Blind attack one where the commands are sent to the victim but don’t get to see the results. 
+
+DoS Stress Testing Attack - wont need a response just want to flood the network d
+
+change default native vlanid. 
+
+Switch Spoofing - ATTACKER ATTEMPTS TO USE THE dtp DYNAMIC PROTOCOL TO NEGOTIATE A trunk port with a switch. 
+
+Always configure switch ports to hvae dynami swithc port motes disables by default. 
+
+MAC table overflow attack - allows VLANs to no longer to be enforces. 
+
+overload CAM tables result as switches and they fail open A hub does not have any intel and will send out all packets. 
+
+# VLAN Hopping
+
+### VLAN Basics
+
+- VLANs **partition broadcast domains** for isolation and security.
+- Layer 3 routing + ACLs enforce segregation between VLANs.
+- Misconfiguration can allow an attacker to “hop” from one VLAN to another.
+
+---
+
+### VLAN Hopping Attacks
+
+1. **Double Tagging**
+- Attacker inserts **two VLAN tags** into the Ethernet frame.
+- Outer tag = attacker’s VLAN (removed by first switch).
+- Inner tag = victim VLAN (forwarded onto target VLAN).
+- Exploits **native VLAN misconfiguration** on trunk ports.
+- **Blind attack** → attacker can send traffic but often doesn’t see the replies.
+
+**Mitigation:**
+
+- Change default native VLAN from VLAN 1.
+- Disable trunking on user-facing ports.
+
+---
+
+1. **Switch Spoofing**
+- Attacker uses **Dynamic Trunking Protocol (DTP)** to trick the switch into forming a trunk.
+- Once trunk is formed, attacker gains access to multiple VLANs.
+
+**Mitigation:**
+
+- Disable DTP (set ports to “access” mode only).
+- Explicitly configure allowed VLANs on trunks.
+
+---
+
+1. **MAC Table Overflow (related attack)**
+- Attacker floods switch CAM table with fake MACs.
+- Switch fails open → acts like a hub → VLAN enforcement may fail.
+- Enables eavesdropping or VLAN hopping.
+
+**Mitigation:**
+
+- Enable **port security** to limit MACs per port.
+- Use IDS/IPS to detect abnormal MAC learning rates.
+
+---
+
+### Exam Takeaways
+
+- **VLAN Hopping = Exploiting misconfigurations to escape VLAN boundaries.**
+- **Double Tagging = Exploits native VLAN on trunk ports.**
+- **Switch Spoofing = Exploits DTP to create unauthorized trunks.**
+- **Mitigation = Disable DTP, change native VLAN, lock down ports with port security.**
+
+---
+
+⚡Memory Trick:
+
+- **“Hop with Two Tags”** = Double Tagging.
+- **“Hop with Fake Trunk”** = Switch Spoofing.

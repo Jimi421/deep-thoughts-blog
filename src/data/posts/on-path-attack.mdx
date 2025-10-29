@@ -1,0 +1,83 @@
+---
+title: "on path attack"
+slug: "on-path-attack"
+date: "2025-10-29"
+status: "published"
+summary: "on - path attack - where the attacker or pentester places their workstarion between two hot=sts to capture monitor and relay communiations."
+tags: ["network+"]
+toc: true
+---
+
+# on path attack
+
+on - path attack - where the attacker or pentester places their workstarion between two hot=sts to capture monitor and relay communiations. 
+
+ARP poisioning 
+
+DNS POISING 
+
+ROUGE WIRELESS ACCESS POINT 
+
+Replay - valid data is captured is repeteaded immetadly without dely. capture a handshake then redo it and it thinks we are the same. 
+
+or relay - attacer is a proxy between the two hosts, can read and modify the info. put yourself inbetween the serve and the client and mix it up. 
+
+SSL stripping redirecting HTTPs request to HTTP to bypass encryption. 
+
+Downgrade - an attack in which the attacker attempt to have a clinet or server abandon ith higher security mode in faor of a lower security mode. that may allow the attacker to crack the encryption at a much lower level. but can be applied to any encryption or protection mechanianisim. 
+
+# On-Path Attacks (a.k.a. Man-in-the-Middle, MITM)
+
+### Concept
+
+- Attacker inserts themselves **between two hosts** (client ↔ server).
+- Can **capture, monitor, relay, or modify** communications.
+- Often invisible to the victim.
+
+---
+
+### Common Techniques
+
+- **ARP Poisoning** → Corrupt ARP cache so traffic flows through attacker.
+- **DNS Poisoning** → Redirects users to attacker-controlled sites.
+- **Rogue Wireless Access Point** → Attacker sets up fake AP, users connect unknowingly.
+- **Replay Attack** → Captures valid traffic (e.g., handshake, login token) and resends it to impersonate.
+- **Relay Attack** → Attacker proxies real-time traffic, can **read & modify** contents.
+- **SSL Stripping** → Downgrades HTTPS to HTTP, bypassing encryption.
+- **Downgrade Attack** → Forces weaker encryption protocol (e.g., from TLS 1.3 → TLS 1.0), making traffic easier to crack.
+
+---
+
+### Impacts
+
+- Data theft (passwords, credit card numbers).
+- Session hijacking.
+- Unauthorized access.
+- Loss of encryption and confidentiality.
+
+---
+
+### Mitigation
+
+- **Encryption (TLS/SSL, VPNs)** → Prevents useful interception.
+- **Certificate validation (PKI)** → Stops SSL stripping & downgrade attacks.
+- **Static ARP entries / Dynamic ARP Inspection (DAI)** → Mitigates ARP poisoning.
+- **DNSSEC** → Protects against DNS poisoning.
+- **Wireless security (WPA3, disable open SSIDs)** → Prevents rogue AP use.
+- **Replay protection mechanisms** (timestamps, nonces).
+
+---
+
+✅ **Exam Must-Knows**
+
+- On-Path = attacker **between two parties**.
+- **Replay = resend valid traffic. Relay = live proxying.**
+- **SSL stripping = HTTPS → HTTP downgrade.**
+- **Downgrade attack = force weaker crypto.**
+- Mitigations = **encryption, certificate validation, DAI, DNSSEC, VPNs.**
+
+---
+
+⚡Memory Trick:
+
+**“On-Path = Overhear, Replay, Alter, Strip, Downgrade.”**

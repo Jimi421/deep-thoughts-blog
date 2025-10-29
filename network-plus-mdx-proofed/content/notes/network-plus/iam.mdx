@@ -1,0 +1,104 @@
+---
+title: "IAM"
+slug: "iam"
+date: "2025-10-29"
+status: "published"
+summary: "Security process that proivides indification, authentication, and authorization for users and computers. Ideanty and Access Mangment"
+tags: ["network+"]
+toc: true
+---
+
+# IAM
+
+Security process that proivides indification, authentication, and authorization for users and computers. Ideanty and Access Mangment 
+
+Every unique subnect in an orginization has an account. 
+
+personell - people, employees 
+
+writing down usernames and passwords, logging in carelessly 
+
+endpoints - desktops, laptops, tablets, cell phones. 
+
+servers - have their own IAM mission crytical systems, encryption schemes. 
+
+Software - can take info from users so needs it’s own way to allow or disallow. 
+
+Roles - support the identies of various assest by defining the resource an accet is allowd to access. 
+
+Identy and access management - directroy services repositories. access managemen tools, auding and reporting tools. 
+
+create and deprovision accounts
+
+manage accounts - reset passwords , update digital certs
+
+audit accounts - big function in cyber security 
+
+evaluate identy-based threats. check for weak passwords. 
+
+maintain compliance .
+
+Risk - 
+
+user accounts - least risky 
+
+privleged accounts - more risky has more permissions. administrator root, or super user. 
+
+shared accounts - dangerous when it comes to audits. 
+
+# Identity and Access Management (IAM)
+
+### Concept
+
+- **Security process** for **Identification, Authentication, and Authorization** of users, endpoints, servers, and software.
+- Ensures the **right users/devices get the right access** at the right time.
+
+---
+
+### IAM Components
+
+- **Subjects (Accounts):** Each unique entity (employee, system, service) has an identity.
+    - **Personnel:** User accounts (employees, contractors).
+    - **Endpoints:** Desktops, laptops, tablets, smartphones.
+    - **Servers:** Critical systems with IAM + encryption needs.
+    - **Software/Apps:** Must authenticate to resources securely (APIs, services).
+- **Roles:** Define what resources/accounts can access (role-based access control).
+- **IAM Tools:**
+    - Directory services (e.g., Active Directory, LDAP).
+    - Access management tools (SSO, MFA).
+    - Auditing & reporting tools.
+
+---
+
+### IAM Functions
+
+- **Provisioning/Deprovisioning:** Create and remove accounts promptly.
+- **Account Management:** Reset passwords, update digital certs, manage roles.
+- **Auditing Accounts:** Critical for cybersecurity and compliance.
+- **Threat Evaluation:** Detect weak passwords, excessive permissions.
+- **Compliance:** Ensure policies, regulations (PCI DSS, HIPAA, GDPR) are met.
+
+---
+
+### Risks by Account Type
+
+- **User Accounts:** Least risky, limited permissions.
+- **Privileged Accounts:** Higher risk — admin/root/superuser accounts can cause severe damage if compromised.
+- **Shared Accounts:** Most dangerous — hard to audit and trace activity, often against compliance rules.
+
+---
+
+✅ **Exam Must-Knows**
+
+- IAM = **Identify, Authenticate, Authorize**.
+- **Privileged accounts** are highest risk.
+- **Shared accounts** are a compliance red flag.
+- **Auditing + provisioning** = core IAM functions.
+
+---
+
+⚡Memory Trick:
+
+**IAA → Identify, Authenticate, Authorize**.
+
+Think: *“Who are you? → Prove it. → What can you do?”*

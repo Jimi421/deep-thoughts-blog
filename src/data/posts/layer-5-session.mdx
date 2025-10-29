@@ -1,0 +1,112 @@
+---
+title: "Layer 5 (Session)"
+slug: "layer-5-session"
+date: "2025-10-29"
+status: "published"
+summary: "Conversation that is kept session from the tohers, it’s a 1 on 1 conversation b"
+tags: ["network+"]
+toc: true
+---
+
+# Layer 5 (Session)
+
+Conversation that is kept session from the tohers, it’s a 1 on 1 conversation b
+
+Sesson Layer - keeps conversaitons separate to prevent intermingling of data. 
+
+Set up : Checking of user credentials and assisngn gnumbers to assign to the session to help identify them. 
+
+maintain : where data is transfered back and forth across the network.  
+
+Transfer data, reestablish connetion if lost 
+
+acknowledge recipt of data. 
+
+tear down Session - ending of a session after transfer id done or when the other party disconnects. 
+
+Layer 5 examples: 
+
+h.323 - used to set up maintain and tear down video and voice calls. 
+
+RTP- Real time transport protocol streaming audio/video (phone call or FaceTime Session)
+
+Netbios- used to share fieles over a network. You see it a lot on networks. 
+
+# 🔐 Layer 5 – Session Layer (OSI Model)
+
+**Purpose:** Manages and maintains individual sessions between applications.
+
+**Key Role:** Keeps **multiple conversations** separate and organized.
+
+---
+
+## ✅ Core Functions
+
+| Phase | Description |
+| --- | --- |
+| **Set up** | Authenticates user credentials and assigns a unique session ID |
+| **Maintain** | Transfers data and can **reestablish connection** if interrupted |
+| **Teardown** | Gracefully ends the session when communication is complete |
+
+🧠 **Think: a private 1-on-1 phone call kept separate from other calls.**
+
+---
+
+## 🎯 Key Responsibilities
+
+- Session **establishment, maintenance, and termination**
+- Prevents **data intermingling** between multiple conversations
+- Can **resume** sessions after brief interruptions
+- Coordinates **dialog control** (half-duplex vs full-duplex communication)
+
+---
+
+## 🔌 Common Protocols at Layer 5
+
+| Protocol | Use Case |
+| --- | --- |
+| **H.323** | Sets up, maintains, and tears down **voice/video calls** |
+| **RTP** | **Streams audio/video** in real time (used in VoIP, video conferencing) |
+| **NetBIOS** | Allows **file/printer sharing** over a LAN (common in Windows networks) |
+
+> 💡 NetBIOS bridges communication between apps on separate machines.
+> 
+
+---
+
+## 🧠 Memory Trick
+
+> "Session = Separation"
+> 
+> 
+> Layer 5 ensures every chat, stream, or connection stays isolated.
+> 
+
+---
+
+## ⚡ Rapid Review Questions
+
+1. **What does the session layer prevent?**
+    
+    → Intermingling of conversations
+    
+2. **What protocol sets up VoIP sessions?**
+    
+    → `H.323`
+    
+3. **Which layer reestablishes a connection if it drops mid-transfer?**
+    
+    → `Session Layer (5)`
+    
+4. **Which protocol helps with Windows file sharing?**
+    
+    → `NetBIOS`
+    
+
+---
+
+### 💡 Exam Tip:
+
+If the question is about **setting up, maintaining, or ending communication sessions**, it's Layer 5 — **not** the Transport Layer (which handles segmentation and delivery).
+
+---

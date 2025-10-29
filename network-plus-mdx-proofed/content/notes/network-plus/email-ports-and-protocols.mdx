@@ -1,0 +1,85 @@
+---
+title: "Email ports and Protocols."
+slug: "email-ports-and-protocols"
+date: "2025-10-29"
+status: "published"
+summary: "what the server uses to send emails."
+tags: ["network+"]
+toc: true
+---
+
+# Email ports and Protocols.
+
+what the server uses to send emails. 
+
+SMTP over port 25 plain text 
+
+SMTPs is the secure variant, tunneles it through smtps. 
+
+port 465 or port 587 to ensure they are encrypted. 
+
+POP3 post office protocol version 3 
+
+used to retrieve emails from a remote server to a local client port 110. you download the emails to the computere this was better from dialup. at first it was deleting to the emails off the server. Iinsure protocol. 
+
+IMAP -Internet message access protocol. port 143 allows you to manaage emails directly on the email server designed for the alwasy on email, best if you check email from multiple locations. 
+
+IMAT initally lacked security, transmitting over in plain text 
+
+IMAPS port 993 is secure, uses an SSL or TLS tunnle. 
+
+SMTP/SMTPS sending emails
+
+POP3/IMAP used for reciving emails. 
+
+alwasy use the secure verison of the protocols. 
+
+## 📧 Email Protocols — Server Use, Ports & Security
+
+### 🔼 **Sending Email (Server to Server or Client to Server)**
+
+| Protocol | Port | Secure? | Notes |
+| --- | --- | --- | --- |
+| **SMTP** | 25 | ❌ No | Sends email in **plain text**. Used mostly **server-to-server**. |
+| **SMTPS** | 465 or 587 | ✅ Yes | Secure SMTP using **SSL/TLS**. Used by clients to send mail **securely** to servers. |
+
+> ✅ Always use port 465 or 587 over 25 for secure sending.
+> 
+
+---
+
+### 🔽 **Receiving Email (Client from Server)**
+
+| Protocol | Port | Secure? | Notes |
+| --- | --- | --- | --- |
+| **POP3** | 110 | ❌ No | Downloads email to local client; deletes from server by default. Ideal for **dial-up** era. |
+| **POP3S** | 995 | ✅ Yes | Encrypted version of POP3 using SSL/TLS. |
+| **IMAP** | 143 | ❌ No | Allows users to **manage email on the server**. Best for **multi-device access**. |
+| **IMAPS** | 993 | ✅ Yes | Secure IMAP using SSL/TLS. **Recommended** over IMAP. |
+
+---
+
+### 🔐 Summary Table
+
+| Action | Insecure Protocol (Port) | Secure Protocol (Port) |
+| --- | --- | --- |
+| Send Email | SMTP (25) | SMTPS (465 or 587) |
+| Receive Email | POP3 (110), IMAP (143) | POP3S (995), IMAPS (993) |
+
+---
+
+### 💡 Memory Tricks
+
+- **SMTP = Sending**
+- **IMAP = Server Management** (Multiple devices)
+- **POP3 = Pull once and delete** (Download & store locally)
+
+---
+
+### ✅ Must Know for the Exam
+
+- Always prefer **SMTPS, IMAPS, and POP3S** for secure communication.
+- Ports:
+    - **25 / 465 / 587 → SMTP**
+    - **110 / 995 → POP3**
+    - **143 / 993 → IMAP**

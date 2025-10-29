@@ -1,0 +1,115 @@
+---
+title: "NAC ( Network Access Control)"
+slug: "nac-network-access-control"
+date: "2025-10-29"
+status: "published"
+summary: "Method for increasing the security of a given netowkr by inspecing the devices tryin tto connect a network. checks to see if a device is secure enough for the netowk. like going th"
+tags: ["network+"]
+toc: true
+---
+
+# NAC ( Network Access Control)
+
+Method for increasing the security of a given netowkr by inspecing the devices tryin tto connect a network. checks to see if a device is secure enough for the netowk. like going through a bounder or customs. If everything matches up then you are allowed to join the network. 
+
+Each device will presetnt itself for inspection when it first attempts to join the network.
+
+port security - securing physical network ports to allow only specefic MAC address to access a port. 
+
+ , MAC address filtering - controls access to the ntwrok by limiting which device can acess based on mac addrss. allow listing. many devices allow to configure with block listing also. less secure than allow listing. 
+
+Allowlistin g- allowes specified device and blocks everyone else. 
+
+802.1x Authentication - provides a framework where only authroized users are allowed to join, like password. 
+
+Supplicant - user device 
+
+Authenticat o- device it wants to connect to 
+
+Authentacor server -server on network that will authenticat .. RADIUS server. Authenticator acts as a gatekeeper blockng all tracffic except the 802.1x authentication traffic sent by the users device. 
+
+location based access control enances network security by utilizyng geolocaton technologies. 
+
+Role- Based access control provides a dynamic method of regulation access based on the role. 
+
+Rule- based. access contool - operates baes on a set of pre devined rules for access to the network. 
+
+# Network Access Control & Authentication (N10-009)
+
+### **Network Access Control (NAC)**
+
+- **Purpose:** Increases network security by inspecting devices before allowing them to connect.
+- Think of it like **customs at a border**: device must meet requirements (antivirus, patches, compliance) before access.
+- Provides **posture assessment** (checks device security posture).
+- If compliant → granted access; if not → quarantined or blocked.
+
+---
+
+### **Port Security (Switch Feature)**
+
+- Limits access to switch ports based on **MAC addresses**.
+- Example: Only specific MAC addresses are allowed.
+- Can block or shut down a port if an unauthorized device connects.
+
+---
+
+### **MAC address Filtering**
+
+- Controls network access by allowing/denying devices based on MAC.
+- **Allowlisting (whitelisting):** Only approved devices can connect.
+- **Blocklisting (blacklisting):** Block specific devices, but others allowed.
+- **Weakness:** MACs can be spoofed → less secure than 802.1X.
+
+---
+
+### **802.1X Authentication**
+
+- Framework for **port-based access control**.
+- Ensures only authorized users/devices can join the network.
+- **Three roles:**
+    - **Supplicant:** Device/user requesting access.
+    - **Authenticator:** Network device (switch/AP) controlling access.
+    - **Authentication Server:** Usually a **RADIUS server**, validates credentials.
+- Authenticator **blocks all traffic except 802.1X authentication traffic** until user is validated.
+
+---
+
+### **Access Control Models**
+
+- **Location-Based Access Control:**
+    - Restricts/permits access based on physical/geographical location.
+    - Example: Can only log in if you’re on campus or in a specific region.
+- **Role-Based Access Control (RBAC):**
+    - Access granted based on a user’s role/job function.
+    - Example: HR staff can access payroll systems; others cannot.
+- **Rule-Based Access Control:**
+    - Access granted/denied by **predefined rules**.
+    - Example: Firewall ACL → “deny after hours,” “allow only HTTP/HTTPS.”
+
+---
+
+✅ **Exam Must-Knows**
+
+- **NAC = device inspection before access.**
+- **Port Security = restrict switch ports to known MACs.**
+- **MAC Filtering = simple allow/block based on MAC; weaker security.**
+- **802.1X = strongest; uses supplicant, authenticator, authentication server (RADIUS).**
+- **RBAC = role-based. Rule-Based = condition/policy-based. Location-Based = geo-based.**
+
+---
+
+⚡ Flashcard Drill
+
+- **Q:** What protocol/framework enforces port-based authentication?
+    
+    **A:** 802.1X.
+    
+- **Q:** In 802.1X, what is the supplicant?
+    
+    **A:** The user’s device.
+    
+- **Q:** What’s weaker, Port Security or 802.1X?
+    
+    **A:** Port Security/MAC filtering (can be spoofed).
+    
+- **Q:** Which model r

@@ -1,0 +1,123 @@
+---
+title: "quick notes"
+slug: "quick-notes"
+date: "2025-10-29"
+status: "published"
+summary: "**Order (0 = highest severity, 7 = lowest):**"
+tags: ["network+"]
+toc: true
+---
+
+# quick notes
+
+# 📝 Syslog Severity Levels (0–7)
+
+**Order (0 = highest severity, 7 = lowest):**
+
+0 – Emergency
+
+1 – Alert
+
+2 – Critical
+
+3 – Error
+
+4 – Warning
+
+5 – Notice
+
+6 – Informational
+
+7 – Debug
+
+### 🔑 Mnemonic:
+
+👉 **“Every Awesome Cat Eats Wet Noodles In Dens.”**
+
+- **E**very → **Emergency (0)**
+- **A**wesome → **Alert (1)**
+- **C**at → **Critical (2)**
+- **E**ats → **Error (3)**
+- **W**et → **Warning (4)**
+- **N**oodles → **Notice (5)**
+- **I**n → **Informational (6)**
+- **D**ens → **Debug (7)**
+
+---
+
+# 🛡️ Zero Trust Architecture (ZTA)
+
+**Core Components:**
+
+- **Policy Engine** → Decides if access should be allowed (brains of ZTA).
+- **Policy Administrator** → Sets up and manages the rules.
+- **Policy Enforcement Point (PEP)** → Executes the decision (enforces allow/deny).
+- **Subject System** → The user/device trying to connect.
+
+### 🔑 Memory Trick:
+
+👉 **“Engine Decides, Admin Writes, Enforcement Executes, Subject Requests.”**
+
+- **Engine** = Policy Engine (decision-maker).
+- **Admin** = Policy Administrator (rule-setter).
+- **Enforcement** = Enforcement Point (gatekeeper).
+- **Subject** = User/Device making the request.
+
+# 🔌 Common Ports (Network+ Must Know)
+
+| **Port** | **Protocol / Service** | **Notes** |
+| --- | --- | --- |
+| 20/21 | FTP (File Transfer Protocol) | 20 = data, 21 = control. Cleartext. |
+| 22 | SSH / SFTP / SCP | Encrypted remote login & file transfer. |
+| 23 | Telnet | Remote login, insecure (plaintext). |
+| 25 | SMTP (Simple Mail Transfer Protocol) | Mail transfer (legacy). |
+| 53 | DNS (Domain Name System) | UDP = queries, TCP = zone transfers. |
+| 67/68 | DHCP (Dynamic Host Config Protocol) | 67 = server, 68 = client. |
+| 69 | TFTP (Trivial File Transfer Protocol) | Lightweight, no authentication. |
+| 80 | HTTP | Unencrypted web. |
+| 110 | POP3 (Post Office Protocol v3) | Retrieve mail (legacy). |
+| 143 | IMAP (Internet Message Access Protocol) | Retrieve/sync mail. |
+| 161/162 | SNMP (Simple Network Management Protocol) | 161 = requests, 162 = traps. |
+| 389 | LDAP (Lightweight Directory Access Protocol) | Directory services (AD, etc.). |
+| 443 | HTTPS (HTTP Secure) | Encrypted web traffic. |
+| 445 | SMB (Server Message Block) | Windows file/printer sharing. |
+| 514 | Syslog | Log forwarding (UDP). |
+| 636 | LDAPS | Secure LDAP (TLS/SSL). |
+| 1433 | Microsoft SQL Server | Database connections. |
+| 3306 | MySQL | Database connections. |
+| 3389 | RDP (Remote Desktop Protocol) | Windows remote GUI. |
+| 5060/5061 | SIP (Session Initiation Protocol) | VoIP signaling (5060 = UDP/TCP, 5061 = TLS). |
+
+---
+
+## ✅ Exam Tips
+
+- Memorize **mail protocols** (25 = SMTP, 110 = POP3, 143 = IMAP).
+- **SSH vs Telnet**: 22 = secure, 23 = insecure.
+- **DNS (53)** = UDP mostly, TCP sometimes.
+- **RDP = 3389**, **HTTPS = 443** (most commonly tested).
+- DHCP = 67/68 (server/client).
+
+---
+
+## 🔑 Memory Trick (for big ones):
+
+👉 **“Some People Feel That Sending Data Helps Improve Security.”**
+
+- **S**SH – 22
+- **P**OP3 – 110
+- **F**TP – 20/21
+- **T**elnet – 23
+- **S**MTP – 25
+- **D**NS – 53
+- **H**TTP – 80
+- **I**MAP – 143
+- **S**NMP – 161
+
+---
+
+⚡ Sample Question:
+
+*A user reports they cannot connect via RDP to a remote server. Which port should the administrator check is open?*
+
+→ **3389**

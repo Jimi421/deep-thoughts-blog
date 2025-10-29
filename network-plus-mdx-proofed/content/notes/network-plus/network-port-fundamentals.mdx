@@ -1,0 +1,116 @@
+---
+title: "Network port Fundamentals"
+slug: "network-port-fundamentals"
+date: "2025-10-29"
+status: "published"
+summary: "Ip addresses street address."
+tags: ["network+"]
+toc: true
+---
+
+# Network port Fundamentals
+
+Ip addresses street address. 
+
+ports bedroo, kitchen ect. 
+
+Port: Logical opening in a computer that represents a service or applicaion. 
+
+Ports in a computer network: nUmbered from 0, to 65,535 
+
+Well known ports 0 - 1,023.. 80,443, 53 ect. 
+
+Registered ports -registired with IANA
+
+Ephemeral ports. - short lived temp ports which are opened just for a small period of tiem for an application from 49,152 
+
+so a client will always send to the well known port but will use an ephermerial port to send it from. 
+
+# 🎯 Ports & Port Ranges – Key to Network Services
+
+**Analogy:**
+
+- **IP Address = Street Address** (where the device lives)
+- **Port = Room Number** (which service/app you're trying to reach)
+
+---
+
+## 🧩 What is a Port?
+
+> A logical number that identifies a specific service or application running on a system.
+> 
+> 
+> Helps direct traffic to the correct process.
+> 
+
+---
+
+## 🔢 Port Range Breakdown
+
+| Type | Range | Description |
+| --- | --- | --- |
+| **Well-known Ports** | `0–1023` | Assigned to common protocols (HTTP, HTTPS, DNS, etc.) |
+| **Registered Ports** | `1024–49151` | Used by vendors/app developers (e.g., MS SQL, Oracle) |
+| **Ephemeral Ports** | `49152–65535` | **Temporary, client-side ports** used when initiating a connection |
+
+> 🧠 Clients send from an ephemeral port → to a well-known or registered port on the server
+> 
+
+---
+
+## 📡 Real-World Example
+
+### Visiting a Website:
+
+- Client uses **ephemeral port** (e.g., `49500`)
+- Sends request to **port 443** (HTTPS) on the web server
+- Server replies to client’s ephemeral port
+
+---
+
+## 🧠 Memory Trick
+
+> Ephemeral = Expires Quickly (short-lived)
+> 
+> 
+> **W**ell-known = **W**idely Used (HTTP, DNS, etc.)
+> 
+
+---
+
+## 💡 Common Well-Known Ports
+
+| Port | Protocol | Description |
+| --- | --- | --- |
+| 20/21 | FTP | File Transfer Protocol |
+| 22 | SSH | Secure Shell |
+| 23 | Telnet | Unencrypted remote login |
+| 25 | SMTP | Sending email |
+| 53 | DNS | Domain Name System |
+| 67/68 | DHCP | Dynamic Host Configuration |
+| 80 | HTTP | Web (unencrypted) |
+| 110 | POP3 | Email retrieval |
+| 123 | NTP | Time sync |
+| 143 | IMAP | Email retrieval |
+| 443 | HTTPS | Web (secure) |
+| 3389 | RDP | Remote Desktop |
+
+---
+
+## ⚡ Rapid Review Questions
+
+1. **What range are ephemeral ports in?**
+    
+    → `49152–65535`
+    
+2. **Do clients send to or from ephemeral ports?**
+    
+    → **From** ephemeral ports (to well-known/registered ports)
+    
+3. **What type of port is port 443?**
+    
+    → Well-known port (HTTPS)
+    
+4. **What is the purpose of a port?**
+    
+    → Directs traffic to the correct **application/service**

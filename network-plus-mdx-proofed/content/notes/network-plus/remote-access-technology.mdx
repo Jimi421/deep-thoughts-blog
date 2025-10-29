@@ -1,0 +1,95 @@
+---
+title: "Remote access technology"
+slug: "remote-access-technology"
+date: "2025-10-29"
+status: "published"
+summary: "Telnet - port 23 sends text-based commands and is unencrypted not secure."
+tags: ["network+"]
+toc: true
+---
+
+# Remote access technology
+
+Telnet - port 23 sends text-based commands and is unencrypted not secure. 
+
+secure shell - port 22 - encrypts everything that is being sent and recived between the client and the server. 
+
+RDP - port 3389 - provides graphicle interface to connect to another computer over a network. 
+
+RGD can create a secure gateway and then tunnel into a 
+
+RDG - provides. secure connection using SSL/TLS to secure RTP. 
+
+VNC - port 5900 designed for thin client archiceture or VDI. 
+
+Virtual desktop infristructure. hosts a desktop enfrin on a centalized server. Desktop as a service. 
+
+In band - using telnet or SSH. 
+
+out of band - connecting to th emanagement network to manage the devices on the network. 
+
+API - Application prgramming interface. set of protocols and routines for building and interacing with software applications. allow for direct intergration of different tird party 
+
+# 🌍 Remote Access Technologies
+
+## 🔑 Core Protocols
+
+- **Telnet (TCP/23)**
+    - Text-based remote command access.
+    - ⚠️ **Unencrypted** → insecure, replaced by SSH.
+- **SSH – Secure Shell (TCP/22)**
+    - Encrypted alternative to Telnet.
+    - Used for secure CLI management (routers, switches, Linux servers).
+- **RDP – Remote Desktop Protocol (TCP/3389)**
+    - Microsoft protocol for **graphical remote access**.
+    - Used to connect to Windows desktops/servers.
+- **RDG – Remote Desktop Gateway**
+    - Wraps RDP inside **SSL/TLS** for secure tunneling.
+    - Allows RDP connections over the internet safely.
+- **VNC – Virtual Network Computing (TCP/5900)**
+    - Provides graphical desktop sharing.
+    - Often used in thin client or **VDI (Virtual Desktop Infrastructure)** setups.
+
+---
+
+## 🖥️ Virtual Desktop Infrastructure (VDI)
+
+- Runs desktops on centralized servers → accessed remotely.
+- Can be delivered as **DaaS (Desktop as a Service)** from the cloud.
+
+---
+
+## ⚙️ Management Access
+
+- **In-Band Management**
+    - Uses the same network as production traffic.
+    - Examples: SSH, RDP, Telnet.
+- **Out-of-Band Management**
+    - Uses a **separate management network** or console connection.
+    - Used when the production network is down.
+
+---
+
+## 🔗 API (Application Programming Interface)
+
+- Set of rules/protocols for interacting with software.
+- Allows direct **integration of third-party apps/services**.
+- Common in **cloud, automation, and remote management**.
+
+---
+
+## ✅ Exam Tips
+
+- **Telnet = insecure, SSH = secure**.
+- **RDP = graphical remote access**, enhanced by **RDG**.
+- **VNC = platform-independent GUI remote access**.
+- **In-band = production network**, **Out-of-band = dedicated mgmt path**.
+- **API = enables automation and remote integration**.
+
+---
+
+⚡ Sample Exam Question:
+
+*“Which remote access technology provides secure CLI management by encrypting all session traffic?”*
+
+→ **SSH (TCP/22)**

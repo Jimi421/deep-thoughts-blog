@@ -1,0 +1,92 @@
+---
+title: "Layer 2 (Data Link)"
+slug: "layer-2-data-link"
+date: "2025-10-29"
+status: "published"
+summary: "Data link layer- packages data into frames and transmits those frames over the network."
+tags: ["network+"]
+toc: true
+---
+
+# Layer 2 (Data Link)
+
+Data link layer- packages data into frames and transmits those frames over the network. 
+
+Media Access Control (MAC) - Physical addressing system of a device which opperates on a logical topology. 
+
+unique 48 bit physical addressing system to every network card that is produces. uses hexadecimal. D2:51:F1:3A:34:65 first 3 are the vendor code last three are the unique value
+
+Layer 2 devices view the network logically. 
+
+Logical link Control (LLC) - Provides a connetion cerices and aloows acknlwdgment recipt of messages. the most basic of flow control. Device can ask for replay send less if the dada is corrupted. it uses a checksum. 
+
+layer 2 communicaton has 3 schemes
+
+isochronus - network devices us a common refrence clock source and crate time slots for transmission 
+
+Synchronous - network devices agree on clocking method to indicate begenning and ending of framed and can use control characters. Allows for begennig and end frames. 
+
+Asyncrhonous - network devices refrence inernal clocks and use start and stop bits for synchronization. 
+
+Devices: Network Interface Cards, Bridges, Switches. Ues logic to learn what ports are assigned to what mac addrss address. uging CAM tables and switching mechanisims across the network. 
+
+## 🧱 Layer 2 — Data Link Layer (OSI Model)
+
+> Purpose: Packages data into frames and transmits them across the network. Responsible for node-to-node delivery and error detection.
+> 
+
+---
+
+### 📦 Layer 2 Sub-Layers:
+
+### 1. **Media Access Control (MAC)**
+
+- Responsible for **physical addressing**
+- Uses a **48-bit hexadecimal address** (e.g., `D2:51:F1:3A:34:65`)
+    - First 24 bits: **OUI** (vendor code)
+    - Last 24 bits: **unique identifier**
+- Operates on a **logical topology** (how devices appear to be connected)
+
+### 2. **Logical Link Control (LLC)**
+
+- Provides:
+    - **Connection services**
+    - **Acknowledgment** of frames
+    - **Flow control** (basic form)
+- Can request retransmission if the data is corrupted (uses a checksum)
+
+---
+
+### 🔄 Layer 2 Communication Modes
+
+1. **Isochronous**
+    - Devices use a **shared clock source**
+    - Data is sent in **predefined time slots**
+    - Minimal delay and jitter
+2. **Synchronous**
+    - Devices agree on a **clocking method**
+    - Frames are sent with **control characters** to mark beginning and end
+    - More efficient than asynchronous
+3. **Asynchronous**
+    - Devices use **independent clocks**
+    - Data sent with **start and stop bits**
+    - Simple but less efficient
+
+---
+
+### 🧠 How Layer 2 "Sees" the Network
+
+- **Logical topology**: Layer 2 devices view the network based on MAC addresses and port mappings (not physical layout)
+
+---
+
+### 🔧 Layer 2 Devices
+
+| Device | Role |
+| --- | --- |
+| **NIC (Network Interface Card)** | Sends and receives Layer 2 frames |
+| **Switch** | Uses MAC addresses to forward traffic |
+| **Bridge** | Connects two segments and filters traffic |
+| **Access Points (APs)** | Operate at Layer 2 for wireless (also touches Layer 1) |
+- **Switches use CAM tables** to track which MAC address is associated with which port
+- **Bridges and switches** use **forwarding mechanisms** to decide where to send frames

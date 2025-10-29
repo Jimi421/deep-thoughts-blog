@@ -1,0 +1,101 @@
+---
+title: "Documentation and Process"
+slug: "documentation-and-process"
+date: "2025-10-29"
+status: "published"
+summary: "- **Administrative controls** = management decisions that direct technical + physical security."
+tags: ["network+"]
+toc: true
+---
+
+# Documentation and Process
+
+# Administrative (Management) Controls — What to Know for Network+
+
+### Big Picture
+
+- **Administrative controls** = management decisions that direct technical + physical security.
+- Think **top-down**: **Governance → Policies → Standards/Baselines → Procedures & Guidelines**.
+
+---
+
+## Governance
+
+- **IT Governance**: overall **framework** that aligns security with business goals (roles, accountability, risk appetite, compliance).
+- Examples: adopting **NIST CSF**, **ISO 27001**, setting risk tolerance, audit cadence.
+
+---
+
+## Policies (High-Level “What & Why”)
+
+- Define intent, scope, and responsibilities. Mandatory.
+- **Types you’ll see on exams:**
+    - **Organizational (Program/EISP):** company-wide direction (who owns security, objectives).
+    - **System-Specific (SSSP):** requirements for a particular tech/system (e.g., “VPN policy for Remote Access Server”).
+    - **Issue-Specific (ISSP):** focused topic (e.g., **Acceptable Use**, **Password Policy**, **Email/AI/Cloud policy**).
+
+**Exam Tip:** Policy = **management intent**; no step-by-step detail.
+
+---
+
+## Standards (Mandatory “How Much/How Exactly”)
+
+- Implement the policy with **uniform, measurable requirements**.
+- Examples: “Passwords ≥ 14 chars, MFA required; TLS 1.3 only; AES-256 at rest; log retention 365 days.”
+
+---
+
+## Baselines (Mandatory **Minimums**)
+
+- The **minimum acceptable security** configuration across similar assets.
+- Examples: “Windows Server baseline: disable SMBv1, enable host firewall, audit categories X/Y/Z, CIS level-1 controls enabled.”
+
+**Must Know:** **Baseline = minimum**; **Standard = exact specification**.
+
+---
+
+## Procedures (Mandatory “How-To Steps”)
+
+- **Detailed, step-by-step** instructions anyone can follow.
+- Examples: “Join host to domain → apply baseline GPO → enroll EDR → verify logs in SIEM.”
+
+---
+
+## Guidelines (Recommended “Best Practice”)
+
+- **Advisory**, allow exceptions with approval.
+- Example: “Video editors may exceed default 1 TB storage; request up to 5 TB with manager sign-off.”
+
+---
+
+## Why “Administrative” Controls Matter
+
+- Drive **technical** (firewalls, EDR, ACLs) and **physical** (badges, cameras, mantraps) controls.
+- Enable **auditability, consistency, and compliance**.
+- **Most important part**: people follow clear rules that are enforced and reviewed.
+
+---
+
+## Quick Examples (tie it together)
+
+- **Policy:** “All remote access must be secure.”
+- **Standard:** “Only TLS 1.3; MFA via TOTP; VPN must be WireGuard or IKEv2.”
+- **Baseline:** “Remote laptops: full-disk encryption, EDR, CIS-L1, auto-patch ≤ 7 days.”
+- **Procedure:** “Create VPN account → enroll MFA → install client → validate connection logs.”
+- **Guideline:** “Preferred MFA app: Authenticator X; Y allowed if traveling without smartphone.”
+
+[Common Documentation ](Documentation%20and%20Process/Common%20Documentation%202666f82ab005806dad01f736486fc782.md)
+
+[Asset. Management ](Documentation%20and%20Process/Asset%20Management%202666f82ab00580a89746e6f19bf6a5a8.md)
+
+[IP Address Management (IPAM) ](Documentation%20and%20Process/IP%20Address%20Management%20(IPAM)%202666f82ab00580c49d25e5ecb2e76b13.md)
+
+[common agreements](Documentation%20and%20Process/common%20agreements%202666f82ab00580df8521e75c220134fd.md)
+
+[product lifecycle - ](Documentation%20and%20Process/product%20lifecycle%20-%202666f82ab00580d3a4a7e2cf4a6ca3df.md)
+
+[change management ](Documentation%20and%20Process/change%20management%202666f82ab005800aa53dd59e86e658e2.md)
+
+[Configuration management ](Documentation%20and%20Process/Configuration%20management%202666f82ab00580ca9766ebd514bf6e50.md)
+
+[patch management ](Documentation%20and%20Process/patch%20management%202666f82ab0058088b6c7f7f05d062176.md)
