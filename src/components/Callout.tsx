@@ -1,10 +1,27 @@
-// src/components/mdx/Callout.tsx
 import { ReactNode } from "react";
 
-export default function Callout({ children }: { children: ReactNode }) {
+type CalloutProps = {
+  children: ReactNode;
+  emoji?: string;
+  title?: string;
+};
+
+export default function Callout({ children, emoji, title }: CalloutProps) {
   return (
-    <div className="border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-900/20 p-4 my-4 rounded">
-      {children}
+    <div className="my-6 flex gap-3 rounded-lg border border-blue-400/40 bg-blue-50/80 p-5 text-blue-900 shadow-sm dark:border-blue-400/30 dark:bg-blue-900/20 dark:text-blue-100">
+      {emoji ? (
+        <span className="text-2xl" aria-hidden>
+          {emoji}
+        </span>
+      ) : null}
+      <div>
+        {title ? (
+          <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-200">
+            {title}
+          </p>
+        ) : null}
+        <div className="space-y-2 text-sm leading-relaxed">{children}</div>
+      </div>
     </div>
   );
 }
