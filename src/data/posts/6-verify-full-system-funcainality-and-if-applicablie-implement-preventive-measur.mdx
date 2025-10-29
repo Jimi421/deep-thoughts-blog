@@ -1,61 +1,43 @@
 ---
-title: >-
-  6 - Verify full system funcainality and if applicablie, implement preventive
-  measures
-slug: >-
-  6-verify-full-system-funcainality-and-if-applicablie-implement-preventive-measur
+title: 6 - Verify full system functionality and, if applicable, implement preventive measures
+slug: 6-verify-full-system-funcainality-and-if-applicablie-implement-preventive-measur
 date: '2025-10-29'
 status: published
-summary: >-
-  - Confirm the solution worked and that **all systems/services are back to
-  normal**.
+summary: Confirm that every service is restored, validate with users, and deploy preventative steps so the incident does not recur.
 tags:
   - network+
 toc: true
 category: Network+ Exam
 ---
 
-# 6 - Verify full system funcainality and if applicablie, implement preventive measures
+# Step 6 — Verify Full System Functionality & Implement Preventive Measures
 
-# Step 6 — Verify Full System Functionality & Implement Preventative Measures
+After applying the fix, ensure the environment is truly healthy. Verification protects against hidden regressions, and preventive work reduces the chance of seeing the same problem again.
 
-### Purpose
+## Prove the Fix
 
-- Confirm the solution worked and that **all systems/services are back to normal**.
-- Prevent the problem from happening again.
+1. **Test comprehensively.** Validate connectivity, application performance, and any dependent services. Run through the success criteria defined in Step 4.
+2. **Confirm with the user.** Have the requester or affected stakeholders reproduce their workflow and acknowledge resolution.
+3. **Check adjacent systems.** Inspect logs, dashboards, and alerts to ensure no collateral issues were introduced.
 
----
+## Implement Preventive Measures
 
-### Key Actions
+- **Patch and update.** Apply firmware or software updates that address the root cause.
+- **Harden configurations.** Adjust ACLs, enable redundancy, or tune DHCP leases to prevent reoccurrence.
+- **Improve monitoring.** Add alerts, logging, or dashboards that will highlight early warning signs next time.
+- **Document safeguards.** Update runbooks or knowledge base articles with new steps that should be performed proactively.
 
-1. **Verify System Functionality**
-    - Test the fix thoroughly (connectivity, applications, performance).
-    - Confirm with the **user/customer** that the issue is resolved.
-    - Check related systems to ensure nothing else broke.
-2. **Implement Preventative Measures**
-    - Apply **patches/updates** if the issue came from outdated software.
-    - Strengthen **configurations** (e.g., enable DHCP failover, tighten ACLs).
-    - Improve **monitoring/logging** to catch early warnings next time.
-    - Add redundancy or backups if lack of resilience was the cause.
+## Communicate Outcomes
 
----
-
-### Example Scenarios
-
-- Fixed a switch port → verify user can now access LAN and Internet.
-- DHCP misconfig resolved → confirm all new devices get valid leases.
-- If root cause was a missing patch → deploy patch enterprise-wide.
+- **Share the results.** Notify stakeholders that services are restored and outline any lingering risks.
+- **Schedule follow-up actions.** Plan additional preventive projects if the permanent fix requires future maintenance windows.
 
 ---
 
 ✅ **Exam Must-Knows**
 
-- Step 6 = **Confirm success + prevent recurrence.**
-- Always test after applying a fix.
-- Preventative measures = patching, updates, monitoring, hardening.
+- Step 6 is about **validation plus prevention**.
+- Always gain user confirmation that the system works as expected.
+- Preventive measures include patching, configuration hardening, improved monitoring, and added redundancy.
 
----
-
-⚡Memory Trick:
-
-**Step 6 = “Prove it, Prevent it.”**
+⚡ **Memory Hook:** *Step 6 = Prove it works, then prevent it from breaking again.*

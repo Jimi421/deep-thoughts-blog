@@ -1,0 +1,226 @@
+slug,title,wordCount,readingTimeMinutes,effort
+1-6-datacenter-topology,1.6 Datacenter Topology,191,1,Light
+1-identify-the-problem,1 - Identify the problem,269,1.3,Light
+2-establish-a-theory-of-a-probable-cause-and-question-the-obvious,2. Establish a theory of a probable cause and question the obvious.,786,3.9,Medium
+3-test-the-theory-to-determine-the-cause,3 - Test the theory to determine the cause,207,1,Light
+4-establish-a-plan-of-action-to-resolve-the-problem-an-identify-the-potential-ef,4 Establish a plan of action to resolve the problem an identify the potential effects.,213,1.1,Light
+5-implement-the-solution-or-escelate-it-as-nessecary,5 - Implement the solution or escelate it as nessecary,169,0.8,Light
+6-verify-full-system-funcainality-and-if-applicablie-implement-preventive-measur,"6 - Verify full system funcainality and if applicablie, implement preventive measures",178,0.9,Light
+7-document-findings-actions-outcomes-and-lessons-learned,"7 document findings, actions, outcomes and lessons learned.",17,0.1,Outline
+access-control-list-acl,Access Control List (ACL),441,2.2,Medium
+address-resolution-protocol-attacks,Address Resolution Protocol Attacks,407,2,Medium
+address-translation,Address Translation,389,1.9,Light
+arp,arp,55,0.3,Outline
+asset-management,Asset. Management,193,1,Light
+assigning-ip-addresses,Assigning IP Addresses,497,2.5,Medium
+audits-and-compliance,Audits and Compliance,387,1.9,Light
+authentication-methods,Authentication Methods,568,2.8,Medium
+automating-netowrk-inventories,automating netowrk inventories,286,1.4,Light
+basic-network-device-commands,basic network device commands,36,0.2,Outline
+benefits-of-automation-and-orchestration,Benefits of Automation and Orchestration,200,1,Light
+bring-your-own-device-byod,Bring your own device - BYOD -,75,0.4,Outline
+building-a-copper-cable,Building a copper Cable,86,0.4,Outline
+cable-distribution-systems,Cable Distribution Systems,779,3.9,Medium
+cable-docsis-connections,Cable (DOCSIS) Connections,89,0.4,Outline
+captive-portal,captive portal,41,0.2,Outline
+captive-portal-issues,captive portal issues,462,2.3,Medium
+cellular-connections,Cellular Connections,150,0.8,Light
+change-management,change management,227,1.1,Light
+client-disassociation-issues,client disassociation issues,94,0.5,Outline
+cloud-and-the-datcenter,Cloud and The datacenter,138,0.7,Outline
+cloud-computing,Cloud Computing,485,2.4,Medium
+cloud-connectivity,Cloud connectivity,77,0.4,Outline
+cloud-deployment-models,Cloud Deployment Models,297,1.5,Light
+cloud-security,Cloud Security,313,1.6,Light
+cloud-service-models,Cloud Service Models,620,3.1,Medium
+collionos-and-broadcast-storms,collionos and broadcast storms.,27,0.1,Outline
+common-agreements,common agreements,59,0.3,Outline
+common-documentation,Common Documentation,121,0.6,Outline
+computer-mathmatics,computer mathmatics,22,0.1,Outline
+configuration-management,Configuration management,39,0.2,Outline
+content-filtering,Content Filtering,433,2.2,Medium
+copper-cable-issues,Copper Cable Issues,148,0.7,Outline
+copper-media,Copper Media,716,3.6,Medium
+copper-network-connectors,Copper Network Connectors,398,2,Light
+designing-redundant-netowrks,Designing Redundant Netowrks,24,0.1,Outline
+device-hardening,Device Hardening.,219,1.1,Light
+dhcp-dynamic-host-configuration-protocol,DHCP (Dynamic Host Configuration Protocol),467,2.3,Medium
+dhcp-issues,DHCP issues,53,0.3,Outline
+digital-certificate,Digital Certificate,440,2.2,Medium
+disaster-recoery-metrics,Disaster Recoery Metrics,364,1.8,Light
+disaster-recovery,Disaster Recovery,37,0.2,Outline
+discovery-protocols,Discovery protocols,87,0.4,Outline
+distribution-systems,Distribution Systems,69,0.3,Outline
+dns-domain-name-system,DNS - DOMAIN NAME SYSTEM,577,2.9,Medium
+documentation-and-process,Documentation and Process,403,2,Medium
+domain-name-system-attacks,Domain Name System Attacks,382,1.9,Light
+dos-and-ddos,DOS and DDoS,407,2,Medium
+dsl-digital-subscriber-line,DSL (Digital Subscriber Line),105,0.5,Outline
+duplicate-ip-addresses,Duplicate IP Addresses,62,0.3,Outline
+email-ports-and-protocols,Email ports and Protocols.,345,1.7,Light
+encapsulation,Encapsulation,328,1.6,Light
+encryption,Encryption,129,0.6,Outline
+ethernet-fundamentals,Ethernet Fundamentals,610,3,Medium
+ethernet-issues,Ethernet Issues,317,1.6,Light
+ethernet-switching,Ethernet Switching,95,0.5,Outline
+fiber-cable-issues,Fiber Cable Issues,191,1,Light
+fiber-optic-connections,Fiber Optic Connections,40,0.2,Outline
+fiber-optic-connectors,Fiber optic connectors,312,1.6,Light
+fiber-optic-media,Fiber Optic Media,365,1.8,Light
+file-transer-protocol-ports,File Transer Protocol & ports,449,2.2,Medium
+finding-center,Finding Center,94,0.5,Outline
+fire-suppression-systems,Fire suppression systems,25,0.1,Outline
+firewall,firewall,111,0.6,Outline
+firewalls,Firewalls,382,1.9,Light
+gre-generic-routing-encapsulation,GRE Generic routing encapsulation,242,1.2,Light
+hardware-tools,Hardware Tools,419,2.1,Medium
+hello-world,"Hello, World!",4,0,Outline
+high-availibity-approaches,High Availibity Approaches,95,0.5,Outline
+honeypots,Honeypots,117,0.6,Outline
+hvac-heating-ventilation-and-air-conditioning-hvac-system,"HVAC( Heating, Ventilation, and Air Conditioning (HVAC) System",121,0.6,Outline
+iac-infrastructure-as-code,IaC - infrastructure as code,135,0.7,Outline
+iam,IAM,372,1.9,Light
+incorrect-wireless-configurations,incorrect wireless configurations,122,0.6,Outline
+interface-issues,interface issues,119,0.6,Outline
+interface-port-issues,Interface Port Issues,491,2.5,Medium
+interface-statistice,interface statistice,480,2.4,Medium
+interference-issues,interference issues,263,1.3,Light
+intergrations-and-api,intergrations and api,324,1.6,Light
+internet-control-message-protocol-icmp,Internet Control Message Protocol ICMP,402,2,Medium
+intrusision-detection-systems-ids-ips,Intrusision Detection Systems (IDS/IPS),384,1.9,Light
+iot,IoT,463,2.3,Medium
+ip-address-management-ipam,IP Address Management (IPAM),247,1.2,Light
+ip-addressing,IP Addressing,111,0.6,Outline
+ipconfig-ifconfig-and-ip,"ipconfig, ifconfig, and ip",428,2.1,Medium
+ipsec,IPSEC,198,1,Light
+ipv4,IPV4,706,3.5,Medium
+ipv4-address-types,IPV4 Address types,447,2.2,Medium
+ipv4-to-ipv6,IPV4 to IPV6.,121,0.6,Outline
+ipv6-addresses,IPV6 Addresses,153,0.8,Light
+jumpbox,Jumpbox,269,1.3,Light
+layer-1-physical,Layer 1 - (Physical),685,3.4,Medium
+layer-2-data-link,Layer 2 (Data Link),455,2.3,Medium
+layer-3-network,Layer 3 (Network),598,3,Medium
+layer-4-transport,Layer 4 (Transport),708,3.5,Medium
+layer-5-session,Layer 5 (Session),362,1.8,Light
+layer-6-presentation,Layer 6 (Presentation),128,0.6,Outline
+layer-7-application,Layer 7 (Application),320,1.6,Light
+leased-line-connections,Leased Line Connections,96,0.5,Outline
+log-aggragarion-with-syslog,Log Aggragarion with Syslog,351,1.8,Light
+logical-security,Logical Security,74,0.4,Outline
+mac-flooding,MAC Flooding,259,1.3,Light
+malware,Malware,481,2.4,Medium
+maximum-transition-unit,Maximum Transition Unit,100,0.5,Outline
+media-and-cabling,Media and Cabling,80,0.4,Outline
+mfa-multifator-authentication,MFA (Multifator Authentication),134,0.7,Outline
+microwave,Microwave,18,0.1,Outline
+missed-practice,Missed practice,14,0.1,Outline
+more-network-device-commands,more network device commands,36,0.2,Outline
+multicast-routing,multicast routing,80,0.4,Outline
+multiprotocol-label-switching-mpls,Multiprotocol Label Switching (MPLS),318,1.6,Light
+nac-network-access-control,NAC ( Network Access Control),573,2.9,Medium
+netflow-data,Netflow Data,365,1.8,Light
+netstat,netstat,10,0.1,Outline
+network,Network +,178,0.9,Light
+network-attacks,Network Attacks,70,0.3,Outline
+network-cable-limitations,Network Cable Limitations,192,1,Light
+network-devices,Network Devices,576,2.9,Medium
+network-function-virtuilizaiton,Network Function Virtuilizaiton,259,1.3,Light
+network-fundamentals,Network Fundamentals,56,0.3,Outline
+network-moitoring,Network Moitoring,114,0.6,Outline
+network-performance-metrics,Network Performance metrics,269,1.3,Light
+network-port-fundamentals,Network port Fundamentals,368,1.8,Light
+network-security-fundamentals,Network Security Fundamentals,75,0.4,Outline
+network-segmentation,Network Segmentation,100,0.5,Outline
+network-sensor,Network Sensor,273,1.4,Light
+network-service-ports-and-protocols,Network Service Ports and Protocols,502,2.5,Medium
+network-services,Network Services,66,0.3,Outline
+nmap,nmap,36,0.2,Outline
+nslookup-dig-and-hostname,"nslookup, dig and hostname",68,0.3,Outline
+ntp-network-time-protocol,NTP (NETWORK TIME PROTOCOL),257,1.3,Light
+obj-1-2-network-componets,OBJ 1.2 - NETWORK COMPONETS,196,1,Light
+obj-1-2-network-resources,OBJ 1.2 Network Resources,77,0.4,Outline
+obj-1-6-understanding-network-geography,OBJ 1.6 Understanding Network Geography,125,0.6,Outline
+obj-1-6-wired-network-topology,OBJ 1.6 Wired Network Topology,322,1.6,Light
+on-path-attack,on path attack,365,1.8,Light
+orchestration-and-automation,Orchestration and Automation,127,0.6,Outline
+osi-model,OSI Model,129,0.6,Outline
+other-network-ports-and-protocols,Other network ports and protocols.,103,0.5,Outline
+packet-captures,Packet Captures,120,0.6,Outline
+patch-management,patch management,60,0.3,Outline
+physical-security,Physical Security,260,1.3,Light
+ping-traceroute-and-tracert,"ping, traceroute, and tracert",4,0,Outline
+pki-public-key-infrstructure,PKI - public key infrstructure,47,0.2,Outline
+playbook,Playbook,262,1.3,Light
+ports-and-protocols,Ports and Protocols.,159,0.8,Light
+power-distribution-systems,Power Distribution Systems,127,0.6,Outline
+power-over-ethernet-poe,Power over Ethernet (PoE),189,0.9,Light
+product-lifecycle,product lifecycle -,71,0.4,Outline
+qos-quality-of-service,QoS Quality of service,256,1.3,Light
+quick-notes,quick notes,419,2.1,Medium
+redundant-site-considerations,Redundant Site considerations,3,0,Outline
+remote-access-ports-and-protocols,Remote Access Ports and Protocols,457,2.3,Medium
+remote-access-technology,Remote access technology,372,1.9,Light
+risk-management,Risk Management,484,2.4,Medium
+rouge-device,Rouge Device,243,1.2,Light
+route-selection,Route Selection,335,1.7,Light
+routing,Routing,120,0.6,Outline
+routing-fundamentals,Routing Fundamentals,315,1.6,Light
+routing-issues,Routing issues,37,0.2,Outline
+routing-protocols,Routing protocols,234,1.2,Light
+routing-redundancy-protocol,Routing Redundancy Protocol,252,1.3,Light
+routing-tables,Routing Tables,309,1.5,Light
+scada-ics,SCADA ICS,186,0.9,Light
+secure-access-secure-edge-sase-securit-service-edge-sse,Secure Access Secure Edge - SASE .. Securit Service Edge SSE,132,0.7,Outline
+security-principles,security principles,392,2,Light
+segmentation-zones,Segmentation Zones,331,1.7,Light
+signal-degradation,Signal Degradation,265,1.3,Light
+slaac-statless-adress-autoconfiguration,SLAAC - statless address autoconfiguration.,214,1.1,Light
+snmp-simple-network-management-protocol,SNMP (Simple Network management protocol),459,2.3,Medium
+social-engineering-attacks,Social Engineering Attacks,425,2.1,Medium
+software-defined-networking,Software defined networking,439,2.2,Medium
+software-defined-wan,Software Defined Wan,14,0.1,Outline
+software-tools,Software Tools,398,2,Light
+source-control,Source Control,319,1.6,Light
+stp-spanning-tree-protocol-802-1d,STP (Spanning Tree Protocol) 802.1d,548,2.7,Medium
+sttelite-internet-access-using-satelites-to-establish-the-connection,Sttelite internet Access - using satelites to establish the connection,57,0.3,Outline
+subnetting,Subnetting,616,3.1,Medium
+swithching-loops,swithching loops,96,0.5,Outline
+syslog-severity-level-flashcards,📝 Syslog Severity Level Flashcards,115,0.6,Outline
+take-1,Take 1,881,4.4,Heavy
+take-2,Take 2,317,1.6,Light
+tansceivers,Tansceivers,427,2.1,Medium
+tcpdump,tcpdump,18,0.1,Outline
+the-cia-triad,The CIA Triad,247,1.2,Light
+threats-and-vulnerabilities,Threats and Vulnerabilities,276,1.4,Light
+training-and-exerscises,Training and Exerscises,274,1.4,Light
+transmission-crontol-protocol-tcp,Transmission Crontol Protocol (TCP),380,1.9,Light
+troubleshooting-methodology,Troubleshooting Methodology,90,0.5,Outline
+troubleshooting-network-services,Troubleshooting Network Services,64,0.3,Outline
+troubleshooting-performance-issues,Troubleshooting performance issues,12,0.1,Outline
+troubleshooting-physical-network,Troubleshooting Physical network,71,0.4,Outline
+troubleshooting-tools,Troubleshooting Tools,108,0.5,Outline
+troubleshooting-wireless-networks,Troubleshooting Wireless Networks,220,1.1,Light
+understanding-siems,Understanding SIEMS,542,2.7,Medium
+upgrades-and-complianc-e,Upgrades and Complianc e,327,1.6,Light
+user-datagram-protocol-udp,User Datagram Protocol (UDP),430,2.1,Medium
+v-extensible-local-are-network,V Extensible Local are network,149,0.7,Outline
+virtual-local-access-networks-vlan,Virtual Local Access Networks (vLAN),372,1.9,Light
+vlan-configuration,VLAN Configuration,509,2.5,Medium
+vlan-hopping,VLAN Hopping,452,2.3,Medium
+vlan-issues,vlan issues,10,0.1,Outline
+vpn-virtual-private-network,VPN(Virtual Private Network),464,2.3,Medium
+wan,WAN -,43,0.2,Outline
+web-ports-and-protocols,Web Ports and Protocols,487,2.4,Medium
+when-security-fails,When security fails.,5,0,Outline
+when-to-automate-and-orchestrate,When to automate and orchestrate,346,1.7,Light
+wireless-antennas,Wireless Antennas,366,1.8,Light
+wireless-considerations-in-troubleshooting,wireless considerations in troubleshooting.,486,2.4,Medium
+wireless-coverage-issues,wireless coverage issues,145,0.7,Outline
+wireless-frequencies,Wireless Frequencies,669,3.3,Medium
+wireless-network-topology,Wireless Network Topology,86,0.4,Outline
+wireless-networks,Wireless Networks,83,0.4,Outline
+wireless-security,Wireless Security,687,3.4,Medium
+wireshark,Wireshark,3,0,Outline
+wirless-network-types,Wirless Network Types,551,2.8,Medium
+zero-trust-archetecture,Zero Trust Archetecture,447,2.2,Medium
