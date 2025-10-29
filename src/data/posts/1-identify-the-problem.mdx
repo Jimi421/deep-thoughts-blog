@@ -3,81 +3,45 @@ title: 1 - Identify the problem
 slug: 1-identify-the-problem
 date: '2025-10-29'
 status: published
-summary: >-
-  gether info from the user, what exactly is wrong, what are the symptoms, wnat
-  may have caused it. what exactly is the problem “Internet is not working”
+summary: Collect detailed context about the symptoms, scope, and recent changes before touching the environment.
 tags:
   - network+
 toc: true
 category: Network+ Exam
 ---
 
-# 1 - Identify the problem
-
-gether info from the user, what exactly is wrong, what are the symptoms, wnat may have caused it. what exactly is the problem “Internet is not working” 
-
-what happend
-
-what was the status before? 
-
-what was the status after? 
-
-has there been any change to the system? 
-
-any new updates? 
-
-anyone else in your area having issues? 
-
-what has chaged? the latest change is most likley the issue
-
-user, environmental, or software update. 
-
-have you done anything to try to solve the problem? 
-
-perform backups before you take any action. 
-
 # Step 1 – Identify the Problem
 
-### Gather Information
+Troubleshooting always starts with disciplined discovery. Before you change anything, capture a clear picture of what the user is experiencing, what has changed, and how widespread the disruption might be.
 
-- Ask the user what exactly is wrong.
-    
-    *Example:* “The internet isn’t working.”
-    
-- Clarify **symptoms**:
-    - Slow connection?
-    - No connectivity?
-    - Intermittent dropouts?
-    - Error messages?
+## Gather the Story
 
-### Establish Baseline
+- **Clarify the symptoms.** Ask the user to describe exactly what is happening (for example, *“The internet will not load on any browser.”*).
+- **Capture timing details.** When did the issue begin? Has it happened before? Is it intermittent or constant?
+- **Collect environment data.** What applications, devices, or locations are affected? Are other users or departments seeing the same problem?
 
-- **Before vs. After:**
-    - What was working normally before the issue?
-    - When did it stop working?
-- **Recent Changes:**
-    - Any updates, patches, or configuration changes?
-    - Any new hardware/software?
-    - Has the environment changed (power outage, moved devices)?
+## Establish the Baseline
 
-### Scope the Issue
+- **Before vs. after.** Document what worked prior to the incident and what changed immediately afterward.
+- **Recent changes.** Note software updates, new hardware, configuration modifications, or environmental events (power outage, moves, construction).
+- **User actions.** Determine whether the user attempted any self-remediation, such as rebooting gear or swapping cables.
 
-- Is the problem isolated (one user) or widespread (entire office)?
-- Check if neighbors, coworkers, or others in the area are affected.
-- Determine if it’s **user error**, **environmental**, or **system/software related**.
+## Scope the Impact
 
-### Troubleshooting Questions
+- **Isolate the audience.** Identify whether the problem affects a single endpoint, an entire VLAN, a site, or remote clients only.
+- **Check dependencies.** Validate upstream services (ISP status, cloud provider health dashboards, or SaaS outage notices) to understand whether the root cause might be external.
 
-- What happened right before the problem occurred?
-- Has this issue happened before?
-- Has anything been replaced recently (cables, routers, NICs)?
-- Have you tried anything to resolve it (restart, reset, cable swap)?
+## Collect Objective Data
 
-### Data & Safety
+- **Inspect and listen.** Look for link lights, warning LEDs, fans that are not spinning, unusual noises, or burning smells.
+- **Review logs and monitors.** Export relevant entries from event logs, syslog, or monitoring dashboards while the symptoms are present.
+- **Preserve evidence.** Take screenshots or gather error codes so nothing is lost once remediation begins.
 
-- Perform **backups** before making system changes.
-- Document what you observe, even if it seems small.
+## Protect the Environment
+
+- **Back up first.** Capture configurations, system state, or critical data before applying changes.
+- **Document findings.** Write down the questions asked, the answers received, and any assumptions you make so later steps stay grounded in facts.
 
 ---
 
-✅ **Exam Tip:** On the test, expect “first step” troubleshooting questions — the answer is usually **gather information** rather than immediately fixing or replacing hardware.
+✅ **Exam Tip:** When a question asks for the *first* troubleshooting action, the correct response is almost always to **gather information** before swapping hardware or reconfiguring devices.

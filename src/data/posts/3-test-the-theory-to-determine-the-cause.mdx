@@ -3,64 +3,40 @@ title: 3 - Test the theory to determine the cause
 slug: 3-test-the-theory-to-determine-the-cause
 date: '2025-10-29'
 status: published
-summary: >-
-  Test our theory to see if what we think the problem is, try to fix it. if the
-  thory does not work make a new theory. figure out what the next theory is.
+summary: Execute low-risk tests to confirm or disprove your leading hypothesis, escalating only if the work exceeds your authority or expertise.
 tags:
   - network+
 toc: true
 category: Network+ Exam
 ---
 
-# 3 - Test the theory to determine the cause
+# Step 3 — Test the Theory to Determine the Cause
 
-Test our theory to see if what we think the problem is, try to fix it. if the thory does not work make a new theory. figure out what the next theory is. 
+Once you have a working hypothesis, validate it. The goal is to prove that the suspected cause actually explains the symptoms—or to eliminate it and move to the next theory.
 
-Thoery is confirmed 
+## Execute Controlled Tests
 
-Theory is not confirmed 
+- **Start with reversible checks.** Swap cables, reboot services, or apply configuration changes you can easily roll back.
+- **Gather metrics as you test.** Monitor logs, interface counters, or application dashboards to see how the system responds.
+- **Keep a change log.** Note the time, action taken, and result so you can undo or escalate with confidence.
 
-Lack of skill or authority “part cots $10k” .. or issue is with the group policy, we don’t work with the servers. 
+## Interpret the Results
 
-inability to solve
+- **Theory confirmed:** You have evidence that the change resolved the issue or reproduced the failure. Proceed to Step 4 to plan the fix.
+- **Theory disproved:** Document the outcome, revert any temporary changes, and return to Step 2 to form a new hypothesis.
 
-# Step 3 — Test the Theory to Determine Cause
+## Know When to Escalate
 
-### Purpose
-
-- Once you’ve **formed a probable cause (Step 2)** → **test it**.
-- Goal: **confirm or rule out** your theory.
-
----
-
-### Outcomes
-
-- **Theory Confirmed**
-    - You’ve found the root cause.
-    - Proceed to Step 4 (Establish a plan of action).
-- **Theory Not Confirmed**
-    - Form a **new theory** and test again.
-    - Work through alternative hypotheses until resolved.
+- **Skill or authority limits:** If the resolution requires access you do not have (e.g., modifying Group Policy, changing firewall rules, or purchasing expensive hardware), escalate to the appropriate team.
+- **Risk considerations:** Stop and escalate if further testing could jeopardize production systems or violate change-control policy.
+- **Communicate clearly:** Provide the work performed, evidence gathered, and recommended next steps when you hand off the case.
 
 ---
 
-### Limitations
+✅ **Exam Must-Knows**
 
-- **Lack of skill or authority**
-    - Example: Issue tied to **Group Policy Objects** (server team’s responsibility).
-    - Or the fix requires a **$10k hardware part** (outside your approval).
-- If outside your scope → **escalate** to the proper team.
+- Step 3 is about **confirmation**: prove or disprove your theory.
+- If you cannot confirm the cause, **loop back** and develop a new theory.
+- **Escalate** when the fix is outside your authority, requires specialized skills, or impacts critical infrastructure.
 
----
-
-### Exam Must-Knows
-
-- Step 3 = **Confirm or reject your theory.**
-- If theory fails → loop back to Step 2.
-- If confirmed but **you can’t fix** (lack authority/skills/resources) → **escalate**.
-
----
-
-⚡Memory Trick:
-
-**“Test → Confirm, Reject, Escalate.”**
+⚡ **Memory Hook:** *Test → Confirm, Reject, or Escalate.*
