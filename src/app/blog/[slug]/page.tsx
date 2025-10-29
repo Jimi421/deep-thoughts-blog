@@ -17,7 +17,7 @@ const mdxComponents = {
   Callout,
 };
 
-export function generateStaticParams() {
+export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   const slugs = getPostSlugs()
     .filter(
       (filename: string) =>
@@ -28,12 +28,12 @@ export function generateStaticParams() {
   return slugs.map((slug: string) => ({ slug }));
 }
 
-interface Props {
-  params: { slug: string };
+interface PageProps {
+  params: Promise<{ slug: string }>;
 }
 
-export default async function Page({ params }: Props) {
-  const { slug } = params;
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
 
   let post;
   try {
